@@ -83,7 +83,7 @@ const DrawingCanvas: React.FC<Props> = (props) => {
                 y: totalY / count
             }
         }
-        return {x: 0, y: 0};
+        return null;
     };
 
     const updateSvgPath = () => {
@@ -99,7 +99,8 @@ const DrawingCanvas: React.FC<Props> = (props) => {
             let tmpPath = "";
             for (let offset = 2; offset < buffer.length; offset += 2) {
                 pt = getAveragePoint(offset);
-                tmpPath += " L" + pt.x + " " + pt.y;
+                if (pt != null)
+                    tmpPath += " L" + pt.x + " " + pt.y;
             }
 
             // Set the complete current path coordinates
@@ -117,6 +118,8 @@ const DrawingCanvas: React.FC<Props> = (props) => {
         if (path) {
             setPath(null)
         }
+        if (buffer.length > 0) 
+            setBuffer([])
     };
 
     return (
