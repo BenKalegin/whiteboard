@@ -38,7 +38,7 @@ const EnhancementTabs: React.FC<Props> = (props) => {
 
             <div id="predict" className="tabcontent">
             <h3>Predict</h3>
-            <p>Predict what was being drawing and suggest ready made picture.</p> 
+            <p>Predict what was being drawing and suggest ready made picture. </p> 
             </div>
         </div>        
     );
