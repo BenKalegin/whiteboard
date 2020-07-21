@@ -3,6 +3,7 @@ import CSS from 'csstype';
 
 export interface Props {
     smoothWindow: number
+    penColor: string
 }
 
 const DrawingCanvas: React.FC<Props> = (props) => {
@@ -48,11 +49,13 @@ const DrawingCanvas: React.FC<Props> = (props) => {
         }
     };
 
+
     const mouseDownHandler = (e: React.MouseEvent) => {
 
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute("fill", "none");
-        path.setAttribute("stroke", "#000");
+
+        path.setAttribute("stroke", props.penColor ?? "#000");
         path.setAttribute("stroke-width", strokeWidth);
         setPath(path);
         setBuffer([]);
