@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b1f83c6-bc47-4d5b-a8f4-89bab6553c2b" name="Default Changelist" comment="" />
+    <list default="true" id="7b1f83c6-bc47-4d5b-a8f4-89bab6553c2b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/DrawingCanvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawingCanvas.tsx" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -16,11 +18,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DrawingCanvas.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="29" column="68" lean-forward="true" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+            <state relative-caret-position="234">
+              <caret line="152" column="55" selection-start-line="152" selection-start-column="55" selection-end-line="152" selection-end-column="55" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
-                <marker date="1595218773249" expanded="true" signature="8599:8670" ph="..." />
+                <marker date="1595250068519" expanded="true" signature="8363:8434" ph="..." />
               </folding>
             </state>
           </provider>
@@ -86,6 +88,7 @@
       <find>stop-opacity</find>
       <find>buffer</find>
       <find>cmbBufferSize</find>
+      <find>transform</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -108,8 +111,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1367" />
-    <option name="y" value="139" />
+    <option name="x" value="4107" />
+    <option name="y" value="-6" />
     <option name="width" value="1157" />
     <option name="height" value="1052" />
   </component>
@@ -178,23 +181,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595205809559</updated>
-      <workItem from="1595205810737" duration="9347000" />
+      <workItem from="1595205810737" duration="11072000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9347000" />
+    <option name="totallyTimeSpent" value="11072000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="3456" height="1416" extended-state="6" />
+    <frame x="3432" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14862493" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26765016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.32969603" />
+      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.20151679" />
       <window_info anchor="bottom" id="Terminal" weight="0.3289166" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -256,11 +259,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DrawingCanvas.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="29" column="68" lean-forward="true" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+        <state relative-caret-position="234">
+          <caret line="152" column="55" selection-start-line="152" selection-start-column="55" selection-end-line="152" selection-end-column="55" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
-            <marker date="1595218773249" expanded="true" signature="8599:8670" ph="..." />
+            <marker date="1595250068519" expanded="true" signature="8363:8434" ph="..." />
           </folding>
         </state>
       </provider>
