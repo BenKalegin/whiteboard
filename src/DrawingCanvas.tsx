@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import CSS from 'csstype';
 
 export interface Props {
+    smoothWindow: number
 }
 
 const DrawingCanvas: React.FC<Props> = (props) => {
@@ -15,9 +16,8 @@ const DrawingCanvas: React.FC<Props> = (props) => {
         transformOrigin: '50% 50%'
     };
 
-    const strokeWidth = "2";
+    const strokeWidth = "3";
 
-    const [cmbBufferSize] = useState(1);
     const [path, setPath] = useState<SVGPathElement | null>(null);
     const [strPath, setStrPath] = useState<string>("null");
     // Contains the last positions of the mouse cursor
@@ -29,7 +29,7 @@ const DrawingCanvas: React.FC<Props> = (props) => {
 
     const appendToBuffer = function (pt: { x: number; y: number }) {
         buffer.push(pt);
-        while (buffer.length > cmbBufferSize) {
+        while (buffer.length > props.smoothWindow) {
             buffer.shift();
         }
         setBuffer(buffer)
@@ -67,7 +67,7 @@ const DrawingCanvas: React.FC<Props> = (props) => {
     // Calculate the average point, starting at offset in the buffer
     const getAveragePoint = (offset: number) => {
         const len = buffer.length;
-        if (len % 2 === 1 || len >= cmbBufferSize) {
+        if (len % 2 === 1 || len >= props.smoothWindow) {
             let totalX = 0;
             let totalY = 0;
             let pt, i;
@@ -134,7 +134,7 @@ const DrawingCanvas: React.FC<Props> = (props) => {
                      height="1000"
                      width="1000">
                     <g>
-                        <g>
+                        <g>wB
                             <defs>
                                 <pattern patternUnits="userSpaceOnUse" height="48" width="48" y="0" x="0" id="Neutral">
                                     <g>
