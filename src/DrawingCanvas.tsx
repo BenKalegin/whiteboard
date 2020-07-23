@@ -4,7 +4,9 @@ import CSS from 'csstype';
 export interface Props {
     smoothWindow: number
     penColor: string
+    figureDrawn: (points: { x: number; y: number; time: number }[]) => void
 }
+
 
 const DrawingCanvas: React.FC<Props> = (props) => {
 
@@ -21,19 +23,24 @@ const DrawingCanvas: React.FC<Props> = (props) => {
 
     const [path, setPath] = useState<SVGPathElement | null>(null);
     const [strPath, setStrPath] = useState<string>("null");
-    // Contains the last positions of the mouse cursor
-    const [buffer, setBuffer] = useState<{ x: number; y: number }[]>([]);
+    const [buffer, setBuffer] = useState<{ x: number; y: number}[]>([]);
+    const [curvePoints, setCurvePoints] =  useState<{ x: number; y: number; time: number }[]>([]);
+    const [curveStartedAt, setCurveStartedAt] = useState<number>(0)
 
 
     const boundRef = useRef<HTMLElement>(null);
     let svgContainerRef = useRef<SVGSVGElement>(null);
 
     const appendToBuffer = function (pt: { x: number; y: number }) {
-        buffer.push(pt);
-        while (buffer.length > props.smoothWindow) {
-            buffer.shift();
+        const newBuffer = [...buffer, {x: pt.x, y: pt.y}];
+
+        while (newBuffer.length > props.smoothWindow) {
+            newBuffer.shift();
         }
-        setBuffer(buffer)
+        setBuffer(newBuffer)
+
+        setCurvePoints([...curvePoints, {x: Math.round(pt.x), y: Math.round(pt.y), time: curveStartedAt == 0 ? 0 : Date.now() - curveStartedAt}])
+
     };
 
     const getMousePosition = (e: React.MouseEvent) =>   {
@@ -54,11 +61,13 @@ const DrawingCanvas: React.FC<Props> = (props) => {
 
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute("fill", "none");
-
         path.setAttribute("stroke", props.penColor ?? "#000");
         path.setAttribute("stroke-width", strokeWidth);
         setPath(path);
+
         setBuffer([]);
+        setCurvePoints([]);
+        setCurveStartedAt(Date.now())
         let pt = getMousePosition(e);
         appendToBuffer(pt);
         const strPath = "M" + pt.x + " " + pt.y
@@ -121,8 +130,16 @@ const DrawingCanvas: React.FC<Props> = (props) => {
         if (path) {
             setPath(null)
         }
-        if (buffer.length > 0) 
+        if (buffer.length > 0) {
             setBuffer([])
+        }
+
+        if (curvePoints.length > 0) {
+            props.figureDrawn(curvePoints)
+            setCurvePoints([])
+        }
+
+        setCurveStartedAt(0)
     };
 
     return (
