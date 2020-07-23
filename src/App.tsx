@@ -8,8 +8,9 @@ import { inkPayload } from './InputTools';
 
 function App() {
   const [smoothWindow, setSmoothWindow] = React.useState(1);
+  const [predictions, setPredictions] = React.useState<string[]>([]);
   const [toolSelected, selectTool] = useState(CanvasToolbarSelection.None);
-  const { get, post, response, loading, error } = useFetch('https://inputtools.google.com/request?ime=handwriting&app=quickdraw&dbg=1&cs=1&oe=UTF-8')
+  const { post, response } = useFetch('https://inputtools.google.com/request?ime=handwriting&app=quickdraw&dbg=1&cs=1&oe=UTF-8')
 
   const penColor = () => {
     switch (toolSelected) {
@@ -23,9 +24,13 @@ function App() {
   }
 
   const figureDrawn = async (points: { x: number; y: number; time: number }[]) => {
-    await post('', inkPayload(1000, 1000, points) )
-    // if if (response.ok) setPredictions([...predictions])
-    console.log(response.ok)
+    const data = await post('', inkPayload(1000, 1000, points) )
+    if (!response.ok) {
+        console.error("request failed", response.headers)
+    }else if (data[0] !== "SUCCESS") {
+      console.error("request failed", data)
+    }else
+      setPredictions(data[1][0][1])
   }
 
 
@@ -33,7 +38,7 @@ function App() {
     <div className="App">
         <CanvasToolbar currentTool={toolSelected} selectTool={(tool) => selectTool(tool)}/>
         <DrawingCanvas smoothWindow={smoothWindow} penColor={penColor()} figureDrawn={(p) => figureDrawn(p)}/>
-        <EnhancementTabs smoothWindow={smoothWindow} smoothWindowChanged={(n: number) => setSmoothWindow(n)}/>
+        <EnhancementTabs smoothWindow={smoothWindow} smoothWindowChanged={(n: number) => setSmoothWindow(n)} predictions={predictions} />
     </div>
   );
 }

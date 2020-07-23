@@ -1,18 +1,20 @@
-import React, { useState, useRef } from 'react';
-import CSS from 'csstype';
+import React from 'react';
 import SmoothEnhancement from './SmoothEnhancement';
+import PredictEnhancement from './PredictEnhancement';
+
 
 export interface Props {
     smoothWindow: number
-    smoothWindowChanged: (window: number) => void    
+    smoothWindowChanged: (window: number) => void
+    predictions: string[]
 }
 
 const EnhancementTabs: React.FC<Props> = (props) => {
 
     const onTabClick = (e: React.MouseEvent<HTMLButtonElement>, tabName: string) => {
-        const tabcontent = document.getElementsByClassName("tabcontent");
-        for (let i = 0; i < tabcontent.length; i++) {
-            const tab = tabcontent[i] as HTMLDivElement
+        const tabContent = document.getElementsByClassName("tabcontent");
+        for (let i = 0; i < tabContent.length; i++) {
+            const tab = tabContent[i] as HTMLDivElement
             tab.setAttribute("style", "display=none");
         }
         const tabLinks = document.getElementsByClassName("tablinks");
@@ -28,8 +30,8 @@ const EnhancementTabs: React.FC<Props> = (props) => {
             <p>There are some tabs below with whiteboard drawing enhancements:</p>
 
             <div className="tab">
-            <button className="tablinks" onClick={(e) => onTabClick(e, "simplify")}>Simplify line</button>
-            <button className="tablinks" onClick={(e) => onTabClick(e, "predict")}>Predict Figure</button>
+            <button className="tablinks" onClick={(e) => onTabClick(e, "simplify")}>Smooth</button>
+            <button className="tablinks" onClick={(e) => onTabClick(e, "predict")}>Predict</button>
             </div>
 
             <div id="simplify" className="tabcontent">
@@ -37,8 +39,7 @@ const EnhancementTabs: React.FC<Props> = (props) => {
             </div>
 
             <div id="predict" className="tabcontent">
-            <h3>Predict</h3>
-            <p>Predict what was being drawing and suggest ready made picture. </p> 
+                <PredictEnhancement predictions={props.predictions} />
             </div>
         </div>        
     );

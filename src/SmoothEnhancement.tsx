@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 
 export interface Props {
     smoothWindow: number
@@ -9,7 +9,7 @@ const SmoothEnhancement: React.FC<Props> = (props) => {
 
 return (
     <div>
-        <h3>Simplify</h3>
+        <h3>Smoothing</h3>
         <p>Simplifies the line by averaging specified number of points.</p>
 
     <div id="divSmoothingFactor">

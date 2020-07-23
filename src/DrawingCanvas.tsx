@@ -39,7 +39,7 @@ const DrawingCanvas: React.FC<Props> = (props) => {
         }
         setBuffer(newBuffer)
 
-        setCurvePoints([...curvePoints, {x: Math.round(pt.x), y: Math.round(pt.y), time: curveStartedAt == 0 ? 0 : Date.now() - curveStartedAt}])
+        setCurvePoints([...curvePoints, {x: Math.round(pt.x), y: Math.round(pt.y), time: curveStartedAt === 0 ? 0 : Date.now() - curveStartedAt}])
 
     };
 
