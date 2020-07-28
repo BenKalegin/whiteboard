@@ -6,7 +6,7 @@ import EnhancementTabs from './EnhancementTabs';
 import '../App.css';
 import {inkPayload} from '../helpers/InputTools';
 import {Curve, Figure, TemporalPoint} from "../stores/Models";
-import {InkDrawingMouseHandler, InkDrawingModel, DefaultInkDrawingModel} from "../helpers/InkDrawingMouseHandler";
+import {DefaultInkDrawingModel, InkDrawingModel, InkDrawingMouseHandler} from "../helpers/InkDrawingMouseHandler";
 import {DoNothingMouseHandler} from "../helpers/DoNothingMouseHandler";
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
     }
   }
 
-  const figureDrawn = async (points: TemporalPoint[]) => {
+  const fetchPredictions = async (points: TemporalPoint[]) => {
     const data = await post('', inkPayload(1000, 1000, points) )
     if (!response.ok) {
       console.error("request failed", response.headers)
@@ -68,25 +68,39 @@ function App() {
     }
   }
 
-  function UpdateRecentFigure(model: InkDrawingModel) {
-    const lastFigure = figures.shift()!;
+  function UpdateRecentCurve(model: InkDrawingModel) {
+    const lastFigure = figures.pop()!
     let curves = lastFigure.curves;
-    const lastCurve : Curve = curves.shift() || {
-      polyLinePoints: [],
-      pointTimes: [],
-      strokeColor: penColor(),
-      strokeWidth: 3
-    }
+    const lastCurve : Curve = curves.pop()!
     lastCurve.polyLinePoints = model.ProjectedPoints
     lastCurve.pointTimes = model.ProjectedPoints.map(p => p.timespan)
     setFigures([...figures, {...lastFigure, curves: [...curves, lastCurve]}])
   }
 
+  const startNewCurve = (model: InkDrawingModel) => {
+    const lastFigure = figures.pop()!;
+    const curve : Curve = {
+      id: "Crv" + (lastFigure.curves.length + 1).toString(),
+      polyLinePoints: [],
+      pointTimes: [],
+      strokeColor: penColor(),
+      strokeWidth: 3
+    }
+
+    curve.polyLinePoints = model.ProjectedPoints
+    curve.pointTimes = model.ProjectedPoints.map(p => p.timespan)
+    setFigures([...figures, {...lastFigure, curves: [...lastFigure.curves, curve]}])
+  }
+
   const mouseHandler = isPen(toolSelected) ?  new InkDrawingMouseHandler(mouseHandlerModel, {
-    Changed: (model: InkDrawingModel) => { setMouseHandlerModel(model); UpdateRecentFigure(model)},
-    Finished: (points) => figureDrawn(points)
+      Changed: (model: InkDrawingModel) => { setMouseHandlerModel(model); UpdateRecentCurve(model)},
+      Finished: (points) => { fetchPredictions(points) },
+      Started: (model: InkDrawingModel) => {startNewCurve(model)}
   }) : new DoNothingMouseHandler()
 
+  if (toolSelected === CanvasToolbarSelection.None) {
+    selectTool(CanvasToolbarSelection.Black)
+  }
   return (
     <div className="App">
         <CanvasToolbar currentTool={toolSelected} selectTool={(tool) => selectTool(tool)}/>

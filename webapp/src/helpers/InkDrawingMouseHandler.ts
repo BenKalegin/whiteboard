@@ -22,8 +22,8 @@ export interface InkDrawingModel {
 }
 
 interface InkDrawingEvents {
+    Started(model: InkDrawingModel): void
     Changed(model: InkDrawingModel): void
-
     Finished(ProjectedPoints: TemporalPoint[]): void
 }
 
@@ -107,7 +107,7 @@ export class InkDrawingMouseHandler implements MouseHandler {
         this.model.tracking = true
         this.appendToBuffer(p);
         this.updateVisiblePoints();
-        this.events.Changed(this.model)
+        this.events.Started(this.model)
     };
 
     MouseMove = (p: Point): void => {

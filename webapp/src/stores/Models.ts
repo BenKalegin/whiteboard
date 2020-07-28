@@ -11,6 +11,7 @@ export interface TemporalPoint extends Point {
 
 
 export interface Curve {
+    id: string
     strokeWidth: number | string
     strokeColor: string
     polyLinePoints: Point[]

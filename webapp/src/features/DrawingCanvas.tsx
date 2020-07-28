@@ -16,10 +16,6 @@ const DrawingCanvas: React.FC<Props> = (props) => {
         overflow: 'hidden'
     };
 
-    const mainStyles: CSS.Properties = {
-        transformOrigin: '50% 50%'
-    };
-
     const boundRef = useRef<HTMLElement>(null);
 
     const getMousePosition = (e: React.MouseEvent) =>   {
@@ -40,8 +36,7 @@ const DrawingCanvas: React.FC<Props> = (props) => {
             <main id="svg"
                   ref={boundRef}
                   aria-label="Whiteboard Canvas. Capture your ideas and collaborate with others"
-                  style={mainStyles}>
-                <div id="ucParent" className="flexAlignCenter"/>
+                  >
                 <svg aria-hidden="true"
                      onMouseDown={(e) => props.mouseHandler.MouseDown(getMousePosition(e))}
                      onMouseMove={(e) => props.mouseHandler.MouseMove(getMousePosition(e))}
@@ -51,10 +46,10 @@ const DrawingCanvas: React.FC<Props> = (props) => {
                      height="1000"
                      width="1000">
                     <g id="canvas-decorators">
-                        <polyline id="1574a03e0b06e900"
-                                  points="0,0 100,100 100, 0"
-                                  fill="none" strokeLinejoin="round" strokeLinecap="round"
-                                  strokeWidth="512" stroke="rgba(0,105,191,1)"/>
+                        <circle cx="0" cy="0" r="40" fill="rgba(0,105,191,1)" />
+                        <circle cx="0%" cy="100%" r="40" fill="rgba(0,105,191,1)" />
+                        <circle cx="100%" cy="0%" r="40" fill="rgba(0,105,191,1)" />
+                        <circle cx="100%" cy="100%" r="40" fill="rgba(0,105,191,1)" />
                     </g>
                     <g id="canvas-figures">
                         {props.figures.map((f, i) =>
