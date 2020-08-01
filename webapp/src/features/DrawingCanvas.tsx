@@ -1,15 +1,19 @@
 import React, { useRef } from 'react'
 import CSS from 'csstype'
-import {Figure as FigureModel, MouseHandler} from '../stores/Models'
+import {Figure as FigureModel, Point} from '../stores/DrawModels'
 import  Figure  from './Figure'
 
 
 export interface Props {
     figures: FigureModel[]
-    activePenColor: string
     mouseHandler: MouseHandler
 }
 
+export interface MouseHandler {
+    MouseDown: (p: Point) => void
+    MouseMove: (p: Point) => void
+    MouseUp: (p: Point) => void
+}
 const DrawingCanvas: React.FC<Props> = (props) => {
 
     const svgParentStyles: CSS.Properties = {

@@ -32,6 +32,7 @@ const EnhancementTabs: React.FC<Props> = (props) => {
             <div className="tab">
             <button className="tablinks" onClick={(e) => onTabClick(e, "simplify")}>Smooth</button>
             <button className="tablinks" onClick={(e) => onTabClick(e, "predict")}>Predict</button>
+            <button className="tablinks" onClick={(e) => onTabClick(e, "shape")}>Autoshape</button>
             </div>
 
             <div id="simplify" className="tabcontent">
@@ -41,7 +42,11 @@ const EnhancementTabs: React.FC<Props> = (props) => {
             <div id="predict" className="tabcontent">
                 <PredictEnhancement predictions={props.predictions} />
             </div>
-        </div>        
+
+            <div id="shape" className="tabcontent">
+                <PredictEnhancement predictions={props.predictions} />
+            </div>
+        </div>
     );
 }
 

@@ -4,12 +4,12 @@ export interface Props {
     predictions: string[]
 }
 
-const PredictEnhancement: React.FC<Props> = (props) => {
+const AutoShapeEnhancement: React.FC<Props> = (props) => {
 
     return (
         <React.Fragment>
-            <h3>Recognize the drawing</h3>
-            <p>Draw any figure (mug, apple, cat, mosquito, house) in one mouse stroke and check predicted labels below:</p>
+            <h3>Auto Shapes</h3>
+            <p>Recognize simple shape in your drawing and auto correct it</p>
             <ul>
                 {props.predictions.slice(0, 5).map((s, i) => {
                     return <li key={i}>{s}</li>;
@@ -19,4 +19,4 @@ const PredictEnhancement: React.FC<Props> = (props) => {
     )};
 
 
-export default PredictEnhancement;
+export default AutoShapeEnhancement;
