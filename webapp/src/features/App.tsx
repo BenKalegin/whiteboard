@@ -4,12 +4,17 @@ import DrawingCanvas, {MouseHandler} from './DrawingCanvas';
 import EnhancementTabs from './EnhancementTabs';
 import '../App.css';
 import {Point} from "../stores/DrawModels";
-import {AppContext, AppProvider} from "../stores/Context";
 import {CanvasAction} from "../stores/Actions";
+import {ApplicationState} from "../stores/Reducers";
+import {useDispatch, useSelector} from "react-redux";
 
 export default function App() {
   const [smoothWindow, setSmoothWindow] = React.useState(1);
-  const { state ,dispatch } = React.useContext(AppContext);
+
+  const toolSelected = useSelector((state: ApplicationState) => state.canvas.toolSelected)
+  const figures = useSelector((state: ApplicationState) => state.canvas.figures)
+  const predictions = useSelector((state: ApplicationState) => state.predictions.quickDraw.topMatches)
+  const dispatch = useDispatch()
 
   const selectTool = (tool: CanvasToolbarSelection) => {
     dispatch( {
@@ -43,14 +48,12 @@ export default function App() {
 
 
   return (
-      <AppProvider>
-        <div className="App">
-          <CanvasToolbar currentTool={state.canvas.toolSelected} selectTool={tool => selectTool(tool)}/>
-          <DrawingCanvas figures={state.canvas.figures} mouseHandler={mouseHandler}/>
-          <EnhancementTabs smoothWindow={smoothWindow} smoothWindowChanged={(n: number) => setSmoothWindow(n)}
-                           predictions={state.predictions.quickDraw.topMatches}/>
-        </div>
-      </AppProvider>
+      <div className="App">
+        <CanvasToolbar currentTool={toolSelected} selectTool={tool => selectTool(tool)}/>
+        <DrawingCanvas figures={figures} mouseHandler={mouseHandler}/>
+        <EnhancementTabs smoothWindow={smoothWindow} smoothWindowChanged={(n: number) => setSmoothWindow(n)}
+                         predictions={predictions}/>
+      </div>
   );
 }
 

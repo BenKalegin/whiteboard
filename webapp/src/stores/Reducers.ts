@@ -1,9 +1,9 @@
 import {CanvasAction, CanvasActions, PredictionAction, PredictionActions} from "./Actions";
-import {Canvas, Curve, Figure, Point, TemporalPoint} from "./DrawModels";
+import {Canvas, Curve, DefaultCanvas, Figure, Point, TemporalPoint} from "./DrawModels";
 import {CanvasToolbarSelection} from "../features/CanvasToolbar";
-import {Predictions} from "./PredictModels";
+import {DefaultPredictions, Predictions} from "./PredictModels";
 import {InkDrawSmoothReducer} from "./InkDrawSmoothReducer";
-import {inkPayload} from "../services/InputTools";
+import {Reducer} from "redux";
 
 
 export const predictionsReducer = (state: Predictions, action: PredictionActions) : Predictions => {
@@ -68,6 +68,7 @@ const penColor = (toolSelected: CanvasToolbarSelection) => {
 
 const startNewCurve = (figures: Figure[], startedAt: number, toolSelected: CanvasToolbarSelection, projectedPoints: TemporalPoint[]) : Figure[] => {
     const lastFigure = figures.pop()!;
+
     const curve : Curve = {
         startedAt: startedAt,
         id: "Crv" + (lastFigure.curves.length + 1).toString(),
@@ -105,7 +106,7 @@ const updateRecentCurveWithInkDrawing = (figures: Figure[], projectedPoints: Tem
 
 
 const mouseMove = (state: Canvas, point: Point): Canvas => {
-    if (!isPen(state.toolSelected))
+    if (!isPen(state.toolSelected) || !state.inkDraw.tracking)
         return state
 
     const inkDraw = InkDrawSmoothReducer.MouseMove(state.inkDraw, point)
@@ -115,14 +116,15 @@ const mouseMove = (state: Canvas, point: Point): Canvas => {
         figures: updateRecentCurveWithInkDrawing(state.figures, state.inkDraw.projectedPoints)
     }
 }
-const mouseUp = (state: Canvas, _: Point): Canvas => {
+const mouseUp = (state: Canvas, point: Point): Canvas => {
     if (!isPen(state.toolSelected))
         return state
 
     // todo fetchPredictions().then()
-
+    const inkDraw = InkDrawSmoothReducer.MouseUp(state.inkDraw, point)
     return {
         ...state,
+        inkDraw: inkDraw,
         figures: updateRecentCurveWithInkDrawing(state.figures, state.inkDraw.projectedPoints)
     }
 }
@@ -142,6 +144,27 @@ export const canvasReducer = (state: Canvas, action: CanvasActions): Canvas => {
             return state;
     }
 }
+
+export interface ApplicationState {
+    canvas: Canvas
+    predictions: Predictions
+}
+
+export const initialState : ApplicationState = {
+    canvas: DefaultCanvas,
+    predictions: DefaultPredictions
+}
+
+export type AllActions = PredictionActions | CanvasActions
+
+export const rootReducer : Reducer<ApplicationState, AllActions> = (state = initialState, action) => {
+    return {
+        predictions: predictionsReducer(state.predictions, action as PredictionActions),
+        canvas: canvasReducer(state.canvas, action as CanvasActions)
+    } as ApplicationState
+}
+
+
 
 /*
 const { post, response } = useFetch('https://inputtools.google.com/request?ime=handwriting&app=quickdraw&dbg=1&cs=1&oe=UTF-8')

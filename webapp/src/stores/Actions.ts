@@ -41,7 +41,7 @@ export enum CanvasAction {
     ToolSelected = "SET_TOOL",
     CanvasMouseDown = "CANVAS_MOUSE_DOWN",
     CanvasMouseMove = "CANVAS_MOUSE_MOVE",
-    CanvasMouseUp = "CANVAS_MOUSE_Up",
+    CanvasMouseUp = "CANVAS_MOUSE_UP",
 }
 
 type CanvasMessages = {
