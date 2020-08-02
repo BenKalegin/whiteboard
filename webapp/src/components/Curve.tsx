@@ -1,5 +1,5 @@
 import React from 'react';
-import {Curve as CurveModel} from '../stores/DrawModels'
+import {Curve as CurveModel} from '../models/DrawModels'
 
 export interface Props {
     model: CurveModel

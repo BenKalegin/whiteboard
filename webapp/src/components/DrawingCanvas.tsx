@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import CSS from 'csstype'
-import {Figure as FigureModel, Point} from '../stores/DrawModels'
+import {Figure as FigureModel, Point} from '../models/DrawModels'
 import  Figure  from './Figure'
 
 

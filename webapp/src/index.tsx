@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './features/App';
+import App from './components/App';
 import { Action, Middleware, applyMiddleware, compose, createStore, StoreEnhancer } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
-import {rootReducer, initialState} from "./stores/Reducers";
+import {rootReducer, initialState} from "./reducers/Reducers";
+import {rootSaga} from "./sagas/RootSaga";
 
 
 const sagaMiddle = createSagaMiddleware();
@@ -58,7 +59,7 @@ const composedEnhancers = compose(asyncDispatchEnhancer, ...enhancers)
 
 export const store = createStore(rootReducer, initialState, composedEnhancers as StoreEnhancer);
 
-//sagaMiddle.run(rootSaga);
+sagaMiddle.run(rootSaga);
 
 ReactDOM.render(
     <React.StrictMode>

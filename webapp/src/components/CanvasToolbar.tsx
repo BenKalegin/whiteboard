@@ -2,22 +2,13 @@ import React from 'react';
 import PencilButton from './PencilButton';
 import PanZoomButton from './PanZoomButton';
 import EraserButton from './EraserButton';
+import {CanvasToolbarSelection} from "../models/DrawModels";
 
 
 export interface Props {
     currentTool: CanvasToolbarSelection
     selectTool: (tool: CanvasToolbarSelection) => void
 
-}
-
-export enum CanvasToolbarSelection {
-    None, 
-    PanZoom,
-    Black,
-    Red,
-    Green,
-    Blue,
-    Eraser
 }
 
 const CanvasToolbar: React.FC<Props> = (props) => {

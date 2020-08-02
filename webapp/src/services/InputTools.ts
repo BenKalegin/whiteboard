@@ -1,4 +1,4 @@
-import {Figure, TemporalPoint} from "../stores/DrawModels";
+import {Figure, TemporalPoint} from "../models/DrawModels";
 
 export const inkPayload = (width: number, height: number, figure: Figure) => {
     let curves: TemporalPoint[][] = []

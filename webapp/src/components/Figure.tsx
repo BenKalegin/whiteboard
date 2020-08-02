@@ -1,5 +1,5 @@
 import React from 'react'
-import {Figure as FigureModel} from '../stores/DrawModels'
+import {Figure as FigureModel} from '../models/DrawModels'
 import Curve from './Curve'
 
 export interface Props {

@@ -1,5 +1,4 @@
-import {CanvasToolbarSelection} from "../features/CanvasToolbar";
-import {Point} from "./DrawModels";
+import {CanvasToolbarSelection, Point} from "../models/DrawModels";
 
 export type ActionMap<M extends { [index: string]: any }> = {
     [Key in keyof M]: M[Key] extends undefined
@@ -32,13 +31,11 @@ export enum PredictionAction {
 
 type PredictionMessages = {
     [PredictionAction.LookupQuickDraw]: { requestObject: object };
-    [PredictionAction.LookupBasicShape]: {
-        // todo
-    };
+    [PredictionAction.LookupBasicShape]: {};
 };
 
 export enum CanvasAction {
-    ToolSelected = "SET_TOOL",
+    ToolSelected = "CANVAS_SET_TOOL",
     CanvasMouseDown = "CANVAS_MOUSE_DOWN",
     CanvasMouseMove = "CANVAS_MOUSE_MOVE",
     CanvasMouseUp = "CANVAS_MOUSE_UP",
@@ -51,10 +48,24 @@ type CanvasMessages = {
     [CanvasAction.CanvasMouseUp]: { point: Point };
 };
 
+export enum ApplicationAction {
+    StartApplication = "APP_START"
+}
+
+type ApplicationMessages = {
+    [ApplicationAction.StartApplication]: { };
+};
 
 export type PredictionActions = ActionMap<PredictionMessages>[keyof ActionMap<PredictionMessages>];
 export type CanvasActions = ActionMap<CanvasMessages>[keyof ActionMap<CanvasMessages>];
+export type ApplicationActions = ActionMap<ApplicationMessages>[keyof ActionMap<ApplicationMessages>];
 
-export const CanvasMsg = createMsg<CanvasMessages>();
+export const canvasMsg = createMsg<CanvasMessages>();
+export const predictionMsg = createMsg<PredictionMessages>();
+export const applicationMsg = createMsg<ApplicationMessages>();
+
+export type AllActions = PredictionActions | CanvasActions | ApplicationActions
+
+
 
 

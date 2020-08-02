@@ -1,4 +1,4 @@
-import {InkDraw, Point, TemporalPoint} from "./DrawModels";
+import {InkDraw, Point, TemporalPoint} from "../models/DrawModels";
 
 export class InkDrawSmoothReducer {
 

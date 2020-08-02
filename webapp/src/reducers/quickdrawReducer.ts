@@ -1,7 +1,7 @@
 import useFetch from 'use-http'
 
 import {inkPayload} from "../services/InputTools";
-import {Figure} from "./DrawModels";
+import {Figure} from "../models/DrawModels";
 
 // const { post, response } = useFetch('https://inputtools.google.com/request?ime=handwriting&app=quickdraw&dbg=1&cs=1&oe=UTF-8')
 

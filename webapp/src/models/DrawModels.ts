@@ -1,5 +1,3 @@
-import {CanvasToolbarSelection} from "../features/CanvasToolbar";
-
 export interface Point {
     x: number
     y: number
@@ -55,6 +53,16 @@ const DefaultInkDraw: InkDraw = {
     tracking: false
 }
 
+export enum CanvasToolbarSelection {
+    None,
+    PanZoom,
+    Black,
+    Red,
+    Green,
+    Blue,
+    Eraser
+}
+
 export interface Canvas {
     smoothWindow: number
     toolSelected: CanvasToolbarSelection
@@ -63,7 +71,7 @@ export interface Canvas {
     figureIdentifier: number
 }
 
-export const DefaultCanvas: Canvas = {
+export const initialCanvas: Canvas = {
     smoothWindow: 1,
     toolSelected: CanvasToolbarSelection.None,
     inkDraw: DefaultInkDraw,

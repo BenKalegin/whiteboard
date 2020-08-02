@@ -1,7 +1,6 @@
-import {CanvasAction, CanvasActions, PredictionAction, PredictionActions} from "./Actions";
-import {Canvas, Curve, DefaultCanvas, Figure, Point, TemporalPoint} from "./DrawModels";
-import {CanvasToolbarSelection} from "../features/CanvasToolbar";
-import {DefaultPredictions, Predictions} from "./PredictModels";
+import {CanvasAction, CanvasActions, PredictionAction, PredictionActions, AllActions} from "../actions/Actions";
+import {Canvas, Curve, initialCanvas, Figure, Point, TemporalPoint, CanvasToolbarSelection} from "../models/DrawModels";
+import {DefaultPredictions, Predictions} from "../models/PredictModels";
 import {InkDrawSmoothReducer} from "./InkDrawSmoothReducer";
 import {Reducer} from "redux";
 
@@ -151,11 +150,9 @@ export interface ApplicationState {
 }
 
 export const initialState : ApplicationState = {
-    canvas: DefaultCanvas,
+    canvas: initialCanvas,
     predictions: DefaultPredictions
 }
-
-export type AllActions = PredictionActions | CanvasActions
 
 export const rootReducer : Reducer<ApplicationState, AllActions> = (state = initialState, action) => {
     return {
