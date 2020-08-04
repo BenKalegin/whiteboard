@@ -1,7 +1,8 @@
-import {CanvasToolbarSelection, Point} from "../models/DrawModels";
+import {CanvasToolbarSelection, Point} from "../models/DrawModels"
+import {Action} from 'redux'
 
 export type ActionMap<M extends { [index: string]: any }> = {
-    [Key in keyof M]: M[Key] extends undefined
+    [Key in keyof M]: M[Key] extends Action
         ? {
             type: Key;
         }
@@ -25,13 +26,13 @@ export function createMsg<Obj extends { [index: string]: any }>() {
 
 
 export enum PredictionAction {
-    LookupQuickDraw = "LOOKUP_QUICK_DRAW",
+    QuickDrawPredictionReceived = "PREDICT_QUICKDRAW_RECEIVED",
     LookupBasicShape = "LOOKUP_BASIC_SHAPE"
 }
 
 type PredictionMessages = {
-    [PredictionAction.LookupQuickDraw]: { requestObject: object };
-    [PredictionAction.LookupBasicShape]: {};
+    [PredictionAction.QuickDrawPredictionReceived]: string[]
+    [PredictionAction.LookupBasicShape]: {}
 };
 
 export enum CanvasAction {
@@ -49,11 +50,13 @@ type CanvasMessages = {
 };
 
 export enum ApplicationAction {
-    StartApplication = "APP_START"
+    StartApplication = "APP_START",
+    CurveCompleted = "APP_CURVE_COMPLETED"
 }
 
 type ApplicationMessages = {
     [ApplicationAction.StartApplication]: { };
+    [ApplicationAction.CurveCompleted]: { figureId: string, curveId: string};
 };
 
 export type PredictionActions = ActionMap<PredictionMessages>[keyof ActionMap<PredictionMessages>];
@@ -65,6 +68,10 @@ export const predictionMsg = createMsg<PredictionMessages>();
 export const applicationMsg = createMsg<ApplicationMessages>();
 
 export type AllActions = PredictionActions | CanvasActions | ApplicationActions
+
+export interface HasInducedActions {
+    asyncDispatch(actions: Action[]): void;
+}
 
 
 

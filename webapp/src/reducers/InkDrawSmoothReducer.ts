@@ -69,7 +69,7 @@ export class InkDrawSmoothReducer {
         return model
     }
 
-    public static MouseDown = (model: InkDraw, p: Point): InkDraw => {
+    public static mouseDown = (model: InkDraw, p: Point): InkDraw => {
         model = {
             ...model,
             smoothingBuffer: [],
@@ -87,7 +87,7 @@ export class InkDrawSmoothReducer {
         }
     };
 
-    public static MouseMove = (model: InkDraw, p: Point): InkDraw => {
+    public static mouseMove = (model: InkDraw, p: Point): InkDraw => {
         if (model.tracking) {
             model = InkDrawSmoothReducer.appendToSmoothingBuffer(p, model);
             model = InkDrawSmoothReducer.updateVisiblePoints(model);
@@ -95,7 +95,7 @@ export class InkDrawSmoothReducer {
         return model;
     };
 
-    public static MouseUp = (model: InkDraw, _: Point): InkDraw => {
+    public static mouseUp = (model: InkDraw, _: Point): InkDraw => {
         return {
             ...model,
             tracking: false

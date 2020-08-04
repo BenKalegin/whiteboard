@@ -1,15 +1,25 @@
-import {CanvasAction, CanvasActions, PredictionAction, PredictionActions, AllActions} from "../actions/Actions";
+import {
+    CanvasAction,
+    CanvasActions,
+    PredictionAction,
+    PredictionActions,
+    AllActions,
+    ApplicationAction, applicationMsg, HasInducedActions
+} from "../actions/Actions";
 import {Canvas, Curve, initialCanvas, Figure, Point, TemporalPoint, CanvasToolbarSelection} from "../models/DrawModels";
 import {DefaultPredictions, Predictions} from "../models/PredictModels";
 import {InkDrawSmoothReducer} from "./InkDrawSmoothReducer";
-import {Reducer} from "redux";
+import {Reducer, Action} from "redux";
 
 
 export const predictionsReducer = (state: Predictions, action: PredictionActions) : Predictions => {
     switch (action.type) {
-        case PredictionAction.LookupQuickDraw:
+        case PredictionAction.QuickDrawPredictionReceived:
             return {
                 ...state,
+                quickDraw:  {
+                    topMatches: action.payload
+                }
             }
         default:
             return state;
@@ -86,7 +96,7 @@ const mouseDown = (state: Canvas, point: Point): Canvas => {
     if (!isPen(state.toolSelected))
         return state
 
-    const inkDraw = InkDrawSmoothReducer.MouseDown(state.inkDraw, point);
+    const inkDraw = InkDrawSmoothReducer.mouseDown(state.inkDraw, point);
     const figures = startNewCurve(state.figures, inkDraw.startedAt, state.toolSelected, inkDraw.projectedPoints);
 
     return {...state,
@@ -108,28 +118,34 @@ const mouseMove = (state: Canvas, point: Point): Canvas => {
     if (!isPen(state.toolSelected) || !state.inkDraw.tracking)
         return state
 
-    const inkDraw = InkDrawSmoothReducer.MouseMove(state.inkDraw, point)
+    const inkDraw = InkDrawSmoothReducer.mouseMove(state.inkDraw, point)
     return {
         ...state,
         inkDraw: inkDraw,
         figures: updateRecentCurveWithInkDrawing(state.figures, state.inkDraw.projectedPoints)
     }
 }
-const mouseUp = (state: Canvas, point: Point): Canvas => {
+const mouseUp = (state: Canvas, point: Point, events: Action[]): Canvas => {
     if (!isPen(state.toolSelected))
         return state
 
-    // todo fetchPredictions().then()
-    const inkDraw = InkDrawSmoothReducer.MouseUp(state.inkDraw, point)
+    const inkDraw = InkDrawSmoothReducer.mouseUp(state.inkDraw, point)
+    const figures = updateRecentCurveWithInkDrawing(state.figures, state.inkDraw.projectedPoints);
+
+    const figure = figures[figures.length-1]
+    const curve = figure.curves[figure.curves.length-1]
+    const action = applicationMsg(ApplicationAction.CurveCompleted, {figureId: figure.id, curveId: curve.id});
+    events.push(action)
+
     return {
         ...state,
         inkDraw: inkDraw,
-        figures: updateRecentCurveWithInkDrawing(state.figures, state.inkDraw.projectedPoints)
+        figures: figures
     }
 }
 
 
-export const canvasReducer = (state: Canvas, action: CanvasActions): Canvas => {
+export const canvasReducer = (state: Canvas, action: CanvasActions, events: Action[]): Canvas => {
     switch (action.type) {
         case CanvasAction.ToolSelected:
             return selectTool(state, action.payload.tool)
@@ -138,7 +154,7 @@ export const canvasReducer = (state: Canvas, action: CanvasActions): Canvas => {
         case CanvasAction.CanvasMouseMove:
             return mouseMove(state, action.payload.point)
         case CanvasAction.CanvasMouseUp:
-            return mouseUp(state, action.payload.point)
+            return mouseUp(state, action.payload.point, events)
         default:
             return state;
     }
@@ -155,27 +171,18 @@ export const initialState : ApplicationState = {
 }
 
 export const rootReducer : Reducer<ApplicationState, AllActions> = (state = initialState, action) => {
-    return {
+    let events: Action[] = [];
+    const newVar = {
         predictions: predictionsReducer(state.predictions, action as PredictionActions),
-        canvas: canvasReducer(state.canvas, action as CanvasActions)
-    } as ApplicationState
+        canvas: canvasReducer(state.canvas, action as CanvasActions, events)
+    } as ApplicationState;
+
+    const asyncDispatch = (action as any as HasInducedActions).asyncDispatch;
+    if (asyncDispatch)
+        asyncDispatch(events);
+
+    return newVar
 }
 
-
-
-/*
-const { post, response } = useFetch('https://inputtools.google.com/request?ime=handwriting&app=quickdraw&dbg=1&cs=1&oe=UTF-8')
-
-const fetchPredictions = async () => {
-    const figure = figures[figures.length - 1];
-    const data = await post('', inkPayload(1000, 1000, figure) )
-    if (!response.ok) {
-        console.error("request failed", response.headers)
-    }else if (data[0] !== "SUCCESS") {
-        console.error("request failed", data)
-    }else
-        setPredictions(data[1][0][1])
-}
-*/
 
 
