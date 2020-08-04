@@ -1,30 +1,43 @@
 import React, { useRef } from 'react'
 import CSS from 'csstype'
-import {CanvasToolbarSelection, Figure as FigureModel, Point} from '../models/DrawModels'
+import {CanvasToolbarSelection, Point} from '../models/DrawModels'
 import  Figure  from './Figure'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {ApplicationState} from "../reducers/Reducers";
+import {CanvasAction} from "../actions/Actions";
 
-export interface MouseHandler {
-    MouseDown: (p: Point) => void
-    MouseMove: (p: Point) => void
-    MouseUp: (p: Point) => void
-}
-
-export interface Props {
-    figures: FigureModel[]
-    mouseHandler: MouseHandler
-}
-
-const DrawingCanvas: React.FC<Props> = (props) => {
+const DrawingCanvas: React.FC = () => {
 
     const tool = useSelector((state: ApplicationState) => state.canvas.toolSelected)
+    const figures = useSelector((state: ApplicationState) => state.canvas.figures)
+    const dispatch = useDispatch()
 
     const svgParentStyles: CSS.Properties = {
         overflow: 'hidden'
     };
 
     const boundRef = useRef<HTMLElement>(null);
+
+    const mouseDown = (p: Point): void => {
+        dispatch({
+            type: CanvasAction.CanvasMouseDown,
+            payload: {point: p}
+        })
+    }
+
+    const mouseMove = (p: Point): void => {
+        dispatch({
+            type: CanvasAction.CanvasMouseMove,
+            payload: {point: p}
+        })
+    }
+
+    const mouseUp = (p: Point): void => {
+        dispatch({
+            type: CanvasAction.CanvasMouseUp,
+            payload: {point: p}
+        })
+    }
 
     const getMousePosition = (e: React.MouseEvent) =>   {
         const bounds = boundRef.current;
@@ -47,9 +60,9 @@ const DrawingCanvas: React.FC<Props> = (props) => {
                   aria-label="Whiteboard Canvas. Capture your ideas and collaborate with others"
                   >
                 <svg aria-hidden="true"
-                     onMouseDown={(e) => props.mouseHandler.MouseDown(getMousePosition(e))}
-                     onMouseMove={(e) => props.mouseHandler.MouseMove(getMousePosition(e))}
-                     onMouseUp={(e) => props.mouseHandler.MouseUp(getMousePosition(e))}
+                     onMouseDown={(e) => mouseDown(getMousePosition(e))}
+                     onMouseMove={(e) => mouseMove(getMousePosition(e))}
+                     onMouseUp={(e) => mouseUp(getMousePosition(e))}
                      xmlns="http://www.w3.org/2000/svg"
                     //  viewBox="0 0 1000 1000"
                      height="1000"
@@ -61,7 +74,7 @@ const DrawingCanvas: React.FC<Props> = (props) => {
                         <circle cx="100%" cy="100%" r="40" fill="rgba(0,105,191,1)" />
                     </g>
                     <g id="canvas-figures">
-                        {props.figures.map((f, i) =>
+                        {figures.map((f, i) =>
                             <Figure key={i} model={f}/>
                         )}
                     </g>
