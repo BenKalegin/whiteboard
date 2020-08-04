@@ -1,13 +1,23 @@
 import React from 'react';
 
 export interface Props {
+    active: boolean
+    onClick: () => void
 }
   
 
 const EraserButton: React.FC<Props> = (props) => {
     return (
-        <button className="chrome-Button pen embedded" id="erase" aria-label="Content Creation Toolbar - Ink Eraser" aria-selected="false" role="tab" title="Eraser">
-            <svg version="1.1" id="Eraser" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 -24 96 96">
+        <button
+            className="chrome-Button pen embedded"
+            id="erase"
+            aria-label="Content Creation Toolbar - Ink Eraser"
+            aria-selected="false"
+            role="tab"
+            title="Eraser"
+            onClick={props.onClick}
+        >
+            <svg version="1.1" id="Eraser" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox={"0 "+ (props.active ? "-8": "-24") + " 96 96"}>
                 <rect className="eraser-0" width="96" height="96"/>
                 <g>
                     <path className="eraser-1" d="M38,0h20c4.4,0,8,3.6,8,8v16H30V8C30,3.6,33.6,0,38,0z"/>

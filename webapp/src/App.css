@@ -40,9 +40,18 @@
 .chrome-Button {
   width: 48px;
   height: 48px;
-  color: #000;
   background-color: #fff;
+  outline-style: none;
 }
+
+.chrome-Button:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.chrome-Button.activePen:hover {
+  background-color: rgba(0, 0, 0, .2);
+}
+
 
 .pen {
   overflow: hidden;
@@ -156,7 +165,7 @@ svg:not(:root) {
 }
 
 .activePen {
-  background: #e5e5e5;
+  background-color: rgba(0, 0, 0, .1);
 }
 
 #svgParent {
@@ -225,3 +234,9 @@ svg:not(:root) {
   background: #fff;
   width: 100%;
 }
+
+.eraseActive,.eraseActive * {
+  cursor: url(resources/EraserCursor.cur),default
+}
+
+/*.eraseActive #canvas-figures g:hover { stroke-opacity: 20% !important; }*/

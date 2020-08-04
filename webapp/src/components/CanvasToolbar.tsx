@@ -3,14 +3,16 @@ import PencilButton from './PencilButton';
 import PanZoomButton from './PanZoomButton';
 import EraserButton from './EraserButton';
 import {CanvasToolbarSelection} from "../models/DrawModels";
+import {useSelector} from "react-redux";
+import {ApplicationState} from "../reducers/Reducers";
 
 export interface Props {
-    currentTool: CanvasToolbarSelection
     selectTool: (tool: CanvasToolbarSelection) => void
-
 }
 
 const CanvasToolbar: React.FC<Props> = (props) => {
+    const toolSelected = useSelector((state: ApplicationState) => state.canvas.toolSelected)
+
     return (
         <div id="chrome" className="embedded">
             <svg className="svgDefs" xmlns="http://www.w3.org/2000/svg" visibility="hidden">
@@ -49,11 +51,11 @@ const CanvasToolbar: React.FC<Props> = (props) => {
             <div id="penCalloutToastContainer" className="toastContainer">
                 <div id="pens" className="chromeContainer embedded" role="tablist">
                     <PanZoomButton/>
-                    <PencilButton color="black" active={props.currentTool === CanvasToolbarSelection.Black} onClick={() => props.selectTool(CanvasToolbarSelection.Black)}/>
-                    <PencilButton color="red" active={props.currentTool === CanvasToolbarSelection.Red} onClick={() => props.selectTool(CanvasToolbarSelection.Red)}/>
-                    <PencilButton color="green" active={props.currentTool === CanvasToolbarSelection.Green} onClick={() => props.selectTool(CanvasToolbarSelection.Green)}/>
-                    <PencilButton color="blue" active={props.currentTool === CanvasToolbarSelection.Blue} onClick={() => props.selectTool(CanvasToolbarSelection.Blue)}/>
-                    <EraserButton/>
+                    <PencilButton color="black" active={toolSelected === CanvasToolbarSelection.Black} onClick={() => props.selectTool(CanvasToolbarSelection.Black)}/>
+                    <PencilButton color="red" active={toolSelected === CanvasToolbarSelection.Red} onClick={() => props.selectTool(CanvasToolbarSelection.Red)}/>
+                    <PencilButton color="green" active={toolSelected === CanvasToolbarSelection.Green} onClick={() => props.selectTool(CanvasToolbarSelection.Green)}/>
+                    <PencilButton color="blue" active={toolSelected === CanvasToolbarSelection.Blue} onClick={() => props.selectTool(CanvasToolbarSelection.Blue)}/>
+                    <EraserButton active={toolSelected === CanvasToolbarSelection.Eraser} onClick={() => props.selectTool(CanvasToolbarSelection.Eraser)}/>
                 </div>
             </div>
         </div>

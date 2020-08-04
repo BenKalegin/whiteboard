@@ -1,20 +1,24 @@
 import React, { useRef } from 'react'
 import CSS from 'csstype'
-import {Figure as FigureModel, Point} from '../models/DrawModels'
+import {CanvasToolbarSelection, Figure as FigureModel, Point} from '../models/DrawModels'
 import  Figure  from './Figure'
-
-
-export interface Props {
-    figures: FigureModel[]
-    mouseHandler: MouseHandler
-}
+import {useSelector} from "react-redux";
+import {ApplicationState} from "../reducers/Reducers";
 
 export interface MouseHandler {
     MouseDown: (p: Point) => void
     MouseMove: (p: Point) => void
     MouseUp: (p: Point) => void
 }
+
+export interface Props {
+    figures: FigureModel[]
+    mouseHandler: MouseHandler
+}
+
 const DrawingCanvas: React.FC<Props> = (props) => {
+
+    const tool = useSelector((state: ApplicationState) => state.canvas.toolSelected)
 
     const svgParentStyles: CSS.Properties = {
         overflow: 'hidden'
@@ -35,8 +39,9 @@ const DrawingCanvas: React.FC<Props> = (props) => {
         }
     };
 
+    const toolSpecificCursor = tool === CanvasToolbarSelection.Eraser ? " eraseActive" : "";
     return (
-        <div id="svgParent" className="flexAlignCenter" style={svgParentStyles}>
+        <div id="svgParent" className={"flexAlignCenter" + toolSpecificCursor} style={svgParentStyles}>
             <main id="svg"
                   ref={boundRef}
                   aria-label="Whiteboard Canvas. Capture your ideas and collaborate with others"

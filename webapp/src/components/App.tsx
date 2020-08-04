@@ -11,7 +11,6 @@ import {useDispatch, useSelector} from "react-redux";
 export default function App() {
   const [smoothWindow, setSmoothWindow] = React.useState(1);
 
-  const toolSelected = useSelector((state: ApplicationState) => state.canvas.toolSelected)
   const figures = useSelector((state: ApplicationState) => state.canvas.figures)
   const predictions = useSelector((state: ApplicationState) => state.predictions.quickDraw.topMatches)
   const dispatch = useDispatch()
@@ -58,7 +57,7 @@ export default function App() {
 
   return (
       <div className="App">
-        <CanvasToolbar currentTool={toolSelected} selectTool={tool => selectTool(tool)}/>
+        <CanvasToolbar selectTool={tool => selectTool(tool)}/>
         <DrawingCanvas figures={figures} mouseHandler={mouseHandler}/>
         <EnhancementTabs smoothWindow={smoothWindow} smoothWindowChanged={(n: number) => setSmoothWindow(n)}
                          predictions={predictions}/>

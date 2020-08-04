@@ -32,7 +32,7 @@ export enum PredictionAction {
 
 type PredictionMessages = {
     [PredictionAction.QuickDrawPredictionReceived]: string[]
-    [PredictionAction.LookupBasicShape]: {}
+    [PredictionAction.LookupBasicShape]: {};
 };
 
 export enum CanvasAction {
