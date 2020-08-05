@@ -20,15 +20,35 @@ export const eraserMouseDown = (state: Canvas) => {
 
 export const eraserMouseMove = (state: Canvas, point: Point): Canvas => {
     const pointsInsideCursor: Point[] = [
-        {x: point.x, y: point.y-1},
-        {x: point.x, y: point.y},
-        {x: point.x, y: point.y+1},
+        {x: point.x-2, y: point.y-2},
+        {x: point.x-2, y: point.y-1},
+        {x: point.x-2, y: point.y},
+        {x: point.x-2, y: point.y+1},
+        {x: point.x-2, y: point.y+2},
+
+        {x: point.x-1, y: point.y-2},
         {x: point.x-1, y: point.y-1},
         {x: point.x-1, y: point.y},
         {x: point.x-1, y: point.y+1},
+        {x: point.x-1, y: point.y+2},
+
+        {x: point.x, y: point.y-2},
+        {x: point.x, y: point.y-1},
+        {x: point.x, y: point.y},
+        {x: point.x, y: point.y+1},
+        {x: point.x, y: point.y+2},
+
+        {x: point.x+1, y: point.y-2},
         {x: point.x+1, y: point.y-1},
         {x: point.x+1, y: point.y},
         {x: point.x+1, y: point.y+1},
+        {x: point.x+1, y: point.y+2},
+
+        {x: point.x+2, y: point.y-2},
+        {x: point.x+2, y: point.y-1},
+        {x: point.x+2, y: point.y},
+        {x: point.x+2, y: point.y+1},
+        {x: point.x+2, y: point.y+2},
     ]
 
     const curveIdsUnderMouse = Array.from(new Set(pointsInsideCursor.flatMap(p => document.elementsFromPoint(p.x, p.y))))
