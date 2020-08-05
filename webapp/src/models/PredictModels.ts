@@ -1,5 +1,6 @@
 export interface QuickdrawPredictions {
     topMatches: string[]
+    figureId: string
 }
 
 export interface BasicShapePredictions {
@@ -12,7 +13,7 @@ export interface Predictions {
 }
 
 export const DefaultPredictions: Predictions = {
-    quickDraw: { topMatches: [] },
+    quickDraw: { topMatches: [], figureId: "" },
     basicShape: {shape: ''}
 }
 

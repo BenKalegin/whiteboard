@@ -1,16 +1,20 @@
-import {Canvas, CanvasPoint, CanvasToolbarSelection, Figure, Point} from "../models/DrawModels";
+import {Bounds, Canvas, CanvasPoint, CanvasToolbarSelection, Figure, Point, Transform} from "../models/DrawModels";
 import {Action} from "redux";
 import {CanvasAction, CanvasActions} from "../actions/Actions";
-import {inkDrawMouseDown, inkDrawMouseMove, inkDrawMouseUp} from "./InkDrawReducers";
+import {inkDrawMouseDown, inkDrawMouseMove, inkDrawMouseUp, penColor} from "./InkDrawReducers";
 import {eraserMouseDown, eraserMouseMove} from "./EraserReducers";
 import {generateFigureId} from "./DynamicIdentifiers";
 
 export const createNewFigure = (): Figure => {
     return {
         id: generateFigureId(),
-        offset: {x: 0, y: 0},
         curves: [],
-        curveTimes: []
+        curveTimes: [],
+        finePicture: {
+            name: "",
+            transform: {},
+            stroke : {color: ""}
+        },
     }
 };
 
@@ -68,6 +72,40 @@ const mouseUp = (state: Canvas, point: Point, events: Action[]): Canvas => {
     return state
 
 }
+
+function calcTransform(bounds: Bounds) : Transform {
+    const scaleFactor = Math.max(bounds.size.x,  bounds.size.y) / 56
+    return {
+        translate: {
+            x: bounds.offset.x,
+            y: bounds.offset.y
+        },
+        scale: {
+            x: scaleFactor,
+            y: scaleFactor
+        }
+    }
+}
+
+const replaceFigure = (state: Canvas, figureId: string, finePictureName: string): Canvas => {
+    const figure = state.figures.find(f => f.id === figureId)
+    if (!figure || !figure.bounds)
+        // figure was deleted during api calls or bounds were not calculated
+        return state
+
+    const newFigure: Figure = {...figure,
+        finePicture: {
+            name: finePictureName,
+            transform: calcTransform(figure.bounds),
+            stroke: {color: penColor(state.toolSelected)}
+        } }
+    return {
+        ...state,
+        figures: [...state.figures.filter(f => f.id !== figureId), newFigure]
+    }
+
+};
+
 export const canvasReducer = (state: Canvas, action: CanvasActions, events: Action[]): Canvas => {
     switch (action.type) {
         case CanvasAction.ToolSelected:
@@ -78,6 +116,8 @@ export const canvasReducer = (state: Canvas, action: CanvasActions, events: Acti
             return mouseMove(state, action.payload.point)
         case CanvasAction.CanvasMouseUp:
             return mouseUp(state, action.payload.point.relative, events)
+        case CanvasAction.ReplaceFigure:
+            return replaceFigure(state, action.payload.figureId, action.payload.finePictureName)
         default:
             return state;
     }

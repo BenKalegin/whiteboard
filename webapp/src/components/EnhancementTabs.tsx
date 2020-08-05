@@ -40,11 +40,10 @@ const EnhancementTabs: React.FC<Props> = (props) => {
             </div>
 
             <div id="predict" className="tabcontent">
-                <PredictEnhancement predictions={props.predictions} />
+                <PredictEnhancement/>
             </div>
 
             <div id="shape" className="tabcontent">
-                <PredictEnhancement predictions={props.predictions} />
             </div>
         </div>
     );

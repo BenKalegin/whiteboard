@@ -11,7 +11,8 @@ export const predictionsReducer = (state: Predictions, action: PredictionActions
             return {
                 ...state,
                 quickDraw:  {
-                    topMatches: action.payload
+                    topMatches: action.payload.predictions,
+                    figureId: action.payload.figureId
                 }
             }
         default:

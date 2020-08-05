@@ -3,6 +3,11 @@ export interface Point {
     y: number
 }
 
+export interface Bounds {
+    offset: Point
+    size: Point
+}
+
 export interface CanvasPoint {
     relative: Point
     absolute: Point
@@ -22,11 +27,39 @@ export interface Curve {
     toBeDeleted: boolean
 }
 
+// https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+export interface Transform {
+    rotate?: {
+        degrees: number
+        aboutPoint?: Point
+    }
+    translate?: {
+        x: number
+        y?: number
+    }
+
+    scale?: {
+        x: number
+        y?: number
+    }
+}
+
+interface Stroke {
+    color: string
+}
+
+export interface FinePictureEmbedding {
+    name: string
+    transform: Transform
+    stroke: Stroke
+}
+
 export interface Figure {
     id: string
-    offset: Point
+    finePicture: FinePictureEmbedding
     curves: Curve[]
     curveTimes: number[]
+    bounds?: Bounds
 }
 
 export interface InkDraw{

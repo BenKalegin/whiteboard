@@ -20,9 +20,17 @@ function* curveCompleted(action: ApplicationActions) {
 
         const response = yield fetchQuickDrawSuggestions(1000, 1000, figure).then(r => r.json())
         const predictions = response[1][0][1]
-        yield put(predictionMsg(PredictionAction.QuickDrawPredictionReceived, predictions))
+        yield put(predictionMsg(PredictionAction.QuickDrawPredictionReceived, { predictions: predictions, figureId: figureId}))
     }
 }
+
+function* suggestionClicked(action: ApplicationActions) {
+    if (action.type === ApplicationAction.SuggestionClicked) {
+        const {suggestion, figureId} = action.payload
+        yield put(canvasMsg(CanvasAction.ReplaceFigure, {figureId: figureId, finePictureName: suggestion }))
+    }
+}
+
 
 export function* startApplicationSaga() {
     // Set tool to black ink on startup. Later we can load last tool from config
@@ -30,6 +38,8 @@ export function* startApplicationSaga() {
 
     // yield put() show demo
 
+    // run watchers in parallel
     yield takeEvery(ApplicationAction.CurveCompleted, curveCompleted);
+    yield takeEvery(ApplicationAction.SuggestionClicked, suggestionClicked);
 }
 

@@ -31,7 +31,7 @@ export enum PredictionAction {
 }
 
 type PredictionMessages = {
-    [PredictionAction.QuickDrawPredictionReceived]: string[]
+    [PredictionAction.QuickDrawPredictionReceived]: { predictions: string[], figureId: string };
     [PredictionAction.LookupBasicShape]: {};
 };
 
@@ -40,23 +40,27 @@ export enum CanvasAction {
     CanvasMouseDown = "CANVAS_MOUSE_DOWN",
     CanvasMouseMove = "CANVAS_MOUSE_MOVE",
     CanvasMouseUp = "CANVAS_MOUSE_UP",
+    ReplaceFigure = "CANVAS_REPLACE_FIGURE"
 }
 
 type CanvasMessages = {
-    [CanvasAction.ToolSelected]: { tool: CanvasToolbarSelection };
-    [CanvasAction.CanvasMouseDown]: { point: CanvasPoint };
-    [CanvasAction.CanvasMouseMove]: { point: CanvasPoint };
-    [CanvasAction.CanvasMouseUp]: { point: CanvasPoint };
+    [CanvasAction.ToolSelected]: { tool: CanvasToolbarSelection }
+    [CanvasAction.CanvasMouseDown]: { point: CanvasPoint }
+    [CanvasAction.CanvasMouseMove]: { point: CanvasPoint }
+    [CanvasAction.CanvasMouseUp]: { point: CanvasPoint }
+    [CanvasAction.ReplaceFigure]: { figureId: string, finePictureName: string }
 };
 
 export enum ApplicationAction {
     StartApplication = "APP_START",
-    CurveCompleted = "APP_CURVE_COMPLETED"
+    CurveCompleted = "APP_CURVE_COMPLETED",
+    SuggestionClicked = "APP_SUGGESTION_CLICKED"
 }
 
 type ApplicationMessages = {
     [ApplicationAction.StartApplication]: { };
     [ApplicationAction.CurveCompleted]: { figureId: string, curveId: string};
+    [ApplicationAction.SuggestionClicked]: { suggestion: string, figureId: string };
 };
 
 export type PredictionActions = ActionMap<PredictionMessages>[keyof ActionMap<PredictionMessages>];

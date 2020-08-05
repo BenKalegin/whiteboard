@@ -23,7 +23,7 @@ export function inkDrawMouseMove(state: Canvas, point: Point): Canvas {
     }
 }
 
-const penColor = (toolSelected: CanvasToolbarSelection) => {
+export const penColor = (toolSelected: CanvasToolbarSelection) => {
     switch (toolSelected) {
         case CanvasToolbarSelection.Black:
             return "black"
@@ -65,11 +65,34 @@ export const inkDrawMouseDown = (state: Canvas, point: Point) => {
     }
 };
 
+const isHtmlSvg = (something: HTMLElement | SVGElement): something is SVGElement => {
+    if(!something) return false;
+    return something instanceof SVGElement;
+}
+
+const getSvgElementById = (id: string): SVGElement | null => {
+    const element = document.getElementById(id)
+    if(!element) return null
+    if(isHtmlSvg(element)) {
+        return element;
+    }
+    return null;
+}
+
 export const inkDrawMouseUp = (state: Canvas, point: Point, events: Action[]) => {
     const inkDraw = InkDrawSmoothReducer.mouseUp(state.inkDraw, point)
     const figures = updateRecentCurveWithInkDrawing(state.figures, state.inkDraw.projectedPoints);
     const figure = figures[figures.length - 1]
     const curve = figure.curves[figure.curves.length - 1]
+
+    const figureElement = getSvgElementById(figure.id) as SVGGElement
+    const bounds = figureElement.getBBox();
+    figure.bounds = {
+        offset: {x: bounds.x, y: bounds.y},
+        size:  {x: bounds.width, y: bounds.height}
+    }
+
+
     const action = applicationMsg(ApplicationAction.CurveCompleted, {figureId: figure.id, curveId: curve.id});
     events.push(action)
     return {
