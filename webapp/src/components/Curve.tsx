@@ -13,7 +13,8 @@ const Curve: React.FC<Props> = (props) => {
             id={m.id}
             xmlns = 'http://www.w3.org/2000/svg'
             fill = "none"
-            stroke = {m.toBeDeleted ? "lightgrey" : m.strokeColor}
+            stroke = {m.strokeColor}
+            strokeOpacity={m.toBeDeleted ? "25%" : undefined}
             strokeWidth = {m.strokeWidth}
             d= {path}
         >

@@ -3,19 +3,14 @@ import {isCurveId} from "./DynamicIdentifiers";
 
 const deleteCurve = (figures: Figure[]): Figure[] => {
     const newFigures = [...figures]
-    for (let i = 0; i < newFigures.length; i++){
-        let figure = newFigures[i];
-        const curvesToKeep = figure.curves.filter(c => !c.toBeDeleted)
-        if (curvesToKeep.length !== figure.curves.length) {
-            if (curvesToKeep.length !== 0)
-                newFigures[i] = {...figure, curves: curvesToKeep}
-            else
-                // last curve in figure
-                newFigures.splice(i, 1)
-        }
-    }
-    return newFigures
+    for (let i = 0; i < newFigures.length; i++)
+        newFigures[i] = {
+            ...newFigures[i],
+            curves: newFigures[i].curves.filter(c => !c.toBeDeleted)
+        };
+    return newFigures.filter(f => f.curves.length > 0)
 }
+
 export const eraserMouseDown = (state: Canvas) => {
     return {
         ...state,
@@ -24,7 +19,19 @@ export const eraserMouseDown = (state: Canvas) => {
 }
 
 export const eraserMouseMove = (state: Canvas, point: Point): Canvas => {
-    const curveIdsUnderMouse = document.elementsFromPoint(point.x, point.y)
+    const pointsInsideCursor: Point[] = [
+        {x: point.x, y: point.y-1},
+        {x: point.x, y: point.y},
+        {x: point.x, y: point.y+1},
+        {x: point.x-1, y: point.y-1},
+        {x: point.x-1, y: point.y},
+        {x: point.x-1, y: point.y+1},
+        {x: point.x+1, y: point.y-1},
+        {x: point.x+1, y: point.y},
+        {x: point.x+1, y: point.y+1},
+    ]
+
+    const curveIdsUnderMouse = Array.from(new Set(pointsInsideCursor.flatMap(p => document.elementsFromPoint(p.x, p.y))))
         .filter(e => isCurveId(e.id))
         .map(e => e.id)
 
