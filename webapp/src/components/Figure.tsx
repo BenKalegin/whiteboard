@@ -4,6 +4,7 @@ import Curve from './Curve'
 
 export interface Props {
     model: FigureModel
+    curveIdsToDelete: string[]
 }
 const Figure: React.FC<Props> = (props) => {
     const m = props.model
@@ -15,7 +16,7 @@ const Figure: React.FC<Props> = (props) => {
             y={m.offset.y}
         >
             {m.curves.map((c, i) =>
-                <Curve model={c} key={i}/>
+                <Curve model={c} key={i} curveIdsToDelete={props.curveIdsToDelete} />
             )}
         </g>
     )

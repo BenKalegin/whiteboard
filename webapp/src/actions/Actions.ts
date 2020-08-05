@@ -1,4 +1,4 @@
-import {CanvasToolbarSelection, Point} from "../models/DrawModels"
+import {CanvasPoint, CanvasToolbarSelection} from "../models/DrawModels"
 import {Action} from 'redux'
 
 export type ActionMap<M extends { [index: string]: any }> = {
@@ -44,9 +44,9 @@ export enum CanvasAction {
 
 type CanvasMessages = {
     [CanvasAction.ToolSelected]: { tool: CanvasToolbarSelection };
-    [CanvasAction.CanvasMouseDown]: { point: Point };
-    [CanvasAction.CanvasMouseMove]: { point: Point };
-    [CanvasAction.CanvasMouseUp]: { point: Point };
+    [CanvasAction.CanvasMouseDown]: { point: CanvasPoint };
+    [CanvasAction.CanvasMouseMove]: { point: CanvasPoint };
+    [CanvasAction.CanvasMouseUp]: { point: CanvasPoint };
 };
 
 export enum ApplicationAction {

@@ -1,12 +1,13 @@
-import {Canvas, CanvasToolbarSelection, Figure, Point} from "../models/DrawModels";
+import {Canvas, CanvasPoint, CanvasToolbarSelection, Figure, Point} from "../models/DrawModels";
 import {Action} from "redux";
 import {CanvasAction, CanvasActions} from "../actions/Actions";
 import {inkDrawMouseDown, inkDrawMouseMove, inkDrawMouseUp} from "./InkDrawReducers";
 import {eraserMouseDown, eraserMouseMove} from "./EraserReducers";
+import {generateFigureId} from "./DynamicIdentifiers";
 
-export const createNewFigure = (id: number): Figure => {
+export const createNewFigure = (): Figure => {
     return {
-        id: "Fig" + id,
+        id: generateFigureId(),
         offset: {x: 0, y: 0},
         curves: [],
         curveTimes: []
@@ -27,37 +28,34 @@ const isPen = (tool: CanvasToolbarSelection) => {
 
 const selectTool = (state: Canvas, newTool: CanvasToolbarSelection) => {
     let figures = state.figures;
-    let figureIdentifier = state.figureIdentifier;
 
     if (isPen(newTool)) {
-        figureIdentifier = state.figureIdentifier + 1
-        figures = [...state.figures, createNewFigure(state.figureIdentifier)]
+        figures = [...state.figures, createNewFigure()]
     }
 
     return {
         ...state,
         toolSelected: newTool,
-        figureIdentifier: figureIdentifier,
         figures: figures
     };
 };
 
-const mouseDown = (state: Canvas, point: Point): Canvas => {
+const mouseDown = (state: Canvas, point: CanvasPoint): Canvas => {
     if (isPen(state.toolSelected))
-        return inkDrawMouseDown(state, point);
+        return inkDrawMouseDown(state, point.relative);
 
     if (state.toolSelected === CanvasToolbarSelection.Eraser)
-        return eraserMouseDown(state, point);
+        return eraserMouseDown(state);
 
     return state;
 }
 
-const mouseMove = (state: Canvas, point: Point): Canvas => {
+const mouseMove = (state: Canvas, point: CanvasPoint): Canvas => {
     if (isPen(state.toolSelected))
-        return inkDrawMouseMove(state, point);
+        return inkDrawMouseMove(state, point.relative);
 
     if (state.toolSelected === CanvasToolbarSelection.Eraser)
-        return eraserMouseMove(state, point);
+        return eraserMouseMove(state, point.absolute);
 
     return state
 
@@ -79,7 +77,7 @@ export const canvasReducer = (state: Canvas, action: CanvasActions, events: Acti
         case CanvasAction.CanvasMouseMove:
             return mouseMove(state, action.payload.point)
         case CanvasAction.CanvasMouseUp:
-            return mouseUp(state, action.payload.point, events)
+            return mouseUp(state, action.payload.point.relative, events)
         default:
             return state;
     }

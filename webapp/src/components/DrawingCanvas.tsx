@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React, {useRef} from 'react'
 import CSS from 'csstype'
-import {CanvasToolbarSelection, Point} from '../models/DrawModels'
-import  Figure  from './Figure'
+import {CanvasPoint, CanvasToolbarSelection} from '../models/DrawModels'
+import Figure from './Figure'
 import {useDispatch, useSelector} from "react-redux";
 import {ApplicationState} from "../reducers/Reducers";
 import {CanvasAction} from "../actions/Actions";
@@ -10,6 +10,7 @@ const DrawingCanvas: React.FC = () => {
 
     const tool = useSelector((state: ApplicationState) => state.canvas.toolSelected)
     const figures = useSelector((state: ApplicationState) => state.canvas.figures)
+    const curveIdsToDelete = useSelector((state: ApplicationState) => state.canvas.curvesIdsToDelete)
     const dispatch = useDispatch()
 
     const svgParentStyles: CSS.Properties = {
@@ -18,39 +19,43 @@ const DrawingCanvas: React.FC = () => {
 
     const boundRef = useRef<HTMLElement>(null);
 
-    const mouseDown = (p: Point): void => {
+    const mouseDown = (e: React.MouseEvent<SVGSVGElement>): void => {
         dispatch({
             type: CanvasAction.CanvasMouseDown,
-            payload: {point: p}
+            payload: {point: getMousePosition(e)}
         })
     }
 
-    const mouseMove = (p: Point): void => {
+    const mouseMove = (e: React.MouseEvent<SVGSVGElement>): void => {
+
         dispatch({
             type: CanvasAction.CanvasMouseMove,
-            payload: {point: p}
+            payload: {point: getMousePosition(e)}
         })
     }
 
-    const mouseUp = (p: Point): void => {
+    const mouseUp = (e: React.MouseEvent<SVGSVGElement>): void => {
         dispatch({
             type: CanvasAction.CanvasMouseUp,
-            payload: {point: p}
+            payload: {point: getMousePosition(e)}
         })
     }
 
-    const getMousePosition = (e: React.MouseEvent) =>   {
+    const getMousePosition = (e: React.MouseEvent): CanvasPoint =>   {
         const bounds = boundRef.current;
         if (!bounds)
-            return {x: 0, y: 0};
+            return {
+                absolute: {x: 0, y: 0},
+                relative: {x: 0, y: 0}
+            }
 
         const rect = bounds.getBoundingClientRect();
 
         return {
-            x: e.pageX - rect.left,
-            y: e.pageY - rect.top
+            absolute: {x: e.pageX, y: e.pageY},
+            relative: {x: e.pageX - rect.left, y: e.pageY - rect.top}
         }
-    };
+    }
 
     const toolSpecificCursor = tool === CanvasToolbarSelection.Eraser ? " eraseActive" : "";
     return (
@@ -60,9 +65,9 @@ const DrawingCanvas: React.FC = () => {
                   aria-label="Whiteboard Canvas. Capture your ideas and collaborate with others"
                   >
                 <svg aria-hidden="true"
-                     onMouseDown={(e) => mouseDown(getMousePosition(e))}
-                     onMouseMove={(e) => mouseMove(getMousePosition(e))}
-                     onMouseUp={(e) => mouseUp(getMousePosition(e))}
+                     onMouseDown={(e) => mouseDown(e)}
+                     onMouseMove={(e) => mouseMove(e)}
+                     onMouseUp={(e) => mouseUp(e)}
                      xmlns="http://www.w3.org/2000/svg"
                     //  viewBox="0 0 1000 1000"
                      height="1000"
@@ -75,7 +80,7 @@ const DrawingCanvas: React.FC = () => {
                     </g>
                     <g id="canvas-figures">
                         {figures.map((f, i) =>
-                            <Figure key={i} model={f}/>
+                            <Figure key={i} model={f} curveIdsToDelete={curveIdsToDelete}/>
                         )}
                     </g>
                 </svg>

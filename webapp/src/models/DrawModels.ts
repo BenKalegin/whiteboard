@@ -3,6 +3,11 @@ export interface Point {
     y: number
 }
 
+export interface CanvasPoint {
+    relative: Point
+    absolute: Point
+}
+
 export interface TemporalPoint extends Point {
     timespan: number;
 }
@@ -68,7 +73,7 @@ export interface Canvas {
     toolSelected: CanvasToolbarSelection
     inkDraw: InkDraw
     figures: Figure[]
-    figureIdentifier: number
+    curvesIdsToDelete: string[]
 }
 
 export const initialCanvas: Canvas = {
@@ -76,5 +81,5 @@ export const initialCanvas: Canvas = {
     toolSelected: CanvasToolbarSelection.None,
     inkDraw: DefaultInkDraw,
     figures: new Array<Figure>(),
-    figureIdentifier:  1
+    curvesIdsToDelete: []
 }

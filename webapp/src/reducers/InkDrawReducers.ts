@@ -2,6 +2,7 @@ import {Canvas, CanvasToolbarSelection, Curve, Figure, Point, TemporalPoint} fro
 import {InkDrawSmoothReducer} from "./InkDrawSmoothReducer";
 import {Action} from "redux";
 import {ApplicationAction, applicationMsg} from "../actions/Actions";
+import {generateCurveId} from "./DynamicIdentifiers";
 
 export const updateRecentCurveWithInkDrawing = (figures: Figure[], projectedPoints: TemporalPoint[]): Figure[] => {
     const lastFigure = figures.pop()!
@@ -43,7 +44,7 @@ const startNewCurve = (figures: Figure[], startedAt: number, toolSelected: Canva
 
     const curve: Curve = {
         startedAt: startedAt,
-        id: "Crv" + (lastFigure.curves.length + 1).toString(),
+        id: generateCurveId(),
         pathPoints: [],
         strokeColor: penColor(toolSelected),
         strokeWidth: 3

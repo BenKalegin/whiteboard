@@ -3,6 +3,7 @@ import {Curve as CurveModel} from '../models/DrawModels'
 
 export interface Props {
     model: CurveModel
+    curveIdsToDelete: string[]
 }
 const Curve: React.FC<Props> = (props) => {
     const m = props.model
@@ -15,6 +16,7 @@ const Curve: React.FC<Props> = (props) => {
             fill = "none"
             stroke = {m.strokeColor}
             strokeWidth = {m.strokeWidth}
+            strokeOpacity = {props.curveIdsToDelete.find(s => s == m.id) ? "25%" : undefined}
             d= {path}
         >
         </path>

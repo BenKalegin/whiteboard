@@ -1,8 +1,8 @@
 import {AllActions, CanvasActions, HasInducedActions, PredictionAction, PredictionActions} from "../actions/Actions";
-import {Canvas, CanvasToolbarSelection, initialCanvas} from "../models/DrawModels";
+import {Canvas, initialCanvas} from "../models/DrawModels";
 import {DefaultPredictions, Predictions} from "../models/PredictModels";
 import {Action, Reducer} from "redux";
-import {canvasReducer, createNewFigure} from "./CanvasReducers";
+import {canvasReducer} from "./CanvasReducers";
 
 
 export const predictionsReducer = (state: Predictions, action: PredictionActions) : Predictions => {
