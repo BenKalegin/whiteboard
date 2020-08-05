@@ -19,6 +19,7 @@ export interface Curve {
     strokeColor: string
     startedAt: number
     pathPoints: TemporalPoint[]
+    toBeDeleted: boolean
 }
 
 export interface Figure {
@@ -73,7 +74,6 @@ export interface Canvas {
     toolSelected: CanvasToolbarSelection
     inkDraw: InkDraw
     figures: Figure[]
-    curvesIdsToDelete: string[]
 }
 
 export const initialCanvas: Canvas = {
@@ -81,5 +81,4 @@ export const initialCanvas: Canvas = {
     toolSelected: CanvasToolbarSelection.None,
     inkDraw: DefaultInkDraw,
     figures: new Array<Figure>(),
-    curvesIdsToDelete: []
 }

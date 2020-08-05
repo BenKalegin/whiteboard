@@ -10,7 +10,6 @@ const DrawingCanvas: React.FC = () => {
 
     const tool = useSelector((state: ApplicationState) => state.canvas.toolSelected)
     const figures = useSelector((state: ApplicationState) => state.canvas.figures)
-    const curveIdsToDelete = useSelector((state: ApplicationState) => state.canvas.curvesIdsToDelete)
     const dispatch = useDispatch()
 
     const svgParentStyles: CSS.Properties = {
@@ -80,7 +79,7 @@ const DrawingCanvas: React.FC = () => {
                     </g>
                     <g id="canvas-figures">
                         {figures.map((f, i) =>
-                            <Figure key={i} model={f} curveIdsToDelete={curveIdsToDelete}/>
+                            <Figure key={i} model={f}/>
                         )}
                     </g>
                 </svg>

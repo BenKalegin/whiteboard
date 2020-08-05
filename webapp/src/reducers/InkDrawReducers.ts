@@ -47,7 +47,8 @@ const startNewCurve = (figures: Figure[], startedAt: number, toolSelected: Canva
         id: generateCurveId(),
         pathPoints: [],
         strokeColor: penColor(toolSelected),
-        strokeWidth: 3
+        strokeWidth: 3,
+        toBeDeleted: false
     }
 
     curve.pathPoints = [...projectedPoints]
