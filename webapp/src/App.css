@@ -52,6 +52,17 @@
   background-color: rgba(0, 0, 0, .2);
 }
 
+.suggest-button {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  outline-style: none;
+  padding: 2px;
+}
+
+.suggest-button:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
 
 .pen {
   overflow: hidden;

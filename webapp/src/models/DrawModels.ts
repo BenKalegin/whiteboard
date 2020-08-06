@@ -35,12 +35,12 @@ export interface Transform {
     }
     translate?: {
         x: number
-        y?: number
+        y: number
     }
 
     scale?: {
         x: number
-        y?: number
+        y: number
     }
 }
 

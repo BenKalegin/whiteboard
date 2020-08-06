@@ -10,7 +10,7 @@ const SuggestionButton: React.FC<Props> = (props) => {
 
     return (
         <button
-            className={"chrome-Button pen"}
+            className={"suggest-button pen"}
             id="red"
             aria-label="Content Creation Toolbar - Ink Red Pen"
             aria-selected='false'

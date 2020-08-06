@@ -25,9 +25,9 @@ const Fine: React.FC<Props> = (props) => {
     const m = props.model
     const translate = m.finePicture.transform.translate;
     const scale = m.finePicture.transform.scale;
-    const scaleStr: string = scale ? ` scale(${scale.x}, ${scale.y})` : ""
+    const scaleStr: string = scale ? ` scale(${scale.x.toFixed(2)}, ${scale.y.toFixed(2)})` : ""
 
-    const translateStr: string = translate? ` translate(${translate.x}, ${translate.y})` : ""
+    const translateStr: string = translate? ` translate(${translate.x.toFixed(0)}, ${translate.y.toFixed(0)})` : ""
     const transform: string = `${translateStr}${scaleStr}`
 
     return (
