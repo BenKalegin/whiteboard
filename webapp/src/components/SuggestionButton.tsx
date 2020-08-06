@@ -8,6 +8,11 @@ export interface Props {
 
 const SuggestionButton: React.FC<Props> = (props) => {
 
+    const picture = findPicture(props.prediction);
+    const onClick = () => {
+        if (typeof picture !== "string")
+            props.onClick();
+    };
     return (
         <button
             className={"suggest-button pen"}
@@ -16,8 +21,8 @@ const SuggestionButton: React.FC<Props> = (props) => {
             aria-selected='false'
             role="tab"
             title={props.prediction}
-            onClick={props.onClick}>
-            {findPicture(props.prediction)}
+            onClick={onClick}>
+            {picture}
         </button>
     )};
 

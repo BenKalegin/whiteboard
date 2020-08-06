@@ -1,17 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import CanvasToolbar from './CanvasToolbar';
 import DrawingCanvas  from './DrawingCanvas';
-import EnhancementTabs from './EnhancementTabs';
 import '../App.css';
 import {CanvasToolbarSelection} from "../models/DrawModels";
 import {ApplicationAction, applicationMsg, CanvasAction} from "../actions/Actions";
 import {ApplicationState} from "../reducers/Reducers";
 import {useDispatch, useSelector} from "react-redux";
+import PredictEnhancement from "./PredictEnhancement";
 
 export default function App() {
-  const [smoothWindow, setSmoothWindow] = React.useState(1);
 
-  const predictions = useSelector((state: ApplicationState) => state.predictions.quickDraw.topMatches)
   const dispatch = useDispatch()
   const [isStarted] = useState(false)
 
@@ -34,8 +32,7 @@ export default function App() {
       <div className="App">
         <CanvasToolbar selectTool={tool => selectTool(tool)}/>
         <DrawingCanvas/>
-        <EnhancementTabs smoothWindow={smoothWindow} smoothWindowChanged={(n: number) => setSmoothWindow(n)}
-                         predictions={predictions}/>
+        <PredictEnhancement/>
       </div>
   );
 }

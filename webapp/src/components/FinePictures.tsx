@@ -63,7 +63,7 @@ export const findPicture = (name: string) => {
         case "castle": return <Castle/>
         case "cat": return <Cat/>
         case "chair": return <Chair/>
-        case "circle": return <svg><circle cx="28" cy="28" r="26.5" strokeWidth="3" fill="none" stroke="var(--primary-color, #000)"/></svg>
+        case "circle": return <svg width="56" height="56" ><circle cx="28" cy="28" r="26.5" strokeWidth="3" fill="none" stroke="var(--primary-color, #000)"/></svg>
         case "couch": return <Couch/>
         case "crab": return <Crab/>
         case "cruise ship": return <CruiseShip/>
@@ -84,7 +84,7 @@ export const findPicture = (name: string) => {
         case "kangaroo": return <Kangaroo/>
         case "key": return <Key/>
         case "lantern": return <Lantern/>
-        case "square": return <svg><rect x="1" y="1" width="54" height="54" strokeWidth="3" fill="none" stroke="var(--primary-color, #000)"/></svg>
+        case "square": return <svg width="56" height="56"><rect x="1" y="1" width="54" height="54" strokeWidth="3" fill="none" stroke="var(--primary-color, #000)"/></svg>
         case "owl": return <Owl/>
         default:
             return name

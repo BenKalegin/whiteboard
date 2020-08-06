@@ -3,6 +3,7 @@ import SuggestionButton from "./SuggestionButton";
 import {useDispatch, useSelector} from "react-redux";
 import {ApplicationState} from "../reducers/Reducers";
 import {ApplicationAction, applicationMsg} from "../actions/Actions";
+import {ReactComponent} from "*.svg";
 
 const PredictEnhancement: React.FC = () => {
     const prediction = useSelector((state: ApplicationState) => state.predictions.quickDraw)
@@ -14,18 +15,11 @@ const PredictEnhancement: React.FC = () => {
     }
 
     return (
-        <React.Fragment>
-            <h3>Recognize the drawing</h3>
-            <p>Draw any figure (mug, apple, cat, mosquito, house) using one ink pen color:</p>
-            <div id="chrome">
-                <div className="chromeContainer" role="tablist">
-                    {prediction.topMatches.slice(0, 8).map((s, i) => {
-                        return <SuggestionButton key={i} prediction={s} onClick={() => onSuggestionClick(s)}/>;
-                    })}
-                </div>
-            </div>
-
-        </React.Fragment>
+        <div className="contextMenu">
+            {prediction.topMatches.slice(0, 8).map((s, i) => {
+                return <SuggestionButton key={i} prediction={s} onClick={() => onSuggestionClick(s)}/>;
+            })}
+        </div>
     )};
 
 export default PredictEnhancement;

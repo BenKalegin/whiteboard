@@ -8,22 +8,17 @@ export interface Props {
 const SmoothEnhancement: React.FC<Props> = (props) => {
 
 return (
-    <React.Fragment>
-        <h3>Smoothing</h3>
-        <p>Simplifies the line by averaging specified number of points.</p>
-
-    <div id="divSmoothingFactor">
-        <label htmlFor="cmbBufferSize">Buffer size:</label>
+    <div className="toolbarText">
+        <label htmlFor="cmbBufferSize">Smoothing:</label>
         <select id="cmbBufferSize" value={props.smoothWindow} onChange={(e) => props.smoothWindowChanged(parseInt(e.target.value))}>
-            <option value="1">1 - No smoothing</option>
-            <option value="4">4 - Sharp curves</option>
-            <option value="8">8 - Smooth curves</option>
-            <option value="12">12 - Very smooth curves</option>
-            <option value="16">16 - Super smooth curves</option>
-            <option value="20">20 - Hyper smooth curves</option>
+            <option value="1">1 - No</option>
+            <option value="4">4 - Sharp</option>
+            <option value="8">8 - Smooth</option>
+            <option value="12">12 - Very smooth</option>
+            <option value="16">16 - Super smooth</option>
+            <option value="20">20 - Hyper smooth</option>
         </select>
     </div>
-    </React.Fragment>
 )};
 
 

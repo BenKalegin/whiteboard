@@ -7,9 +7,10 @@ export interface Props {
   
 
 const EraserButton: React.FC<Props> = (props) => {
+    const active =  props.active ? " selectedToolbarButton" : " unselectedToolbarButton";
     return (
         <button
-            className="chrome-Button pen embedded"
+            className={"toolbarButton unselectedToolbarButton" + active}
             id="erase"
             aria-label="Content Creation Toolbar - Ink Eraser"
             aria-selected="false"
