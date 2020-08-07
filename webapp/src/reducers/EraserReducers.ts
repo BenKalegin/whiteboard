@@ -51,7 +51,8 @@ export const eraserMouseMove = (state: Canvas, point: Point): Canvas => {
         {x: point.x+2, y: point.y+2},
     ]
 
-    const curveIdsUnderMouse = Array.from(new Set(pointsInsideCursor.flatMap(p => document.elementsFromPoint(p.x, p.y))))
+    const hitTestElements = Array.from(new Set(pointsInsideCursor.flatMap(p => document.elementsFromPoint(p.x, p.y))));
+    const curveIdsUnderMouse = hitTestElements
         .filter(e => isCurveId(e.id))
         .map(e => e.id)
 

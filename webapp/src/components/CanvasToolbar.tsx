@@ -6,7 +6,6 @@ import {CanvasToolbarSelection} from "../models/DrawModels";
 import {useSelector} from "react-redux";
 import {ApplicationState} from "../reducers/Reducers";
 import SmoothEnhancement from "./SmoothEnhancement";
-import PredictEnhancement from "./PredictEnhancement";
 
 export interface Props {
     selectTool: (tool: CanvasToolbarSelection) => void

@@ -3,7 +3,6 @@ import SuggestionButton from "./SuggestionButton";
 import {useDispatch, useSelector} from "react-redux";
 import {ApplicationState} from "../reducers/Reducers";
 import {ApplicationAction, applicationMsg} from "../actions/Actions";
-import {ReactComponent} from "*.svg";
 
 const PredictEnhancement: React.FC = () => {
     const prediction = useSelector((state: ApplicationState) => state.predictions.quickDraw)

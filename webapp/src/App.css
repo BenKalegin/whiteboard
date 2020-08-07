@@ -213,7 +213,7 @@ button {
   border: none;
   text-align: center;
   font-size: 12px;
-  white-space: nowrap
+  /*white-space: nowrap*/
 }
 
 
@@ -392,6 +392,7 @@ svg:not(:root) {
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+  word-wrap: break-word;
 }
 
 .suggest-button {

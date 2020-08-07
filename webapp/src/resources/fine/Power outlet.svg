@@ -1,0 +1,18 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <path d="M22.608 9.625c-2.186 1.51-3.642 4.162-3.642 7.178 0 3.028 1.47 5.672 3.67 7.179h8.355c2.199-1.507 3.669-4.15 3.669-7.179 0-3.016-1.456-5.669-3.642-7.178z"
+          fill="none" stroke="var(--primary-color, #000)" stroke-linecap="square"/>
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-width="1.044">
+        <path d="M22.862 13.844c-.554 0-1 .446-1 1v1.875h2.5v-1.875c0-.554-.446-1-1-1z" stroke-linecap="square"
+              transform="matrix(.95724 0 0 .95853 4.69 4.621)"/>
+        <path d="M19.244 8.7l.023 3.774M26.144 8.7l.023 3.774" transform="matrix(.95724 0 0 .95853 5.078 4.621)"/>
+    </g>
+    <path d="M22.608 32.094c-2.186 1.51-3.642 4.162-3.642 7.178 0 3.028 1.47 5.672 3.67 7.179h8.355c2.199-1.507 3.669-4.151 3.669-7.179 0-3.016-1.456-5.669-3.642-7.178z"
+          fill="none" stroke="var(--primary-color, #000)" stroke-linecap="square"/>
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-width="1.044">
+        <path d="M22.862 13.844c-.554 0-1 .446-1 1v1.875h2.5v-1.875c0-.554-.446-1-1-1z" stroke-linecap="square"
+              transform="matrix(.95724 0 0 .95853 4.69 26.611)"/>
+        <path d="M19.244 8.7l.023 3.774M26.144 8.7l.023 3.774" transform="matrix(.95724 0 0 .95853 5.078 26.611)"/>
+    </g>
+    <ellipse cx="26.813" cy="28.038" rx="1.438" ry="1.436" fill="none" stroke="var(--primary-color, #000)" stroke-linecap="square"/>
+    <path fill="none" stroke="var(--primary-color, #000)" stroke-linecap="square" d="M8.976 1.033h35.673v54.01H8.976z"/>
+</svg>

@@ -4,8 +4,7 @@ import DrawingCanvas  from './DrawingCanvas';
 import '../App.css';
 import {CanvasToolbarSelection} from "../models/DrawModels";
 import {ApplicationAction, applicationMsg, CanvasAction} from "../actions/Actions";
-import {ApplicationState} from "../reducers/Reducers";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import PredictEnhancement from "./PredictEnhancement";
 
 export default function App() {
