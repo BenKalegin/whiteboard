@@ -1,0 +1,8 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-width=".888">
+        <path d="M10.19 25.578h34.583v29.286H10.19z" stroke-width="1.0002432"/>
+        <path d="M21.406 33.462h12.15v21.402h-12.15zM27.482 1.923C24.002 4.88 5.517 25.578 5.517 25.578h43.93S30.96 4.88 27.482 1.923z"
+              stroke-width="1.0002432"/>
+        <path d="M37.62 5.866v6.652c1.138 1.24 2.094 2.266 3.203 3.485h.176V5.866z" stroke-width="1.0002432"/>
+    </g>
+</svg>

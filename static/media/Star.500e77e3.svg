@@ -1,0 +1,5 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <path d="M24 .5l-5.563 17.938L.5 18.469l14.532 11.094-5.532 17.938L24 36.407 38.53 47.501l-5.562-17.969 14.53-11.094H29.562z"
+          fill="#fff" fill-rule="evenodd" stroke="var(--primary-color, #000)" stroke-miterlimit="3.7"
+          transform="matrix(1.0655 0 0 1.0168 2.39 5.44)" stroke-width=".939"/>
+</svg>

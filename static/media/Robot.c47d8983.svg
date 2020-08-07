@@ -1,0 +1,68 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="var(--primary-color, #000)" stroke-linecap="round">
+        <g transform="translate(.046 -1131.66) scale(1.1281)">
+            <rect transform="matrix(1.197 0 0 1.1948 -5.56 -198.72)" x="14.027" y="1011.4" width="20.947"
+                  height="16.947" rx="3.138" ry="3.143" fill="none" stroke-linejoin="round" stroke-width=".741"/>
+            <g stroke-width=".886">
+                <path transform="matrix(1.197 0 0 1.1948 -5.597 -198.72)" d="M14 1021.7c2.99 4.676 17.99 4.676 21 0"
+                      fill="none" stroke-width=".741"/>
+                <g fill="none" stroke-width=".811">
+                    <path transform="matrix(1.197 0 0 .99921 -5.726 .588)"
+                          d="M19.106 1018.6v-1.24M30.106 1018.6v-1.24"/>
+                </g>
+                <path transform="matrix(1.197 0 0 1.1935 -5.597 -197.82)" d="M20.5 1011.7v-3.004" fill="none"
+                      stroke-width=".742"/>
+                <circle transform="matrix(.59848 0 0 .59739 6.372 1003.7)" cx="21" cy="3" r="1" stroke-linejoin="round"
+                        stroke-width="1.482"/>
+                <circle transform="matrix(.59848 0 0 .59739 15.948 1003.7)" cx="21" cy="3" r="1" stroke-linejoin="round"
+                        stroke-width="1.482"/>
+                <path transform="matrix(1.197 0 0 1.1935 3.978 -197.82)" d="M20.5 1011.7v-3.004" fill="none"
+                      stroke-width=".742"/>
+            </g>
+        </g>
+        <g fill="none">
+            <g stroke-linejoin="round" stroke-width=".741" transform="translate(.05 -1131.66) scale(1.1281)">
+                <rect transform="matrix(1.197 0 0 1.1948 -5.597 -198.72)" x="15.987" y="1028.3" width="17.026"
+                      height="12.026" rx="1.484" ry="1.487"/>
+                <path transform="matrix(-1.7207 0 0 1.711 52.83 977.641)" d="M20 39a1 1 0 01-2 0h2z"
+                      stroke-width=".517"/>
+                <path transform="matrix(-1.2736 0 0 1.1557 44.957 1000.02)" d="M20.603 39.286v3.179h-2.232v-3.179"
+                      stroke-width=".731"/>
+                <path transform="matrix(1.19693 0 0 1.38238 -3.202 990.33)"
+                      d="M17.567 42.484l3.438-.02v2.054h-5.022v-.643c0-.568.446-1.352 1.584-1.39z" stroke-width=".689"/>
+                <g>
+                    <path transform="matrix(1.7207 0 0 1.711 -5.389 977.641)" d="M20 39a1 1 0 01-2 0h2z"
+                          stroke-width=".517"/>
+                    <path transform="matrix(1.2736 0 0 1.1557 2.485 1000.02)" d="M20.603 39.286v3.179h-2.232v-3.179"
+                          stroke-width=".731"/>
+                    <path transform="matrix(-1.19693 0 0 1.38238 50.643 990.33)"
+                          d="M17.567 42.484l3.438-.02v2.054h-5.022v-.643c0-.568.446-1.352 1.584-1.39z"
+                          stroke-width=".689"/>
+                </g>
+                <circle transform="matrix(-1.197 0 0 1.1948 53.546 1001.5)" cx="24.911" cy="29.429" r="2.143"/>
+            </g>
+            <g stroke-width=".46">
+                <path transform="matrix(1.3503 0 0 3.5056 -6.41 -3530.79)"
+                      d="M19.106 1018.6v-1.24M30.106 1018.6v-1.24"/>
+            </g>
+        </g>
+        <g fill="none" stroke-width=".741">
+            <g transform="matrix(1.3503 0 0 1.3479 -6.306 -1355.836)">
+                <path d="M12.063 1028.3h5.999m-2.125 2h-3.874" stroke-linejoin="round"/>
+                <circle transform="matrix(.5 0 0 .5 7 1016.3)" cx="10" cy="26" r="2" stroke-linejoin="round"
+                        stroke-width="1.482"/>
+                <path transform="matrix(1 0 0 2.5766 -8.438 -1568.5)" d="M20.438 1012.1v-3.493" stroke-width=".462"/>
+                <path transform="matrix(1 0 0 1.047 1 1003.1)" d="M10 36.5c0-2.5 2-2.5 2 0" stroke-linejoin="round"
+                      stroke-width=".724"/>
+            </g>
+            <g transform="matrix(-1.3503 0 0 1.3479 59.944 -1355.836)">
+                <path d="M12.063 1028.3h5.999m-2.125 2h-3.874" stroke-linejoin="round"/>
+                <circle transform="matrix(.5 0 0 .5 7 1016.3)" cx="10" cy="26" r="2" stroke-linejoin="round"
+                        stroke-width="1.482"/>
+                <path transform="matrix(1 0 0 2.5766 -8.438 -1568.5)" d="M20.438 1012.1v-3.493" stroke-width=".462"/>
+                <path transform="matrix(1 0 0 1.047 1 1003.1)" d="M10 36.5c0-2.5 2-2.5 2 0" stroke-linejoin="round"
+                      stroke-width=".724"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M20.898 40.108a6.187 6.187 0 11-12.375 0 6.187 6.187 0 1112.375 0z"
+              transform="translate(-4.505 12.289) scale(.93338)" stroke-width="1.071" stroke-linejoin="round"/>
+        <path d="M12.282 49.725a3.057 3.057 0 11-6.114 0 3.057 3.057 0 116.114 0z" stroke-width=".9998964800000001"
+              stroke-linejoin="round"/>
+        <path transform="translate(29.495 12.289) scale(.93338)"
+              d="M20.898 40.108a6.187 6.187 0 11-12.375 0 6.187 6.187 0 1112.375 0z" stroke-width="1.071"
+              stroke-linejoin="round"/>
+        <path d="M46.282 49.725a3.057 3.057 0 11-6.114 0 3.057 3.057 0 116.114 0z" stroke-width=".9998964800000001"
+              stroke-linejoin="round"/>
+        <path stroke-linejoin="round" d="M3 23h10v11.069H3zM16.1 23h10v11.069h-10zM29 23h10v11.069H29z"/>
+        <path d="M15 49.6h22"/>
+        <path d="M42.3 23s6.67-.649 8.7.931c3.588 2.793 2.494 14.897 2.494 14.897-3.588-.931-3.494-2.793-11.194-4.759z"
+              stroke-linejoin="round"/>
+        <path d="M3 49.069H0V20.207h50c4 0 5.76 3.36 6 5.586C57 35.103 56 50 56 50h-7"/>
+        <path d="M55 32a4.5 1 0 11-9 0 4.5 1 0 119 0z" transform="matrix(.79328 -.25923 .21292 .96582 1.556 14.219)"
+              stroke-width="1.103" stroke-linejoin="round"/>
+        <path d="M48.6 32c2 6 2 5.6 2 5.6"/>
+    </g>
+</svg>
