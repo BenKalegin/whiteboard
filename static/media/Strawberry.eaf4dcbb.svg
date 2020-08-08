@@ -1,0 +1,14 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M24.393 18.894c4.426.537 13.18.537 17.607-4.294-12.973-.358-15.753 1.073-17.607 4.294M18 7c7.945 3.082 6.487 7.257 6.487 12.096"/>
+        <path d="M39 31.775C39 40.71 31 54 24 55.143 17 54 9 40.71 9 31.775c0-8.935 6.716-12.583 15-12.583s15 3.648 15 12.583z"
+              stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.016">
+        <path d="M15 29v2M19 29v2M23 29v2M27 29v2M31 29v2M17 35v2M21 35v2M25 35v2M29 35v2M33 35v2M13 35v2M15 41v2M19 41v2M23 41v2M27 41v2M31 41v2M17 47v2M21 47v2M25 47v2M29 47v2M19 53v2M23 53v2M27 53v2"
+              transform="matrix(1 0 0 .96789 1 -3.069)"/>
+    </g>
+    <path d="M24.675 18.894c-4.426.537-13.18.537-17.607-4.294 12.973-.358 15.753 1.073 17.607 4.294" fill="none"
+          stroke="var(--primary-color, #000)"/>
+    <path d="M17 15l-2-4c4.424-.016 6.564 3.945 9.5 6 2.484-3.44 5.196-5.948 8.5-6l-2 4" fill="none" stroke="var(--primary-color, #000)"/>
+</svg>
