@@ -1,38 +1,19 @@
 import React from 'react'
 import {Figure as FigureModel} from '../models/DrawModels'
 import Curve from './Curve'
-import {findPicture} from "./FinePictures";
+import {findPicture} from "./FinePictures"
+import {figureStyle, figureFineTransform} from "../services/SvgServices"
 
 export interface Props {
     model: FigureModel
 }
 
-interface StyleProps {
-    stroke: string
-    id:string
-}
-const InlineStyle: React.FC<StyleProps> = (props) => {
-    return (<style>{`
-            #${props.id}  {
-                --primary-color: ${props.stroke};
-                --secondary-color: #11EBD8;
-                --tertiary-color: #000;
-            }
-        `}
-    </style>)
-}
 const Fine: React.FC<Props> = (props) => {
     const m = props.model
-    const translate = m.finePicture.transform.translate;
-    const scale = m.finePicture.transform.scale;
-    const scaleStr: string = scale ? ` scale(${scale.x.toFixed(2)}, ${scale.y.toFixed(2)})` : ""
-
-    const translateStr: string = translate? ` translate(${translate.x.toFixed(0)}, ${translate.y.toFixed(0)})` : ""
-    const transform: string = `${translateStr}${scaleStr}`
 
     return (
-        <g id={m.id} transform={transform}>
-            <InlineStyle stroke={m.finePicture.stroke.color} id={m.id}/>
+        <g id={m.id} transform={figureFineTransform(m)}>
+            <style>{figureStyle(m)}</style>
             {findPicture(m.finePicture.name)}
         </g>
     )
@@ -51,7 +32,5 @@ const Figure: React.FC<Props> = (props) => {
         </React.Fragment>
     )
 }
-
-
 
 export default Figure

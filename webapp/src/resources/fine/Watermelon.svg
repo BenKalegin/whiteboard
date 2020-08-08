@@ -1,0 +1,18 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <g stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="29.5" cy="31.974" r="23.5"/>
+            <path d="M28 8.827c4.28 6.88 6.732 15.658 6.464 25.114-.23 8.1-2.42 15.524-5.971 21.559M26.704 52.502C16.709 51.007 8.743 42.386 8.743 31.974c0-10.333 7.55-18.902 17.434-20.493"/>
+            <ellipse transform="rotate(13.897)" cx="20.968" cy="22.232" rx="2.5" ry=".5"/>
+            <ellipse cx="14.329" cy="31.622" rx="2.5" ry=".5"/>
+            <ellipse transform="scale(-1 1) rotate(7.851)" cx="-9.782" cy="38.423" rx="2.5" ry=".5"/>
+            <ellipse transform="rotate(20.278)" cx="23.32" cy="14.739" rx="2.5" ry=".5"/>
+            <ellipse transform="matrix(-.96589 .25895 .26002 .9656 0 0)" cx="-5.358" cy="44.688" rx="2.499" ry=".499"/>
+            <ellipse transform="matrix(-.90793 .41912 .42013 .90747 0 0)" cx="1.767" cy="50.075" rx="2.499" ry=".499"/>
+            <ellipse transform="rotate(30.72)" cx="25.858" cy="5.781" rx="2.5" ry=".5"/>
+            <path d="M28.62 55.5C25 49 22.322 39.842 22.533 30.386 22.713 22.286 25 14 28.232 8.827"/>
+            <path d="M28 8.827c11.07 6.88 17.41 15.658 16.718 25.114-.593 8.1-6.26 15.524-15.444 21.559"/>
+        </g>
+        <path d="M23 1c-2.186 4.503 2.264 6.226 5.231 7.827"/>
+    </g>
+</svg>

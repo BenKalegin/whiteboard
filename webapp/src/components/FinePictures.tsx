@@ -100,6 +100,19 @@ import {ReactComponent as Hourglass} from "../resources/fine/Hourglass.svg"
 import {ReactComponent as Shoe} from "../resources/fine/Shoe.svg"
 import {ReactComponent as SmileyFace} from "../resources/fine/Smiley face.svg"
 import {ReactComponent as SuburbanHome} from "../resources/fine/Suburban home.svg"
+import {ReactComponent as Arrow} from "../resources/fine/Arrow.svg"
+import {ReactComponent as Blueberry} from "../resources/fine/Blueberry.svg"
+import {ReactComponent as Camel} from "../resources/fine/Camel.svg"
+import {ReactComponent as Cherry} from "../resources/fine/Cherry.svg"
+import {ReactComponent as Church} from "../resources/fine/Church.svg"
+import {ReactComponent as ComputerMouse} from "../resources/fine/Computer mouse.svg"
+import {ReactComponent as EiffelTower} from "../resources/fine/Eiffel Tower.svg"
+import {ReactComponent as Hospital} from "../resources/fine/Hospital.svg"
+import {ReactComponent as Passport} from "../resources/fine/Passport.svg"
+import {ReactComponent as Pear} from "../resources/fine/Pear.svg"
+import {ReactComponent as SodaCan} from "../resources/fine/Soda can.svg"
+import {ReactComponent as Strawberry} from "../resources/fine/Strawberry.svg"
+import {ReactComponent as Watermelon} from "../resources/fine/Watermelon.svg"
 
 export const findPicture = (name: string) => {
     switch (name) {
@@ -207,6 +220,19 @@ export const findPicture = (name: string) => {
         case "shoe": return <Shoe/>
         case "smiley face": return <SmileyFace/>
         case "suburban home": return <SuburbanHome/>
+        case "arrow": return <Arrow/>
+        case "blueberry": return <Blueberry/>
+        case "camel": return <Camel/>
+        case "cherry": return <Cherry/>
+        case "church": return <Church/>
+        case "computer mouse": return <ComputerMouse/>
+        case "The Eiffel Tower": return <EiffelTower/>
+        case "hospital": return <Hospital/>
+        case "passport": return <Passport/>
+        case "pear": return <Pear/>
+        case "soda can": return <SodaCan/>
+        case "strawberry": return <Strawberry/>
+        case "watermelon": return <Watermelon/>
         default:
             return name
     }

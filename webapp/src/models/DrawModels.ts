@@ -62,6 +62,10 @@ export interface Figure {
     bounds?: Bounds
 }
 
+export interface FigureProportions {
+    firstMomentAngle: number
+}
+
 export interface InkDraw{
     smoothingBuffer: TemporalPoint[]
 

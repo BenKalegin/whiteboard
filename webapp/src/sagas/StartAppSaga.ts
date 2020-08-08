@@ -10,6 +10,7 @@ import {
 import {CanvasToolbarSelection} from "../models/DrawModels";
 import {fetchQuickDrawSuggestions} from "../api/InputTools";
 import {ApplicationState} from "../reducers/Reducers";
+import {calcProportions} from "../services/BitmapServices";
 
 const figureById = (state: ApplicationState, figureId: string) => state.canvas.figures.find(value => value.id === figureId)!
 
@@ -27,7 +28,9 @@ function* curveCompleted(action: ApplicationActions) {
 function* suggestionClicked(action: ApplicationActions) {
     if (action.type === ApplicationAction.SuggestionClicked) {
         const {suggestion, figureId} = action.payload
-        yield put(canvasMsg(CanvasAction.ReplaceFigure, {figureId: figureId, finePictureName: suggestion }))
+        const figure: ReturnType<typeof figureById> = yield select(figureById, figureId)
+        const proportions = yield calcProportions(figure)
+        yield put(canvasMsg(CanvasAction.ReplaceFigure, {figureId: figureId, finePictureName: suggestion, proportions: proportions}))
     }
 }
 

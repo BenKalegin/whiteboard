@@ -75,8 +75,9 @@ const mouseUp = (state: Canvas, point: Point, events: Action[]): Canvas => {
 
 const finePictureSize = 56;
 
-function calcTransform(bounds: Bounds) : Transform {
+function calcTransform(bounds: Bounds, finePictureName: string, figure: Figure) : Transform {
     const scaleFactor = (bounds.size.x + bounds.size.y) / (finePictureSize*2)
+
     const inkCenter: Point = { x: bounds.offset.x + bounds.size.x / 2, y: bounds.offset.y + bounds.size.y / 2};
     return {
         translate: {
@@ -99,7 +100,7 @@ const replaceFigure = (state: Canvas, figureId: string, finePictureName: string)
     const newFigure: Figure = {...figure,
         finePicture: {
             name: finePictureName,
-            transform: calcTransform(figure.bounds),
+            transform: calcTransform(figure.bounds, finePictureName, figure),
             stroke: {color: penColor(state.toolSelected)}
         } }
     return {
