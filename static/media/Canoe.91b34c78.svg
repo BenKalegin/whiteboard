@@ -1,0 +1,6 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.419 40.393H10C4.73 40.393 5 28 5 28s2.643 4.13 5 4.13h19.416m3.255 0h12.33c2.356 0 5-4.13 5-4.13s.27 12.393-5 12.393H23.758"
+          fill="none" stroke="var(--primary-color, #000)"/>
+    <path d="M6.54 48.914l10.35-6.652 1.31.164L36.01 26.34 36 25l6.903-8.93 5.363 5.936L38.8 27.86l-1.451-.036L19.54 43.91l-.049 1.391-7.587 9.549z"
+          fill="none" stroke="var(--primary-color, #000)" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

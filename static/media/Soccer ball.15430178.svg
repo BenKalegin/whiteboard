@@ -1,0 +1,19 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="var(--primary-color, #000)" fill="var(--primary-color, #000)">
+        <path d="M27.931 20.901l7.715 5.606-2.947 9.069h-9.536l-2.947-9.07z" stroke-linecap="round"
+              stroke-linejoin="round"/>
+        <g transform="translate(7.901 4.79) scale(.90136)" fill="none">
+            <circle transform="scale(-1 1)" cx="-22.168" cy="26.929" r="27.034" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.231"/>
+            <g stroke-width="1.109">
+                <path d="M22.222 18.275v-8.12M5 22.501l8.722 1.873M30.722 24.375l8.15-1.856M27.322 34.175l5.155 6.225M16.922 34.075L12.1 40.4"/>
+            </g>
+        </g>
+        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="1.109">
+            <path d="M28.082 13.928l7.896-3.25-3.127-5.257h-9.537l-3.127 5.258zM12.408 25.071l-.657-8.342-5.492 1.178-2.738 9.07 4.251 4.427zM43.091 25.071l.663-8.342 5.548 1.178 2.766 9.07-4.29 4.427zM18.959 41.19l-8.152-1.907-.706 5.986 7.715 5.606 5.474-2.522zM37.326 41.19l8.152-1.907.706 5.986-7.715 5.606-5.475-2.522z"
+                  stroke-width=".99960824"/>
+        </g>
+        <path d="M27.882 4.854l23.089 16.775-8.82 27.143h-28.54L4.794 21.629z" fill="none" stroke-linecap="round"
+              stroke-linejoin="round"/>
+    </g>
+</svg>

@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2f079324c757a8f740e8568d2c51ebc9",
+    "revision": "5d03e3ead7b251e2c4820f5b706de88e",
     "url": "./index.html"
   },
   {
-    "revision": "d22aef687680a7649f47",
+    "revision": "76eb09a910595ad256d4",
     "url": "./static/css/main.ca7384f1.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/js/2.4135b40f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d22aef687680a7649f47",
-    "url": "./static/js/main.39b92b0d.chunk.js"
+    "revision": "76eb09a910595ad256d4",
+    "url": "./static/js/main.a3be57ba.chunk.js"
   },
   {
     "revision": "7db6cf6f889d912b173e",
@@ -68,6 +68,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Basket.029df11d.svg"
   },
   {
+    "revision": "0dbc696f42f3eb07f02a7f6112fe977d",
+    "url": "./static/media/Basketball.0dbc696f.svg"
+  },
+  {
     "revision": "8de5719b27493e199740ac443b900ea0",
     "url": "./static/media/Bear.8de5719b.svg"
   },
@@ -82,6 +86,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "78a59611ef13be1f32a51a3e04eb6449",
     "url": "./static/media/Bell.78a59611.svg"
+  },
+  {
+    "revision": "1db650a6b101baaf6439fab0640a7756",
+    "url": "./static/media/Bench.1db650a6.svg"
   },
   {
     "revision": "046ff61d6833c2cdfa738eb8c385de0e",
@@ -142,6 +150,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "daa68c12b11ad591dadebb8af490b832",
     "url": "./static/media/Candle.daa68c12.svg"
+  },
+  {
+    "revision": "91b34c78328c657adbd08e93874150fc",
+    "url": "./static/media/Canoe.91b34c78.svg"
   },
   {
     "revision": "9de393a007c66e46de7fd6f6ff653e66",
@@ -236,6 +248,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Duck.8ec04f94.svg"
   },
   {
+    "revision": "84c626774a1dd73a7fb6e7e428401468",
+    "url": "./static/media/Dumbbell.84c62677.svg"
+  },
+  {
     "revision": "b44cf6dafd757fcef0649b0dd030d314",
     "url": "./static/media/Eiffel Tower.b44cf6da.svg"
   },
@@ -288,6 +304,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Flower.067ee722.svg"
   },
   {
+    "revision": "dd511d6f7f0596d9c73050e2f39a52e1",
+    "url": "./static/media/Flying saucer.dd511d6f.svg"
+  },
+  {
     "revision": "06b2f1e454b86fe91a8c6c3f1614223b",
     "url": "./static/media/Gear.06b2f1e4.svg"
   },
@@ -302,6 +322,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4cda799d677c72936895b1f70ddd0ab8",
     "url": "./static/media/Hand.4cda799d.svg"
+  },
+  {
+    "revision": "62eaaf90e16806183bd5897f74d963a0",
+    "url": "./static/media/Hat.62eaaf90.svg"
   },
   {
     "revision": "3dc4d1c709c8df2025eb7e1ed165b899",
@@ -364,6 +388,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Mug.98e976cd.svg"
   },
   {
+    "revision": "19e314628d415f31ff5279608bcb6bbc",
+    "url": "./static/media/Mushroom.19e31462.svg"
+  },
+  {
     "revision": "563159f95bd1e32b5c7c0f453a790de2",
     "url": "./static/media/Music note.563159f9.svg"
   },
@@ -376,6 +404,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Owl.45b3b935.svg"
   },
   {
+    "revision": "08d9aa975bc0d124d32910e96cc9c709",
+    "url": "./static/media/Pants.08d9aa97.svg"
+  },
+  {
     "revision": "b8d0a8d031337e0a9a66650cc548e7a8",
     "url": "./static/media/Passport.b8d0a8d0.svg"
   },
@@ -386,6 +418,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8797d48de7b06a27079d755391e5d92e",
     "url": "./static/media/Penguin.8797d48d.svg"
+  },
+  {
+    "revision": "a47232626ca66df9a892a7203aa4bec6",
+    "url": "./static/media/Piano.a4723262.svg"
+  },
+  {
+    "revision": "b62d2f47239cdf372a4097cba5684735",
+    "url": "./static/media/Planet.b62d2f47.svg"
+  },
+  {
+    "revision": "75329e9ed9fddac0682b512748d2f415",
+    "url": "./static/media/Pond.75329e9e.svg"
   },
   {
     "revision": "e629bc037e03d92d4b4a43a051370880",
@@ -404,6 +448,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Purse.fb91d78d.svg"
   },
   {
+    "revision": "5a01550ee4d9749b119540a75a59004d",
+    "url": "./static/media/Rake.5a01550e.svg"
+  },
+  {
     "revision": "41a14241c5ada053c475f5775c9d150c",
     "url": "./static/media/Remote control.41a14241.svg"
   },
@@ -420,6 +468,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Shoe.6ed514db.svg"
   },
   {
+    "revision": "0003d3ccf6df8fa3c3311d2185fa0d6f",
+    "url": "./static/media/Skyscraper.0003d3cc.svg"
+  },
+  {
     "revision": "c9b24279078370d91076fe488e62fcfc",
     "url": "./static/media/Smiley face.c9b24279.svg"
   },
@@ -432,12 +484,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Snowman.b2328485.svg"
   },
   {
+    "revision": "154301787d2992c9a593e19305af4436",
+    "url": "./static/media/Soccer ball.15430178.svg"
+  },
+  {
     "revision": "b3d0fa26bd96b04d54e42ba6ecab051e",
     "url": "./static/media/Soda can.b3d0fa26.svg"
   },
   {
     "revision": "500e77e3c8b9cf945fa4f6a8e1a28c9f",
     "url": "./static/media/Star.500e77e3.svg"
+  },
+  {
+    "revision": "65a4aeb7e30bf14c178c3c72491fae54",
+    "url": "./static/media/Steak.65a4aeb7.svg"
   },
   {
     "revision": "e6b8768753fa33d56f735102882ed075",
@@ -448,12 +508,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Strawberry.eaf4dcbb.svg"
   },
   {
+    "revision": "fe185981188849c9e8d99e4ef17b1136",
+    "url": "./static/media/String bean.fe185981.svg"
+  },
+  {
     "revision": "7787902ca9d98c57975b4df83be65b8c",
     "url": "./static/media/Suburban home.7787902c.svg"
   },
   {
     "revision": "60486ef23e2b4a4cb89b410118fe9bf5",
     "url": "./static/media/Sun.60486ef2.svg"
+  },
+  {
+    "revision": "50a67634b6714886b8e98b7cbc267722",
+    "url": "./static/media/Table.50a67634.svg"
   },
   {
     "revision": "cfb028e12f47ea8a3f970a3f875bd599",
@@ -470,6 +538,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a271180bf08af5bb59d8f8e6208b1d6f",
     "url": "./static/media/Truck.a271180b.svg"
+  },
+  {
+    "revision": "18b2ac195ad0034ac8291c18028179e7",
+    "url": "./static/media/Van.18b2ac19.svg"
   },
   {
     "revision": "fb25da1d81044fb0615dff90241fcf98",
