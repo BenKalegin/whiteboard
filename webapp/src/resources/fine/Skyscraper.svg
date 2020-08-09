@@ -1,0 +1,39 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <g stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 11h14v43H20zM21.5 8h11v3h-11zM25.5 3h3l2 5h-7z"/>
+        </g>
+        <path d="M27 3V0"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M22 13v3M24 13v3M26 13v3M28 13v3M30 13v3M32 13v3"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M22 17v3M24 17v3M26 17v3M28 17v3M30 17v3M32 17v3"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M22 21v3M24 21v3M26 21v3M28 21v3M30 21v3M32 21v3"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M22 25v3M24 25v3M26 25v3M28 25v3M30 25v3M32 25v3"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M22 29v3M24 29v3M26 29v3M28 29v3M30 29v3M32 29v3"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M22 33v3M24 33v3M26 33v3M28 33v3M30 33v3M32 33v3"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M22 37v3M24 37v3M26 37v3M28 37v3M30 37v3M32 37v3"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M22 41v3M24 41v3M26 41v3M28 41v3M30 41v3M32 41v3"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M22 45v3M24 45v3M26 45v3M28 45v3M30 45v3M32 45v3"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M22 49v3M32 49v3"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M24 49h6v5h-6z"/>
+    </g>
+</svg>

@@ -76,7 +76,7 @@ const mouseUp = (state: Canvas, point: Point, events: Action[]): Canvas => {
 const finePictureSize = 56;
 
 function calcTransform(bounds: Bounds, finePictureName: string, figure: Figure) : Transform {
-    const scaleFactor = (bounds.size.x + bounds.size.y) / (finePictureSize*2)
+    const scaleFactor = Math.max(bounds.size.x, bounds.size.y) / finePictureSize
 
     const inkCenter: Point = { x: bounds.offset.x + bounds.size.x / 2, y: bounds.offset.y + bounds.size.y / 2};
     return {

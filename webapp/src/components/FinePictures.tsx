@@ -113,6 +113,24 @@ import {ReactComponent as Pear} from "../resources/fine/Pear.svg"
 import {ReactComponent as SodaCan} from "../resources/fine/Soda can.svg"
 import {ReactComponent as Strawberry} from "../resources/fine/Strawberry.svg"
 import {ReactComponent as Watermelon} from "../resources/fine/Watermelon.svg"
+import {ReactComponent as Hat} from "../resources/fine/Hat.svg"
+import {ReactComponent as Mushroom} from "../resources/fine/Mushroom.svg"
+import {ReactComponent as Pants} from "../resources/fine/Pants.svg"
+import {ReactComponent as Piano} from "../resources/fine/Piano.svg"
+import {ReactComponent as Planet} from "../resources/fine/Planet.svg"
+import {ReactComponent as Pond} from "../resources/fine/Pond.svg"
+import {ReactComponent as Rake} from "../resources/fine/Rake.svg"
+import {ReactComponent as Skyscraper} from "../resources/fine/Skyscraper.svg"
+import {ReactComponent as SoccerBall} from "../resources/fine/Soccer ball.svg"
+import {ReactComponent as Steak} from "../resources/fine/Steak.svg"
+import {ReactComponent as StringBean} from "../resources/fine/String bean.svg"
+import {ReactComponent as Table} from "../resources/fine/Table.svg"
+import {ReactComponent as Van} from "../resources/fine/Van.svg"
+import {ReactComponent as Basketball} from "../resources/fine/Basketball.svg"
+import {ReactComponent as Bench} from "../resources/fine/Bench.svg"
+import {ReactComponent as Canoe} from "../resources/fine/Canoe.svg"
+import {ReactComponent as Dumbbell} from "../resources/fine/Dumbbell.svg"
+import {ReactComponent as FlyingSaucer} from "../resources/fine/Flying saucer.svg"
 
 export const findPicture = (name: string) => {
     switch (name) {
@@ -233,6 +251,24 @@ export const findPicture = (name: string) => {
         case "soda can": return <SodaCan/>
         case "strawberry": return <Strawberry/>
         case "watermelon": return <Watermelon/>
+        case "hat": return <Hat/>
+        case "mushroom": return <Mushroom/>
+        case "pants": return <Pants/>
+        case "piano": return <Piano/>
+        case "planet": return <Planet/>
+        case "pond": return <Pond/>
+        case "rake": return <Rake/>
+        case "skyscraper": return <Skyscraper/>
+        case "soccer ball": return <SoccerBall/>
+        case "steak": return <Steak/>
+        case "string bean": return <StringBean/>
+        case "table": return <Table/>
+        case "van": return <Van/>
+        case "basketball": return <Basketball/>
+        case "bench": return <Bench/>
+        case "canoe": return <Canoe/>
+        case "dumbbell": return <Dumbbell/>
+        case "flying saucer": return <FlyingSaucer/>
         default:
             return name
     }
