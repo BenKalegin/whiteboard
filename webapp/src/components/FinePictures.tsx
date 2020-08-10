@@ -131,6 +131,21 @@ import {ReactComponent as Bench} from "../resources/fine/Bench.svg"
 import {ReactComponent as Canoe} from "../resources/fine/Canoe.svg"
 import {ReactComponent as Dumbbell} from "../resources/fine/Dumbbell.svg"
 import {ReactComponent as FlyingSaucer} from "../resources/fine/Flying saucer.svg"
+import {ReactComponent as Shovel} from "../resources/fine/Shovel.svg"
+import {ReactComponent as Toaster} from "../resources/fine/Toaster.svg"
+import {ReactComponent as Umbrella} from "../resources/fine/Umbrella.svg"
+import {ReactComponent as Axe} from "../resources/fine/Axe.svg"
+import {ReactComponent as TeddyBear} from "../resources/fine/Teddy bear.svg"
+import {ReactComponent as Cooler} from "../resources/fine/Cooler.svg"
+import {ReactComponent as Fence} from "../resources/fine/Fence.svg"
+import {ReactComponent as Hammer} from "../resources/fine/Hammer.svg"
+import {ReactComponent as HulaHoop} from "../resources/fine/Hula hoop.svg"
+import {ReactComponent as Ladder} from "../resources/fine/Ladder.svg"
+import {ReactComponent as Panda} from "../resources/fine/Panda.svg"
+import {ReactComponent as Peanut} from "../resources/fine/Peanut.svg"
+import {ReactComponent as Pliers} from "../resources/fine/Pliers.svg"
+import {ReactComponent as Ring} from "../resources/fine/Ring.svg"
+import {ReactComponent as Stitches} from "../resources/fine/Stitches.svg"
 
 export const findPicture = (name: string) => {
     switch (name) {
@@ -269,6 +284,21 @@ export const findPicture = (name: string) => {
         case "canoe": return <Canoe/>
         case "dumbbell": return <Dumbbell/>
         case "flying saucer": return <FlyingSaucer/>
+        case "shovel": return <Shovel/>
+        case "toaster": return <Toaster/>
+        case "umbrella": return <Umbrella/>
+        case "axe": return <Axe/>
+        case "teddy-bear": return <TeddyBear/>
+        case "cooler": return <Cooler/>
+        case "fence": return <Fence/>
+        case "hammer": return <Hammer/>
+        case "hula hoop": return <HulaHoop/>
+        case "ladder": return <Ladder/>
+        case "panda": return <Panda/>
+        case "peanut": return <Peanut/>
+        case "pliers": return <Pliers/>
+        case "ring": return <Ring/>
+        case "stitches": return <Stitches/>
         default:
             return name
     }
