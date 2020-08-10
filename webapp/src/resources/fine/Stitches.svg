@@ -1,0 +1,5 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-linecap="round">
+        <path d="M5 26h48M10 23.5l5 5M10 28.5l5-5M18 23.5l5 5M18 28.5l5-5M26 23.5l5 5M26 28.5l5-5M34 23.5l5 5M34 28.5l5-5M42 23.5l5 5M42 28.5l5-5"/>
+    </g>
+</svg>
