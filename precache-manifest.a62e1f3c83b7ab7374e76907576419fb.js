@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5d03e3ead7b251e2c4820f5b706de88e",
+    "revision": "392c610671e804593d60338af3aa0823",
     "url": "./index.html"
   },
   {
-    "revision": "76eb09a910595ad256d4",
+    "revision": "8313d6b1a5e5fec4ca6b",
     "url": "./static/css/main.ca7384f1.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/js/2.4135b40f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "76eb09a910595ad256d4",
-    "url": "./static/js/main.a3be57ba.chunk.js"
+    "revision": "8313d6b1a5e5fec4ca6b",
+    "url": "./static/js/main.3759c3bb.chunk.js"
   },
   {
     "revision": "7db6cf6f889d912b173e",
@@ -52,6 +52,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Arrow.01f9ccea.svg"
   },
   {
+    "revision": "d0581cf9af1a0056be544395d650f485",
+    "url": "./static/media/Axe.d0581cf9.svg"
+  },
+  {
     "revision": "524287341e97d79fecad34fcd8e01ad6",
     "url": "./static/media/Backpack.52428734.svg"
   },
@@ -72,8 +76,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Basketball.0dbc696f.svg"
   },
   {
-    "revision": "8de5719b27493e199740ac443b900ea0",
-    "url": "./static/media/Bear.8de5719b.svg"
+    "revision": "f716f0a861fee23e92fa03a586a3f78a",
+    "url": "./static/media/Bear.f716f0a8.svg"
   },
   {
     "revision": "046a967e0d50f7428188b7afb17c380f",
@@ -212,6 +216,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Cookie.58fa5f05.svg"
   },
   {
+    "revision": "6d3f65652f2dd1a88bb091ee572e920c",
+    "url": "./static/media/Cooler.6d3f6565.svg"
+  },
+  {
     "revision": "0c22984dac8b8f2559bc925b88667ac9",
     "url": "./static/media/Couch.0c22984d.svg"
   },
@@ -280,6 +288,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Fan.e8de88bd.svg"
   },
   {
+    "revision": "2ccb1b7e7abf273561b703a9b92d5fbb",
+    "url": "./static/media/Fence.2ccb1b7e.svg"
+  },
+  {
     "revision": "3a75a54c49258ec8989eab9b7c2cddee",
     "url": "./static/media/Firehydrant.3a75a54c.svg"
   },
@@ -320,6 +332,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Giraffe.2362c1ae.svg"
   },
   {
+    "revision": "cc626aeef11ee4e38b4160c1b6d9bdaf",
+    "url": "./static/media/Hammer.cc626aee.svg"
+  },
+  {
     "revision": "4cda799d677c72936895b1f70ddd0ab8",
     "url": "./static/media/Hand.4cda799d.svg"
   },
@@ -356,12 +372,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/House.c9b57a2d.svg"
   },
   {
+    "revision": "7f95335469f740acca011f78692c6dab",
+    "url": "./static/media/Hula hoop.7f953354.svg"
+  },
+  {
     "revision": "9f3d95681d15a3bab4174aab516e0b54",
     "url": "./static/media/Kangaroo.9f3d9568.svg"
   },
   {
     "revision": "196ef45fa43bd56d6c1f69c54e038905",
     "url": "./static/media/Key.196ef45f.svg"
+  },
+  {
+    "revision": "a02d31fb487e6027df946c6b9aab7920",
+    "url": "./static/media/Ladder.a02d31fb.svg"
   },
   {
     "revision": "9a12abfc683c5e9fb3823637943efc8f",
@@ -404,12 +428,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Owl.45b3b935.svg"
   },
   {
+    "revision": "01a4a9fb60643e5930629e5783c20127",
+    "url": "./static/media/Panda.01a4a9fb.svg"
+  },
+  {
     "revision": "08d9aa975bc0d124d32910e96cc9c709",
     "url": "./static/media/Pants.08d9aa97.svg"
   },
   {
     "revision": "b8d0a8d031337e0a9a66650cc548e7a8",
     "url": "./static/media/Passport.b8d0a8d0.svg"
+  },
+  {
+    "revision": "d0ed9031507f2c5ebe36c16da478dbd8",
+    "url": "./static/media/Peanut.d0ed9031.svg"
   },
   {
     "revision": "72e9662fcba369288433f60fd9632591",
@@ -426,6 +458,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b62d2f47239cdf372a4097cba5684735",
     "url": "./static/media/Planet.b62d2f47.svg"
+  },
+  {
+    "revision": "332200da2d8ace47cc16c1edb9ef3c6f",
+    "url": "./static/media/Pliers.332200da.svg"
   },
   {
     "revision": "75329e9ed9fddac0682b512748d2f415",
@@ -456,6 +492,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Remote control.41a14241.svg"
   },
   {
+    "revision": "e75fa8b93fd0d748fc49f5b24249d813",
+    "url": "./static/media/Ring.e75fa8b9.svg"
+  },
+  {
     "revision": "c47d89838f47a1bee908048760165229",
     "url": "./static/media/Robot.c47d8983.svg"
   },
@@ -466,6 +506,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6ed514dbb27a5523ce297c9600b365be",
     "url": "./static/media/Shoe.6ed514db.svg"
+  },
+  {
+    "revision": "f843cb44f71ba6415a5e4107b7b6a370",
+    "url": "./static/media/Shovel.f843cb44.svg"
   },
   {
     "revision": "0003d3ccf6df8fa3c3311d2185fa0d6f",
@@ -504,6 +548,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Stereo.e6b87687.svg"
   },
   {
+    "revision": "c4a2c692d20e9a9c8758ee4e710247d0",
+    "url": "./static/media/Stitches.c4a2c692.svg"
+  },
+  {
     "revision": "eaf4dcbbac88cf7a11a73339570edc9d",
     "url": "./static/media/Strawberry.eaf4dcbb.svg"
   },
@@ -528,8 +576,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Teapot.cfb028e1.svg"
   },
   {
+    "revision": "8de5719b27493e199740ac443b900ea0",
+    "url": "./static/media/Teddy bear.8de5719b.svg"
+  },
+  {
     "revision": "b5eb429a1faaedd6c2efc003dc86c9b7",
     "url": "./static/media/Television.b5eb429a.svg"
+  },
+  {
+    "revision": "48e60a71e45ea49c678057b05082dcc3",
+    "url": "./static/media/Toaster.48e60a71.svg"
   },
   {
     "revision": "fb514b59a7d03566e58e902b4c49c486",
@@ -538,6 +594,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a271180bf08af5bb59d8f8e6208b1d6f",
     "url": "./static/media/Truck.a271180b.svg"
+  },
+  {
+    "revision": "770bffb7eda6a7ec7b99ed7c12b2aefa",
+    "url": "./static/media/Umbrella.770bffb7.svg"
   },
   {
     "revision": "18b2ac195ad0034ac8291c18028179e7",
