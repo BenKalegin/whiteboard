@@ -1,0 +1,26 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.284 26.151h32.258c5.69 9.199 6.016 18.758 5.865 28.348H5.418c0-9.775 0-19.551 5.865-28.348z"
+          fill="none" stroke="var(--primary-color, #000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.002"/>
+    <path d="M18.628 19.308h3.91v6.843h-3.91zm13.685 0h3.91v6.843h-3.91z" stroke-width="1.002" fill="none" stroke="var(--primary-color, #000)"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(-.588 2.49) scale(.97753)" fill="none" stroke="var(--primary-color, #000)" stroke-linecap="round"
+       stroke-linejoin="round" stroke-width="1.025">
+        <ellipse transform="matrix(0 1 1 0 0 0)" cx="36.299" cy="36.402" rx="1.761" ry="1.76"/>
+        <ellipse transform="matrix(0 1 1 0 0 0)" cx="36.299" cy="20.913" rx="1.761" ry="1.76"/>
+        <ellipse transform="matrix(0 1 1 0 0 0)" cx="30.37" cy="28.657" rx="1.761" ry="1.76"/>
+        <ellipse transform="matrix(0 1 1 0 0 0)" cx="31.977" cy="23.89" rx="1.761" ry="1.76"/>
+        <ellipse transform="matrix(0 1 1 0 0 0)" cx="31.977" cy="33.424" rx="1.761" ry="1.76"/>
+        <ellipse transform="matrix(0 1 1 0 0 0)" cx="38.315" cy="28.657" rx="1.761" ry="1.76"/>
+        <ellipse transform="rotate(90)" cx="41.111" cy="-36.402" rx="1.761" ry="1.76"/>
+        <ellipse transform="rotate(90)" cx="41.111" cy="-20.913" rx="1.761" ry="1.76"/>
+        <ellipse transform="rotate(90)" cx="47.039" cy="-28.657" rx="1.761" ry="1.76"/>
+        <ellipse transform="rotate(90)" cx="45.433" cy="-23.89" rx="1.761" ry="1.76"/>
+        <ellipse transform="rotate(90)" cx="45.433" cy="-33.424" rx="1.761" ry="1.76"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <circle cx="27.426" cy="40.325" r="12.187" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.002"/>
+        <path d="M27.969 7.094C19.511 6.998 12.822 8.204 3.951 11c0 0-1.625 3.831-1.955 5.865-.365 2.252 0 6.843 0 6.843h11.73v-6.843c9.383-4.09 18.484-3.727 27.37 0v6.843h11.73s.366-4.591 0-6.843C52.497 14.831 50.873 11 50.873 11 42.745 8.589 36.428 7.19 27.97 7.094z"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="1.002"/>
+        <path d="M53 17c4.106 8.693.161 39.827-3.305 35.056"/>
+    </g>
+</svg>

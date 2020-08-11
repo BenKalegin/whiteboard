@@ -1,0 +1,9 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-linecap="round">
+        <g stroke-linejoin="round" stroke-width="1.002">
+            <path d="M2 16h52v23H2z"/>
+            <path d="M5 19h4v4H5zm0 6h4v4H5zm0 6h4v4H5zm6-12h4v4h-4zm0 6h4v4h-4zm30 0h4v4h-4zm-24-6h4v4h-4zm0 6h4v4h-4zm24 6h4v4h-4zM23 19h4v4h-4zm0 6h4v4h-4zm6-6h4v4h-4zm0 6h4v4h-4zm0 6h4v4h-4zm6-12h4v4h-4zm0 6h4v4h-4zm0 6h4v4h-4zm-24 0h16v4H11zm30-12h10v4H41zm6 6h4v10h-4z"/>
+        </g>
+        <path d="M28 16c-2.333-6.83 6.719-7.656 1-13"/>
+    </g>
+</svg>

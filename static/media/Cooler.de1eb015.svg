@@ -1,0 +1,23 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.002">
+        <rect x="2.916" y="9.476" width="50.084" height="10.866" rx="2" ry="2"/>
+        <path d="M11.626 3.826H44.29a2.17 2.17 0 012.178 2.173v3.477l-37.02-.082V5.999a2.17 2.17 0 012.178-2.173zM50.278 20.539L48.1 51.094c-.085 1.2-.97 2.173-2.177 2.173H9.993c-1.207 0-2.093-.972-2.178-2.173L5.638 20.373z"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-width=".919">
+        <g transform="matrix(1.0888 0 0 1.0866 -2.528 -2.477)">
+            <path d="M28 24v22"/>
+            <circle cx="28" cy="28" r="2" stroke-linecap="round" stroke-linejoin="round" stroke-width=".921"/>
+            <circle cx="28" cy="42" r="2" stroke-linecap="round" stroke-linejoin="round" stroke-width=".921"/>
+        </g>
+        <g transform="matrix(.54439 -.94104 .94292 .54331 -20.287 42.888)">
+            <path d="M28 24v22"/>
+            <circle cx="28" cy="28" r="2" stroke-linecap="round" stroke-linejoin="round" stroke-width=".921"/>
+            <circle cx="28" cy="42" r="2" stroke-linecap="round" stroke-linejoin="round" stroke-width=".921"/>
+        </g>
+        <g transform="matrix(-.54439 -.94104 -.94292 .54331 76.203 42.888)">
+            <path d="M28 24v22"/>
+            <circle cx="28" cy="28" r="2" stroke-linecap="round" stroke-linejoin="round" stroke-width=".921"/>
+            <circle cx="28" cy="42" r="2" stroke-linecap="round" stroke-linejoin="round" stroke-width=".921"/>
+        </g>
+    </g>
+</svg>

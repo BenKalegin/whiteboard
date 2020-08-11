@@ -1,14 +1,14 @@
 <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="var(--primary-color, #000)">
-        <path d="M11.247 44.94h26.405m5.357 0L56 45.046c-.343-3.771-.55-6.61-1.308-7.583C53.236 35.6 52 36.046 46 35.046c-2.93-3.044-6.994-7.096-10.5-8.109-2.998-.057-16.5-.114-16.5-.114v8.223H0v9.894h6.169m15.678-15.394h13.296c1.857.5 3.857 1.523 6.937 5.5H21.847z"
+        <path d="M15 49h19.4M46 49l10 .046c-.343-3.771-.55-10.61-1.308-11.583C51 34 41.131 22.792 35.498 21c-6.327-.064-28.024.032-35.5 0v27.94l2.8.06m19.047-25.454h13.296C37 24.046 44.92 31.023 48 35l-26.153.046z"
               stroke-linecap="round" stroke-linejoin="round"/>
-        <g stroke-linejoin="round" transform="translate(0 -996.36)">
+        <g transform="translate(0 -996.36)" stroke-linejoin="round">
             <ellipse cx="8.647" cy="1046.5" rx="5.911" ry="5.64"/>
             <ellipse cx="8.647" cy="1046.5" rx="2.834" ry="2.704"/>
             <ellipse cx="40.174" cy="1046.5" rx="5.911" ry="5.64"/>
             <ellipse cx="40.174" cy="1046.5" rx="2.834" ry="2.704"/>
         </g>
-        <path d="M21.818 37.54h3.71M0 45.04l3 4M15 50.04h19M46 50.04h7l3-5"/>
+        <path d="M21.818 37.54h3.71"/>
         <path d="M47.7 37.74h4.6c1.027 0 1.3 3 1.3 3-3.664.135-4.6 0-5.9-3z" stroke-linecap="round"
               stroke-linejoin="round"/>
     </g>

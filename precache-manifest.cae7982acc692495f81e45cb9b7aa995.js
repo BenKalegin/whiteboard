@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "392c610671e804593d60338af3aa0823",
+    "revision": "47ad7899a1675e31885ffabafc29c5ba",
     "url": "./index.html"
   },
   {
-    "revision": "8313d6b1a5e5fec4ca6b",
+    "revision": "f9af995802a60f7c9ac2",
     "url": "./static/css/main.ca7384f1.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/js/2.4135b40f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8313d6b1a5e5fec4ca6b",
-    "url": "./static/js/main.3759c3bb.chunk.js"
+    "revision": "f9af995802a60f7c9ac2",
+    "url": "./static/js/main.569d4c76.chunk.js"
   },
   {
     "revision": "7db6cf6f889d912b173e",
@@ -68,6 +68,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Banana.544d8ef6.svg"
   },
   {
+    "revision": "16ee3d4a645766fc3b35890825f5e8a1",
+    "url": "./static/media/Baseball.16ee3d4a.svg"
+  },
+  {
     "revision": "029df11d3195cf3e627f8f20ccdaa1cb",
     "url": "./static/media/Basket.029df11d.svg"
   },
@@ -110,6 +114,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6f46148c45d9a1f47da1ce87308b5823",
     "url": "./static/media/Book.6f46148c.svg"
+  },
+  {
+    "revision": "30b4b44ed58f265a2823a999f80ce42a",
+    "url": "./static/media/Boomerang.30b4b44e.svg"
   },
   {
     "revision": "8ad33c8b1d669cce853e4f47368ddd35",
@@ -216,8 +224,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Cookie.58fa5f05.svg"
   },
   {
-    "revision": "6d3f65652f2dd1a88bb091ee572e920c",
-    "url": "./static/media/Cooler.6d3f6565.svg"
+    "revision": "de1eb015985b8d59b2b3bd79688d9618",
+    "url": "./static/media/Cooler.de1eb015.svg"
   },
   {
     "revision": "0c22984dac8b8f2559bc925b88667ac9",
@@ -258,6 +266,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "84c626774a1dd73a7fb6e7e428401468",
     "url": "./static/media/Dumbbell.84c62677.svg"
+  },
+  {
+    "revision": "f825850e8123b40561b33037d6274c7d",
+    "url": "./static/media/Ear.f825850e.svg"
   },
   {
     "revision": "b44cf6dafd757fcef0649b0dd030d314",
@@ -384,6 +396,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Key.196ef45f.svg"
   },
   {
+    "revision": "7591a7abda919500ab17b7603f0c6d9e",
+    "url": "./static/media/Keyboard.7591a7ab.svg"
+  },
+  {
     "revision": "a02d31fb487e6027df946c6b9aab7920",
     "url": "./static/media/Ladder.a02d31fb.svg"
   },
@@ -408,6 +424,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Microwave.f37d1b38.svg"
   },
   {
+    "revision": "28b9f865586062a09e0ff2f3d5e4524f",
+    "url": "./static/media/Mosquito.28b9f865.svg"
+  },
+  {
+    "revision": "6251bb53438a821468f2a562ef6ae16b",
+    "url": "./static/media/Mouse.6251bb53.svg"
+  },
+  {
     "revision": "98e976cd1c3a74491f45fb88f875eea2",
     "url": "./static/media/Mug.98e976cd.svg"
   },
@@ -418,6 +442,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "563159f95bd1e32b5c7c0f453a790de2",
     "url": "./static/media/Music note.563159f9.svg"
+  },
+  {
+    "revision": "2193760684f3e233510bb5f537afb789",
+    "url": "./static/media/Necklace.21937606.svg"
+  },
+  {
+    "revision": "1e69297694ee1a8bd88f5b135a81ae1a",
+    "url": "./static/media/Ocean.1e692976.svg"
   },
   {
     "revision": "5e5d20281f9f21d74129aa1260f3f4d2",
@@ -434,6 +466,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "08d9aa975bc0d124d32910e96cc9c709",
     "url": "./static/media/Pants.08d9aa97.svg"
+  },
+  {
+    "revision": "ca3950d0200a302ed0033f43f2240a12",
+    "url": "./static/media/Paperclip.ca3950d0.svg"
   },
   {
     "revision": "b8d0a8d031337e0a9a66650cc548e7a8",
@@ -500,8 +536,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Robot.c47d8983.svg"
   },
   {
+    "revision": "5fb4f1e71bcbef4aed5da1e8ff2a8913",
+    "url": "./static/media/Satellite.5fb4f1e7.svg"
+  },
+  {
     "revision": "6c71f4870e0072e64a49564898f8e722",
     "url": "./static/media/Scissors.6c71f487.svg"
+  },
+  {
+    "revision": "b46f1ce4db5c4d1a84822b1d8b7a199f",
+    "url": "./static/media/Sea turtle.b46f1ce4.svg"
   },
   {
     "revision": "6ed514dbb27a5523ce297c9600b365be",
@@ -510,6 +554,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f843cb44f71ba6415a5e4107b7b6a370",
     "url": "./static/media/Shovel.f843cb44.svg"
+  },
+  {
+    "revision": "7df899f9aa06cb434ee1a0e28af6ce02",
+    "url": "./static/media/Skull.7df899f9.svg"
   },
   {
     "revision": "0003d3ccf6df8fa3c3311d2185fa0d6f",
@@ -540,8 +588,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Star.500e77e3.svg"
   },
   {
-    "revision": "65a4aeb7e30bf14c178c3c72491fae54",
-    "url": "./static/media/Steak.65a4aeb7.svg"
+    "revision": "ab9a5b7a459ead14839a616d1054f380",
+    "url": "./static/media/Steak.ab9a5b7a.svg"
   },
   {
     "revision": "e6b8768753fa33d56f735102882ed075",
@@ -568,8 +616,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Sun.60486ef2.svg"
   },
   {
-    "revision": "50a67634b6714886b8e98b7cbc267722",
-    "url": "./static/media/Table.50a67634.svg"
+    "revision": "a6d03bf3d40ed3246283c3ffa930a703",
+    "url": "./static/media/Sword.a6d03bf3.svg"
+  },
+  {
+    "revision": "b4ebe8482969276ee15fb8ec201dd85e",
+    "url": "./static/media/Table.b4ebe848.svg"
   },
   {
     "revision": "cfb028e12f47ea8a3f970a3f875bd599",
@@ -580,12 +632,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Teddy bear.8de5719b.svg"
   },
   {
+    "revision": "496f4536654bf327cc4046ef2331f2f8",
+    "url": "./static/media/Telephone.496f4536.svg"
+  },
+  {
     "revision": "b5eb429a1faaedd6c2efc003dc86c9b7",
     "url": "./static/media/Television.b5eb429a.svg"
   },
   {
     "revision": "48e60a71e45ea49c678057b05082dcc3",
     "url": "./static/media/Toaster.48e60a71.svg"
+  },
+  {
+    "revision": "081ca248077ea15874c870a876d8c2a0",
+    "url": "./static/media/Tooth.081ca248.svg"
   },
   {
     "revision": "fb514b59a7d03566e58e902b4c49c486",
@@ -600,8 +660,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Umbrella.770bffb7.svg"
   },
   {
-    "revision": "18b2ac195ad0034ac8291c18028179e7",
-    "url": "./static/media/Van.18b2ac19.svg"
+    "revision": "108cb53cbc7e2f3e1da8ed1dc394ace2",
+    "url": "./static/media/Van.108cb53c.svg"
   },
   {
     "revision": "fb25da1d81044fb0615dff90241fcf98",
