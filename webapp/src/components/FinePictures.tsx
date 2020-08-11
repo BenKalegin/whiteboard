@@ -146,6 +146,21 @@ import {ReactComponent as Peanut} from "../resources/fine/Peanut.svg"
 import {ReactComponent as Pliers} from "../resources/fine/Pliers.svg"
 import {ReactComponent as Ring} from "../resources/fine/Ring.svg"
 import {ReactComponent as Stitches} from "../resources/fine/Stitches.svg"
+import {ReactComponent as Mosquito} from "../resources/fine/Mosquito.svg"
+import {ReactComponent as Mouse} from "../resources/fine/Mouse.svg"
+import {ReactComponent as Necklace} from "../resources/fine/Necklace.svg"
+import {ReactComponent as Ocean} from "../resources/fine/Ocean.svg"
+import {ReactComponent as Paperclip} from "../resources/fine/Paperclip.svg"
+import {ReactComponent as Satellite} from "../resources/fine/Satellite.svg"
+import {ReactComponent as Skull} from "../resources/fine/Skull.svg"
+import {ReactComponent as SeaTurtle} from "../resources/fine/Sea turtle.svg"
+import {ReactComponent as Sword} from "../resources/fine/Sword.svg"
+import {ReactComponent as Telephone} from "../resources/fine/Telephone.svg"
+import {ReactComponent as Tooth} from "../resources/fine/Tooth.svg"
+import {ReactComponent as Baseball} from "../resources/fine/Baseball.svg"
+import {ReactComponent as Boomerang} from "../resources/fine/Boomerang.svg"
+import {ReactComponent as Ear} from "../resources/fine/Ear.svg"
+import {ReactComponent as Keyboard} from "../resources/fine/Keyboard.svg"
 
 export const findPicture = (name: string) => {
     switch (name) {
@@ -299,6 +314,21 @@ export const findPicture = (name: string) => {
         case "pliers": return <Pliers/>
         case "ring": return <Ring/>
         case "stitches": return <Stitches/>
+        case "mosquito": return <Mosquito/>
+        case "mouse": return <Mouse/>
+        case "necklace": return <Necklace/>
+        case "ocean": return <Ocean/>
+        case "paper clip": return <Paperclip/>
+        case "satellite": return <Satellite/>
+        case "skull": return <Skull/>
+        case "sea turtle": return <SeaTurtle/>
+        case "sword": return <Sword/>
+        case "telephone": return <Telephone/>
+        case "tooth": return <Tooth/>
+        case "baseball": return <Baseball/>
+        case "boomerang": return <Boomerang/>
+        case "ear": return <Ear/>
+        case "keyboard": return <Keyboard/>
         default:
             return name
     }
