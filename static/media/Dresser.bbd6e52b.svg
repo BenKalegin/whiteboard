@@ -1,0 +1,13 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path stroke-dasharray="0.1, 0.1" stroke-linecap="round" stroke-linejoin="round" d="M15 11h28v7H15z"/>
+        <path d="M25.5 14h7"/>
+        <path stroke-dasharray="0.1, 0.1" stroke-linecap="round" stroke-linejoin="round" d="M15 23h28v7H15z"/>
+        <path d="M25.5 26h7"/>
+        <path stroke-dasharray="0.1, 0.1" stroke-linecap="round" stroke-linejoin="round" d="M15 35h28v7H15z"/>
+        <path d="M25.5 38h7"/>
+        <g stroke-dasharray="0.1, 0.1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 7h34v40H12zM9 5h40v2H9zM15 47h2v4h-2zM41 47h2v4h-2z"/>
+        </g>
+    </g>
+</svg>

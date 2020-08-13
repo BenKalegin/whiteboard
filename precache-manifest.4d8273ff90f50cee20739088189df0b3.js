@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "47ad7899a1675e31885ffabafc29c5ba",
+    "revision": "ca7fad056ec5b041cbfbbe31bd9c6efd",
     "url": "./index.html"
   },
   {
-    "revision": "f9af995802a60f7c9ac2",
+    "revision": "8ec2e9986f1a15c8a262",
     "url": "./static/css/main.ca7384f1.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/js/2.4135b40f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f9af995802a60f7c9ac2",
-    "url": "./static/js/main.569d4c76.chunk.js"
+    "revision": "8ec2e9986f1a15c8a262",
+    "url": "./static/js/main.da3d9dc5.chunk.js"
   },
   {
     "revision": "7db6cf6f889d912b173e",
@@ -38,6 +38,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "02c5188d4e7ecb60b7c99280927b198e",
     "url": "./static/media/Ant.02c5188d.svg"
+  },
+  {
+    "revision": "44bb8c87ecec1e2e9609c84b7b42eb91",
+    "url": "./static/media/Anvil.44bb8c87.svg"
   },
   {
     "revision": "87b410f9691626162ffe081ba2dfdf5a",
@@ -84,6 +88,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Bear.f716f0a8.svg"
   },
   {
+    "revision": "f1f6e68153ed0487cc7a37c116d63faf",
+    "url": "./static/media/Beard.f1f6e681.svg"
+  },
+  {
     "revision": "046a967e0d50f7428188b7afb17c380f",
     "url": "./static/media/Bed.046a967e.svg"
   },
@@ -104,6 +112,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Bicycle.046ff61d.svg"
   },
   {
+    "revision": "be4912b09d4618ac1ea6ffced99b301e",
+    "url": "./static/media/Binoculars.be4912b0.svg"
+  },
+  {
     "revision": "3f4c2801c6b103c130f02cbd296030a3",
     "url": "./static/media/Bird.3f4c2801.svg"
   },
@@ -118,6 +130,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "30b4b44ed58f265a2823a999f80ce42a",
     "url": "./static/media/Boomerang.30b4b44e.svg"
+  },
+  {
+    "revision": "f97889f4d305622ff0d8c2b0a2bd4c93",
+    "url": "./static/media/Brain.f97889f4.svg"
   },
   {
     "revision": "8ad33c8b1d669cce853e4f47368ddd35",
@@ -192,6 +208,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Chair.34787c8a.svg"
   },
   {
+    "revision": "ca7bbd614c1da39cb85f3acde1421bae",
+    "url": "./static/media/Chandelier.ca7bbd61.svg"
+  },
+  {
     "revision": "53a8c6704fb4c50db97c710106d27d67",
     "url": "./static/media/Cherry.53a8c670.svg"
   },
@@ -216,8 +236,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Cloud.5bbb8425.svg"
   },
   {
+    "revision": "353542c41c486c845432fa59a4301a5b",
+    "url": "./static/media/Compass.353542c4.svg"
+  },
+  {
     "revision": "6e8cc0a0926864ca4abd90f3507ddf53",
     "url": "./static/media/Computer mouse.6e8cc0a0.svg"
+  },
+  {
+    "revision": "951cd2a8eb5cd72ca6a04f5c1ca20c6d",
+    "url": "./static/media/Computer.951cd2a8.svg"
   },
   {
     "revision": "58fa5f05fda874eb23699fdeeeff3c18",
@@ -260,6 +288,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Door.1e1168e3.svg"
   },
   {
+    "revision": "bbd6e52bf5fdf46c59df21718e567d46",
+    "url": "./static/media/Dresser.bbd6e52b.svg"
+  },
+  {
     "revision": "8ec04f944b0fc5cc13cde6044068d3d2",
     "url": "./static/media/Duck.8ec04f94.svg"
   },
@@ -300,6 +332,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Fan.e8de88bd.svg"
   },
   {
+    "revision": "1e498c9af5973abd876bcae902fe1e74",
+    "url": "./static/media/Feather.1e498c9a.svg"
+  },
+  {
     "revision": "2ccb1b7e7abf273561b703a9b92d5fbb",
     "url": "./static/media/Fence.2ccb1b7e.svg"
   },
@@ -330,6 +366,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dd511d6f7f0596d9c73050e2f39a52e1",
     "url": "./static/media/Flying saucer.dd511d6f.svg"
+  },
+  {
+    "revision": "767fc4bdc8e4d813906c9479fd15b3d1",
+    "url": "./static/media/Foot.767fc4bd.svg"
+  },
+  {
+    "revision": "f82001358058768b4a53ea80825b1e33",
+    "url": "./static/media/Fork.f8200135.svg"
+  },
+  {
+    "revision": "ee2b8aa66f22c897f95ba3f0f39c811e",
+    "url": "./static/media/Frying pan.ee2b8aa6.svg"
   },
   {
     "revision": "06b2f1e454b86fe91a8c6c3f1614223b",
@@ -372,12 +420,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Helicopter.61dc4a15.svg"
   },
   {
+    "revision": "2fb557bd4b2f218840c2d84fdceabc8a",
+    "url": "./static/media/Hexagon.2fb557bd.svg"
+  },
+  {
     "revision": "7b6b0b447ca3bc7085591927b37c5c0b",
     "url": "./static/media/Hospital.7b6b0b44.svg"
   },
   {
-    "revision": "977bdc71eed4bb95122c118880251ec2",
-    "url": "./static/media/Hourglass.977bdc71.svg"
+    "revision": "dbf982db42fd614e63a49aef480f2af0",
+    "url": "./static/media/Hotdog.dbf982db.svg"
+  },
+  {
+    "revision": "bc83c96761a123df913ad3701acca351",
+    "url": "./static/media/Hourglass.bc83c967.svg"
   },
   {
     "revision": "c9b57a2dc8a3a5038a09b27d38d1b1e0",
@@ -386,6 +442,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7f95335469f740acca011f78692c6dab",
     "url": "./static/media/Hula hoop.7f953354.svg"
+  },
+  {
+    "revision": "99ff5eada63a19ece84116f7f1776e48",
+    "url": "./static/media/Jail.99ff5ead.svg"
   },
   {
     "revision": "9f3d95681d15a3bab4174aab516e0b54",
@@ -400,6 +460,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Keyboard.7591a7ab.svg"
   },
   {
+    "revision": "4c9aa34739d639a16300de5d98b96f77",
+    "url": "./static/media/Knife.4c9aa347.svg"
+  },
+  {
     "revision": "a02d31fb487e6027df946c6b9aab7920",
     "url": "./static/media/Ladder.a02d31fb.svg"
   },
@@ -408,12 +472,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Lantern.9a12abfc.svg"
   },
   {
+    "revision": "7e4e80ced8c3d03aadace804467baf9b",
+    "url": "./static/media/Leg.7e4e80ce.svg"
+  },
+  {
     "revision": "c7935ca5817d611f0a0cbd3f015030a6",
     "url": "./static/media/Light Bulb.c7935ca5.svg"
   },
   {
+    "revision": "90720d74489c2d841598ae4d06c29d45",
+    "url": "./static/media/Lighthouse.90720d74.svg"
+  },
+  {
+    "revision": "9f668f437ec7af644fd18c01cfdf6585",
+    "url": "./static/media/Lightning.9f668f43.svg"
+  },
+  {
     "revision": "89b6207f0c6c55b4cd0139c8a2ead02b",
     "url": "./static/media/Lock.89b6207f.svg"
+  },
+  {
+    "revision": "ef149cb88836857fc3c8b199ad6fafda",
+    "url": "./static/media/Mailbox.ef149cb8.svg"
+  },
+  {
+    "revision": "0d1b01bba3135132bbd6fe06691c818e",
+    "url": "./static/media/Map.0d1b01bb.svg"
   },
   {
     "revision": "7fb684a121f0390e4470a5855597dde5",
@@ -432,6 +516,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Mouse.6251bb53.svg"
   },
   {
+    "revision": "36ef04e91cdcd7f82dd70108530a10f3",
+    "url": "./static/media/Moustache.36ef04e9.svg"
+  },
+  {
     "revision": "98e976cd1c3a74491f45fb88f875eea2",
     "url": "./static/media/Mug.98e976cd.svg"
   },
@@ -448,8 +536,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Necklace.21937606.svg"
   },
   {
+    "revision": "9302e830125a7c985808b380f04cc981",
+    "url": "./static/media/Nose.9302e830.svg"
+  },
+  {
     "revision": "1e69297694ee1a8bd88f5b135a81ae1a",
     "url": "./static/media/Ocean.1e692976.svg"
+  },
+  {
+    "revision": "cfe9792d5a3a6c8fc769fdc5ec03f7ea",
+    "url": "./static/media/Octopus.cfe9792d.svg"
+  },
+  {
+    "revision": "e26ca450942c9e7d1be8d215b210acf4",
+    "url": "./static/media/Onion.e26ca450.svg"
   },
   {
     "revision": "5e5d20281f9f21d74129aa1260f3f4d2",
@@ -492,6 +592,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Piano.a4723262.svg"
   },
   {
+    "revision": "33742cb746b73f111cf3589847885911",
+    "url": "./static/media/Picture frame.33742cb7.svg"
+  },
+  {
+    "revision": "b645b327364b6ed7d946fe9b9aa9ecc8",
+    "url": "./static/media/Pizza.b645b327.svg"
+  },
+  {
     "revision": "b62d2f47239cdf372a4097cba5684735",
     "url": "./static/media/Planet.b62d2f47.svg"
   },
@@ -520,6 +628,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Purse.fb91d78d.svg"
   },
   {
+    "revision": "1250854df5b1f7969824180636bf3704",
+    "url": "./static/media/Pyramid.1250854d.svg"
+  },
+  {
     "revision": "5a01550ee4d9749b119540a75a59004d",
     "url": "./static/media/Rake.5a01550e.svg"
   },
@@ -536,6 +648,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Robot.c47d8983.svg"
   },
   {
+    "revision": "8cdbd9c354a222cd1fef5706fbce7abb",
+    "url": "./static/media/Sailboat.8cdbd9c3.svg"
+  },
+  {
+    "revision": "a59fe4922e74840724eeeaf68cdc7adc",
+    "url": "./static/media/Sandwich.a59fe492.svg"
+  },
+  {
     "revision": "5fb4f1e71bcbef4aed5da1e8ff2a8913",
     "url": "./static/media/Satellite.5fb4f1e7.svg"
   },
@@ -546,6 +666,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b46f1ce4db5c4d1a84822b1d8b7a199f",
     "url": "./static/media/Sea turtle.b46f1ce4.svg"
+  },
+  {
+    "revision": "1bb3b337ffcd59ee4b9f6f4db35ac7c6",
+    "url": "./static/media/Sheep.1bb3b337.svg"
   },
   {
     "revision": "6ed514dbb27a5523ce297c9600b365be",
@@ -580,8 +704,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Soccer ball.15430178.svg"
   },
   {
+    "revision": "ed4ca6c2391452958313adcb77de41e2",
+    "url": "./static/media/Sock.ed4ca6c2.svg"
+  },
+  {
     "revision": "b3d0fa26bd96b04d54e42ba6ecab051e",
     "url": "./static/media/Soda can.b3d0fa26.svg"
+  },
+  {
+    "revision": "1f0470899174dd9fec61abfe30a6aad4",
+    "url": "./static/media/Spoon.1f047089.svg"
+  },
+  {
+    "revision": "9ce1ff4cff93296217312a209a5113a1",
+    "url": "./static/media/Spreadsheet.9ce1ff4c.svg"
   },
   {
     "revision": "500e77e3c8b9cf945fa4f6a8e1a28c9f",
@@ -594,6 +730,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e6b8768753fa33d56f735102882ed075",
     "url": "./static/media/Stereo.e6b87687.svg"
+  },
+  {
+    "revision": "b955e506a567b1d1bf6d9f194a83f6ab",
+    "url": "./static/media/Stethoscope.b955e506.svg"
   },
   {
     "revision": "c4a2c692d20e9a9c8758ee4e710247d0",
@@ -640,12 +780,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Television.b5eb429a.svg"
   },
   {
+    "revision": "81f1d73daf2bfcdb8daff14c8320ecb3",
+    "url": "./static/media/The Mona Lisa.81f1d73d.svg"
+  },
+  {
     "revision": "48e60a71e45ea49c678057b05082dcc3",
     "url": "./static/media/Toaster.48e60a71.svg"
   },
   {
     "revision": "081ca248077ea15874c870a876d8c2a0",
     "url": "./static/media/Tooth.081ca248.svg"
+  },
+  {
+    "revision": "424b4137827e5ed31fd35c96d0f331ab",
+    "url": "./static/media/Traffic light.424b4137.svg"
   },
   {
     "revision": "fb514b59a7d03566e58e902b4c49c486",
@@ -662,6 +810,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "108cb53cbc7e2f3e1da8ed1dc394ace2",
     "url": "./static/media/Van.108cb53c.svg"
+  },
+  {
+    "revision": "91d543ebcb905e727cb2da52e578a64d",
+    "url": "./static/media/Vase.91d543eb.svg"
+  },
+  {
+    "revision": "15325697920c5a12e9454f778ea97046",
+    "url": "./static/media/Volcano.15325697.svg"
   },
   {
     "revision": "fb25da1d81044fb0615dff90241fcf98",

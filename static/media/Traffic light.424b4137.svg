@@ -1,0 +1,9 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.002">
+        <path d="M19 7.836h16v41H19z"/>
+        <circle cx="27" cy="15.735" r="4.543"/>
+        <circle cx="27" cy="28.535" r="4.543"/>
+        <circle cx="27" cy="41.235" r="4.543"/>
+        <path d="M12 10h7v11h-3c0-5.077-3-3.385-4-11zM12 23h7v11h-3c0-5.077-3-3.385-4-11zM12 36h7v11h-3c0-5.077-3-3.385-4-11zM42 10h-7v11h3c0-5.077 3-3.385 4-11zM42 23h-7v11h3c0-5.077 3-3.385 4-11zM42 36h-7v11h3c0-5.077 3-3.385 4-11zM34.999 7.8H19.001c0-3.406 3.581-6.168 8-6.168 4.417 0 7.998 2.761 7.998 6.168zM24 49h6v6h-6z"/>
+    </g>
+</svg>

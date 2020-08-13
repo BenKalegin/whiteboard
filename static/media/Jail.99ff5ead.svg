@@ -1,0 +1,13 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="var(--primary-color, #000)" stroke-linecap="square" stroke-width="2.632">
+        <path d="M47.66 17.767c-3.612 0-6.535 2.79-6.535 6.233v2.998h1.697v-2.512c0-2.832 2.168-5.128 4.839-5.128 2.671 0 4.839 2.296 4.839 5.128v2.512h1.696V24c0-3.444-2.922-6.233-6.535-6.233z"
+              fill="none" stroke-width="1.0000284000000002"/>
+        <path d="M40.718 27.01h13.886a.42.42 0 01.42.423v9.699a.42.42 0 01-.42.421H40.718a.42.42 0 01-.421-.421v-9.7a.42.42 0 01.42-.421z"
+              fill="#fff" fill-rule="evenodd" stroke-width="1.0000284000000002"/>
+        <path d="M47.66 29.1a1.474 1.474 0 00-.63 2.807V33.74a.42.42 0 00.42.422h.421a.42.42 0 00.421-.422V31.92v-.013a1.474 1.474 0 00-.631-2.807z"
+              fill="none" stroke-width="1.0000284000000002"/>
+    </g>
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1.5 1h53v2h-53zM1.5 52h53v2h-53zM6.5 3h2v49h-2zM16.5 3h2v49h-2zM26.5 3h2v49h-2zM36.5 3h2v49h-2zM46.5 17.752V3h2v14.79m0 1.7v7.519m0 10.705V52h-2V37.724m0-10.714v-7.495"/>
+    </g>
+</svg>
