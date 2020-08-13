@@ -1,0 +1,7 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <path d="M27.3 28h3.4c.3 10.064.3 17.032 2.3 24.904-2.68 1.473-5.346 1.45-8 0 2-7.872 2-14.84 2.3-24.904z"
+          fill="none" stroke="var(--primary-color, #000)" stroke-dasharray="0.0999996, 0.0999996" stroke-linecap="round"
+          stroke-linejoin="round"/>
+    <path d="M30.775 1.9V28h-5.143c-.857-12.118-.857-23.304 5.143-26.1z" fill="none" stroke="var(--primary-color, #000)"
+          stroke-dasharray="0.1, 0.1" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

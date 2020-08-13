@@ -161,6 +161,25 @@ import {ReactComponent as Baseball} from "../resources/fine/Baseball.svg"
 import {ReactComponent as Boomerang} from "../resources/fine/Boomerang.svg"
 import {ReactComponent as Ear} from "../resources/fine/Ear.svg"
 import {ReactComponent as Keyboard} from "../resources/fine/Keyboard.svg"
+import {ReactComponent as Stethoscope} from "../resources/fine/Stethoscope.svg"
+import {ReactComponent as TrafficLight} from "../resources/fine/Traffic light.svg"
+import {ReactComponent as Volcano} from "../resources/fine/Volcano.svg"
+import {ReactComponent as Chandelier} from "../resources/fine/Chandelier.svg"
+import {ReactComponent as Compass} from "../resources/fine/Compass.svg"
+import {ReactComponent as Computer} from "../resources/fine/Computer.svg"
+import {ReactComponent as Dresser} from "../resources/fine/Dresser.svg"
+import {ReactComponent as Fork} from "../resources/fine/Fork.svg"
+import {ReactComponent as FryingPan} from "../resources/fine/Frying pan.svg"
+import {ReactComponent as Knife} from "../resources/fine/Knife.svg"
+import {ReactComponent as Lighthouse} from "../resources/fine/Lighthouse.svg"
+import {ReactComponent as Mailbox} from "../resources/fine/Mailbox.svg"
+import {ReactComponent as Map} from "../resources/fine/Map.svg"
+import {ReactComponent as Moustache} from "../resources/fine/Moustache.svg"
+import {ReactComponent as Octopus} from "../resources/fine/Octopus.svg"
+import {ReactComponent as PictureFrame} from "../resources/fine/Picture frame.svg"
+import {ReactComponent as Sailboat} from "../resources/fine/Sailboat.svg"
+import {ReactComponent as Spoon} from "../resources/fine/Spoon.svg"
+import {ReactComponent as MonaLisa} from "../resources/fine/The Mona Lisa.svg"
 
 export const findPicture = (name: string) => {
     switch (name) {
@@ -329,6 +348,24 @@ export const findPicture = (name: string) => {
         case "boomerang": return <Boomerang/>
         case "ear": return <Ear/>
         case "keyboard": return <Keyboard/>
+        case "stethoscope": return <Stethoscope/>
+        case "traffic light": return <TrafficLight/>
+        case "volcano": return <Volcano/>
+        case "chandelier": return <Chandelier/>
+        case "compass": return <Compass/>
+        case "computer": return <Computer/>
+        case "dresser": return <Dresser/>
+        case "fork": return <Fork/>
+        case "frying pan": return <FryingPan/>
+        case "knife": return <Knife/>
+        case "lighthouse": return <Lighthouse/>
+        case "mailbox": return <Mailbox/>
+        case "map": return <Map/>
+        case "moustache": return <Moustache/>
+        case "octopus": return <Octopus/>
+        case "picture frame": return <PictureFrame/>
+        case "spoon": return <Spoon/>
+        case "The Mona Lisa": return <MonaLisa/>
         default:
             return name
     }
