@@ -180,6 +180,26 @@ import {ReactComponent as PictureFrame} from "../resources/fine/Picture frame.sv
 import {ReactComponent as Sailboat} from "../resources/fine/Sailboat.svg"
 import {ReactComponent as Spoon} from "../resources/fine/Spoon.svg"
 import {ReactComponent as MonaLisa} from "../resources/fine/The Mona Lisa.svg"
+import {ReactComponent as Sheep} from "../resources/fine/Sheep.svg"
+import {ReactComponent as Vase} from "../resources/fine/Vase.svg"
+import {ReactComponent as Jail} from "../resources/fine/Jail.svg"
+import {ReactComponent as Leg} from "../resources/fine/Leg.svg"
+import {ReactComponent as Lightning} from "../resources/fine/Lightning.svg"
+import {ReactComponent as Nose} from "../resources/fine/Nose.svg"
+import {ReactComponent as Onion} from "../resources/fine/Onion.svg"
+import {ReactComponent as Pizza} from "../resources/fine/Pizza.svg"
+import {ReactComponent as Pyramid} from "../resources/fine/Pyramid.svg"
+import {ReactComponent as Sandwich} from "../resources/fine/Sandwich.svg"
+import {ReactComponent as Sock} from "../resources/fine/Sock.svg"
+import {ReactComponent as Spreadsheet} from "../resources/fine/Spreadsheet.svg"
+import {ReactComponent as Anvil} from "../resources/fine/Anvil.svg"
+import {ReactComponent as Brain} from "../resources/fine/Brain.svg"
+import {ReactComponent as Feather} from "../resources/fine/Feather.svg"
+import {ReactComponent as Foot} from "../resources/fine/Foot.svg"
+import {ReactComponent as Hexagon} from "../resources/fine/Hexagon.svg"
+import {ReactComponent as Hotdog} from "../resources/fine/Hotdog.svg"
+import {ReactComponent as Beard} from "../resources/fine/Beard.svg"
+import {ReactComponent as Binoculars} from "../resources/fine/Binoculars.svg"
 
 export const findPicture = (name: string) => {
     switch (name) {
@@ -366,6 +386,27 @@ export const findPicture = (name: string) => {
         case "picture frame": return <PictureFrame/>
         case "spoon": return <Spoon/>
         case "The Mona Lisa": return <MonaLisa/>
+        case "sailboat": return <Sailboat/>
+        case "sheep": return <Sheep/>
+        case "vase": return <Vase/>
+        case "jail": return <Jail/>
+        case "leg": return <Leg/>
+        case "lightning": return <Lightning/>
+        case "nose": return <Nose/>
+        case "onion": return <Onion/>
+        case "pizza": return <Pizza/>
+        case "pyramid": return <Pyramid/>
+        case "sandwich": return <Sandwich/>
+        case "sock": return <Sock/>
+        case "spreadsheet": return <Spreadsheet/>
+        case "anvil": return <Anvil/>
+        case "brain": return <Brain/>
+        case "feather": return <Feather/>
+        case "foot": return <Foot/>
+        case "hexagon": return <Hexagon/>
+        case "hot dog": return <Hotdog/>
+        case "beard": return <Beard/>
+        case "binoculars": return <Binoculars/>
         default:
             return name
     }
