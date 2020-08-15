@@ -17,12 +17,11 @@ export const figurePath = (figure: Figure) => {
 }
 
 export const figureFineTransform = (figure: Figure) => {
-    const translate = figure.finePicture.transform.translate;
-    const scale = figure.finePicture.transform.scale;
+    const {translate, scale, rotate} = figure.finePicture.transform;
     const scaleStr: string = scale ? ` scale(${scale.x.toFixed(2)}, ${scale.y.toFixed(2)})` : ""
-
     const translateStr: string = translate? ` translate(${translate.x.toFixed(0)}, ${translate.y.toFixed(0)})` : ""
-    return `${translateStr}${scaleStr}`
+    const rotateStr: string = rotate? ` rotate(${rotate.degrees.toFixed(3)} ${rotate.aboutPoint.x.toFixed(0)}, ${rotate.aboutPoint.y.toFixed(0)})` : ""
+    return `${rotateStr}${translateStr}${scaleStr}`
 }
 
 export const figureStyle = (figure: Figure) => {

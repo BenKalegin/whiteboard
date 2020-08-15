@@ -1,5 +1,6 @@
 import {Figure, FigureProportions} from "../models/DrawModels";
-import {figurePath, figureStyle, figureFineTransform} from "./SvgServices";
+import {figurePath} from "./SvgServices";
+import regression from 'regression'
 
 export interface OnLoadable {
     onload: ((this: GlobalEventHandlers, ev: Event) => any) | null;
@@ -39,11 +40,26 @@ const getSvgBitmap = async (figure: Figure): Promise<ImageData> => {
     return ctx2D.getImageData(0, 0, size.x, size.y);
 };
 
+const longestCurve = (figure: Figure) => {
+    let longestCurve = figure.curves[0];
 
-export const calcProportions = async (figure: Figure): Promise<FigureProportions> => {
-    if (figure.finePicture.name == 'arrow') {
+    for (const curve of figure.curves) {
+        if (curve.pathPoints.length > longestCurve.pathPoints.length )
+            longestCurve = curve;
+    }
+
+    return longestCurve
+}
+
+export const calcProportions = async (figure: Figure, suggestion: string): Promise<FigureProportions> => {
+    if (suggestion == 'arrow') {
+        const curve = longestCurve(figure);
+        const linearApproximation = regression.linear(curve.pathPoints.map(p => [p.x, p.y]))
+        const flipX = curve.pathPoints[0].x > curve.pathPoints[curve.pathPoints.length-1].x
+
+        return { rotateAngle:  linearApproximation.equation[0] * 45, flipX: flipX};
         const {data, height, width} = await getSvgBitmap(figure)
     }
 
-    return {firstMomentAngle: 90}
+    return {rotateAngle: 0, flipX: false}
 }

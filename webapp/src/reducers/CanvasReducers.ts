@@ -1,4 +1,13 @@
-import {Bounds, Canvas, CanvasPoint, CanvasToolbarSelection, Figure, Point, Transform} from "../models/DrawModels";
+import {
+    Bounds,
+    Canvas,
+    CanvasPoint,
+    CanvasToolbarSelection,
+    Figure,
+    FigureProportions,
+    Point,
+    Transform
+} from "../models/DrawModels";
 import {Action} from "redux";
 import {CanvasAction, CanvasActions} from "../actions/Actions";
 import {inkDrawMouseDown, inkDrawMouseMove, inkDrawMouseUp, penColor} from "./InkDrawReducers";
@@ -75,23 +84,27 @@ const mouseUp = (state: Canvas, point: Point, events: Action[]): Canvas => {
 
 const finePictureSize = 56;
 
-function calcTransform(bounds: Bounds, finePictureName: string, figure: Figure) : Transform {
+function calcTransform(bounds: Bounds, finePictureName: string, figure: Figure, rotateAngle: number, flipX: boolean) : Transform {
     const scaleFactor = Math.max(bounds.size.x, bounds.size.y) / finePictureSize
+    const xScaleFactor = flipX ? -scaleFactor : scaleFactor
 
     const inkCenter: Point = { x: bounds.offset.x + bounds.size.x / 2, y: bounds.offset.y + bounds.size.y / 2};
+    const rotate = rotateAngle != 0 ? { degrees: rotateAngle, aboutPoint: inkCenter } : undefined;
+
     return {
         translate: {
-            x: inkCenter.x - finePictureSize * scaleFactor / 2,
+            x: inkCenter.x - finePictureSize * scaleFactor / 2 + (flipX ? finePictureSize * scaleFactor : 0),
             y: inkCenter.y - finePictureSize * scaleFactor / 2,
         },
         scale: {
-            x: scaleFactor,
+            x: xScaleFactor,
             y: scaleFactor
-        }
+        },
+        rotate : rotate
     }
 }
 
-const replaceFigure = (state: Canvas, figureId: string, finePictureName: string): Canvas => {
+const replaceFigure = (state: Canvas, figureId: string, finePictureName: string, proportions: FigureProportions): Canvas => {
     const figure = state.figures.find(f => f.id === figureId)
     if (!figure || !figure.bounds)
         // figure was deleted during api calls or bounds were not calculated
@@ -100,7 +113,7 @@ const replaceFigure = (state: Canvas, figureId: string, finePictureName: string)
     const newFigure: Figure = {...figure,
         finePicture: {
             name: finePictureName,
-            transform: calcTransform(figure.bounds, finePictureName, figure),
+            transform: calcTransform(figure.bounds, finePictureName, figure, proportions.rotateAngle, proportions.flipX),
             stroke: {color: penColor(state.toolSelected)}
         } }
     return {
@@ -121,7 +134,7 @@ export const canvasReducer = (state: Canvas, action: CanvasActions, events: Acti
         case CanvasAction.CanvasMouseUp:
             return mouseUp(state, action.payload.point.relative, events)
         case CanvasAction.ReplaceFigure:
-            return replaceFigure(state, action.payload.figureId, action.payload.finePictureName)
+            return replaceFigure(state, action.payload.figureId, action.payload.finePictureName, action.payload.proportions)
         default:
             return state;
     }

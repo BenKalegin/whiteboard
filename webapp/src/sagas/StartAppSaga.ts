@@ -29,7 +29,7 @@ function* suggestionClicked(action: ApplicationActions) {
     if (action.type === ApplicationAction.SuggestionClicked) {
         const {suggestion, figureId} = action.payload
         const figure: ReturnType<typeof figureById> = yield select(figureById, figureId)
-        const proportions = yield calcProportions(figure)
+        const proportions = yield calcProportions(figure, suggestion)
         yield put(canvasMsg(CanvasAction.ReplaceFigure, {figureId: figureId, finePictureName: suggestion, proportions: proportions}))
     }
 }

@@ -31,7 +31,7 @@ export interface Curve {
 export interface Transform {
     rotate?: {
         degrees: number
-        aboutPoint?: Point
+        aboutPoint: Point
     }
     translate?: {
         x: number
@@ -63,7 +63,8 @@ export interface Figure {
 }
 
 export interface FigureProportions {
-    firstMomentAngle: number
+    rotateAngle: number
+    flipX: boolean
 }
 
 export interface InkDraw{
