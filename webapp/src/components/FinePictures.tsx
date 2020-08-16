@@ -200,6 +200,17 @@ import {ReactComponent as Hexagon} from "../resources/fine/Hexagon.svg"
 import {ReactComponent as Hotdog} from "../resources/fine/Hotdog.svg"
 import {ReactComponent as Beard} from "../resources/fine/Beard.svg"
 import {ReactComponent as Binoculars} from "../resources/fine/Binoculars.svg"
+import {ReactComponent as Rainbow} from "../resources/fine/Rainbow.svg"
+import {ReactComponent as Cupcake} from "../resources/fine/Cupcake.svg"
+import {ReactComponent as FlipFlops} from "../resources/fine/Flip flops.svg"
+import {ReactComponent as Glove} from "../resources/fine/Glove.svg"
+import {ReactComponent as Grapes} from "../resources/fine/Grapes.svg"
+import {ReactComponent as HotAirBalloon} from "../resources/fine/Hot air balloon.svg"
+import {ReactComponent as Lobster} from "../resources/fine/Lobster.svg"
+import {ReactComponent as Pineapple} from "../resources/fine/Pineapple.svg"
+import {ReactComponent as Broccoli} from "../resources/fine/Broccoli.svg"
+import {ReactComponent as Balloon} from "../resources/fine/Balloon.svg"
+import {ReactComponent as Cannon} from "../resources/fine/Cannon.svg"
 
 export const findPicture = (name: string) => {
     switch (name) {
@@ -407,6 +418,17 @@ export const findPicture = (name: string) => {
         case "hot dog": return <Hotdog/>
         case "beard": return <Beard/>
         case "binoculars": return <Binoculars/>
+        case "rainbow": return <Rainbow/>
+        case "cupcake": return <Cupcake/>
+        case "flip flops": return <FlipFlops/>
+        case "glove": return <Glove/>
+        case "grapes": return <Grapes/>
+        case "hot air balloon": return <HotAirBalloon/>
+        case "lobster": return <Lobster/>
+        case "pineapple": return <Pineapple/>
+        case "broccoli": return <Broccoli/>
+        case "balloon": return <Balloon/>
+        case "cannon": return <Cannon/>
         default:
             return name
     }
