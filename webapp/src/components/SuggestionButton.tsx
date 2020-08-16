@@ -10,7 +10,7 @@ const SuggestionButton: React.FC<Props> = (props) => {
 
     const picture = findPicture(props.prediction);
     const onClick = () => {
-        if (typeof picture !== "string")
+        //if (typeof picture !== "string")
             props.onClick();
     };
     return (

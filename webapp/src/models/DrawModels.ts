@@ -48,15 +48,30 @@ interface Stroke {
     color: string
 }
 
-export interface FinePictureEmbedding {
+export enum EmbeddingType {
+    FinePicture,
+    Text
+}
+
+export type FinePictureEmbedding = {
+    type: EmbeddingType.FinePicture
     name: string
     transform: Transform
     stroke: Stroke
 }
 
+export interface TextEmbedding {
+    type: EmbeddingType.Text
+    text: string
+    transform: Transform
+    stroke: Stroke
+}
+
+export type FigureEmbedding = FinePictureEmbedding | TextEmbedding
+
 export interface Figure {
     id: string
-    finePicture?: FinePictureEmbedding
+    embedding?: FigureEmbedding
     curves: Curve[]
     curveTimes: number[]
     bounds?: Bounds

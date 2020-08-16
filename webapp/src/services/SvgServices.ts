@@ -1,4 +1,4 @@
-import {Curve, Figure} from "../models/DrawModels";
+import {Curve, Figure, FinePictureEmbedding} from "../models/DrawModels";
 
 export const curvePath = (curve: Curve) => {
     const pathChar = (i: number)  =>  { return i === 0 ? 'M' : 'L'}
@@ -16,19 +16,27 @@ export const figurePath = (figure: Figure) => {
     `).join("\n")
 }
 
-export const figureFineTransform = (figure: Figure) => {
-    const {translate, scale, rotate} = figure.finePicture!.transform
+export const figureTransform = (figure: Figure) => {
+    const embedding = figure.embedding!;
+    const {translate, scale, rotate} = embedding.transform
     const scaleStr: string = scale ? ` scale(${scale.x.toFixed(2)}, ${scale.y.toFixed(2)})` : ""
     const translateStr: string = translate? ` translate(${translate.x.toFixed(0)}, ${translate.y.toFixed(0)})` : ""
     const rotateStr: string = rotate? ` rotate(${rotate.degrees.toFixed(3)} ${rotate.aboutPoint.x.toFixed(0)}, ${rotate.aboutPoint.y.toFixed(0)})` : ""
     return `${rotateStr}${translateStr}${scaleStr}`
 }
 
-export const figureStyle = (figure: Figure) => {
+export const finePictureStyle = (figure: Figure) => {
     return `
             #${figure.id}  {
-                --primary-color: ${figure.finePicture!.stroke.color};
+                --primary-color: ${figure.embedding!.stroke.color};
                 --secondary-color: #11EBD8;
                 --tertiary-color: #000;
+            }`
+}
+
+export const TextStyle = (figure: Figure) => {
+    return `
+            #${figure.id} text  {
+                fill: ${figure.embedding!.stroke.color}
             }`
 }

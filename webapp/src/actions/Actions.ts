@@ -48,7 +48,7 @@ type CanvasMessages = {
     [CanvasAction.CanvasMouseDown]: { point: CanvasPoint }
     [CanvasAction.CanvasMouseMove]: { point: CanvasPoint }
     [CanvasAction.CanvasMouseUp]: { point: CanvasPoint }
-    [CanvasAction.ReplaceFigure]: { figureId: string, finePictureName: string; proportions: FigureProportions }
+    [CanvasAction.ReplaceFigure]: { figureId: string, finePictureName: string; text: string; proportions: FigureProportions }
 };
 
 export enum ApplicationAction {

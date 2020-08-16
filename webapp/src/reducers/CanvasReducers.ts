@@ -3,9 +3,13 @@ import {
     Canvas,
     CanvasPoint,
     CanvasToolbarSelection,
+    EmbeddingType,
     Figure,
+    FigureEmbedding,
     FigureProportions,
+    FinePictureEmbedding,
     Point,
+    TextEmbedding,
     Transform
 } from "../models/DrawModels";
 import {Action} from "redux";
@@ -38,7 +42,7 @@ const selectTool = (state: Canvas, newTool: CanvasToolbarSelection) => {
         ...state,
         toolSelected: newTool,
         figures: figures
-    };
+    }
 };
 
 const mouseDown = (state: Canvas, point: CanvasPoint): Canvas => {
@@ -72,7 +76,7 @@ const mouseUp = (state: Canvas, point: Point, events: Action[]): Canvas => {
 
 const finePictureSize = 56;
 
-function calcTransform(bounds: Bounds, finePictureName: string, figure: Figure, rotateAngle: number, flipX: boolean) : Transform {
+function calcPictureTransform(bounds: Bounds, finePictureName: string, figure: Figure, rotateAngle: number, flipX: boolean) : Transform {
     const scaleFactor = Math.max(bounds.size.x, bounds.size.y) / finePictureSize
     const xScaleFactor = flipX ? -scaleFactor : scaleFactor
 
@@ -92,19 +96,50 @@ function calcTransform(bounds: Bounds, finePictureName: string, figure: Figure, 
     }
 }
 
-const replaceFigure = (state: Canvas, figureId: string, finePictureName: string, proportions: FigureProportions): Canvas => {
+function calcTextTransform(bounds: Bounds, text: string, figure: Figure, rotateAngle: number, flipX: boolean) : Transform {
+    const textSpaceAbove = 5
+    const textSize = 13 - textSpaceAbove
+    const scaleFactor = bounds.size.x / textSize
+
+    const inkCenter: Point = { x: bounds.offset.x + bounds.size.x / 2, y: bounds.offset.y + bounds.size.y / 2};
+
+    return {
+        translate: {
+            x: inkCenter.x - textSize * scaleFactor / 2,
+            y: bounds.offset.y + bounds.size.y,
+        },
+        scale: {
+            x: scaleFactor,
+            y: scaleFactor
+        },
+    }
+}
+
+const replaceFigure = (state: Canvas, figureId: string, finePictureName: string, text: string, proportions: FigureProportions): Canvas => {
     const figure = state.figures.find(f => f.id === figureId)
     if (!figure || !figure.bounds)
         // figure was deleted during api calls or bounds were not calculated
         return state
 
+    const embedding: FigureEmbedding =
+    finePictureName.length > 0 ?
+        <FinePictureEmbedding> {
+            type: EmbeddingType.FinePicture,
+            name: finePictureName,
+            transform: calcPictureTransform(figure.bounds, finePictureName, figure, proportions.rotateAngle, proportions.flipX),
+        }
+        :
+        <TextEmbedding> {
+            type: EmbeddingType.Text,
+            text: text,
+            transform: calcTextTransform(figure.bounds, text, figure, proportions.rotateAngle, proportions.flipX),
+        }
+    embedding.stroke = {color: penColor(state.toolSelected)}
+
+
     const newFigure: Figure = {...figure,
         drawingClosed: true,
-        finePicture: {
-            name: finePictureName,
-            transform: calcTransform(figure.bounds, finePictureName, figure, proportions.rotateAngle, proportions.flipX),
-            stroke: {color: penColor(state.toolSelected)}
-        } }
+        embedding: embedding }
     return {
         ...state,
         figures: [...state.figures.filter(f => f.id !== figureId), newFigure]
@@ -123,7 +158,8 @@ export const canvasReducer = (state: Canvas, action: CanvasActions, events: Acti
         case CanvasAction.CanvasMouseUp:
             return mouseUp(state, action.payload.point.relative, events)
         case CanvasAction.ReplaceFigure:
-            return replaceFigure(state, action.payload.figureId, action.payload.finePictureName, action.payload.proportions)
+            const {figureId, finePictureName, text, proportions} = action.payload;
+            return replaceFigure(state, figureId, finePictureName, text, proportions)
         default:
             return state;
     }

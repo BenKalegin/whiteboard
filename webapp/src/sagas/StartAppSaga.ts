@@ -35,9 +35,14 @@ function* suggestionClicked(action: ApplicationActions) {
     if (action.type === ApplicationAction.SuggestionClicked) {
         const {drawSuggestion, textSuggestion, figureId} = action.payload
         const figure: ReturnType<typeof figureById> = yield select(figureById, figureId)
-        if (drawSuggestion.length > 0) {
+        if (drawSuggestion.length > 0 || textSuggestion.length > 0 ) {
             const proportions = yield calcProportions(figure, drawSuggestion)
-            yield put(canvasMsg(CanvasAction.ReplaceFigure, {figureId: figureId, finePictureName: drawSuggestion, proportions: proportions}))
+            yield put(canvasMsg(CanvasAction.ReplaceFigure, {
+                figureId: figureId,
+                finePictureName: drawSuggestion,
+                text: textSuggestion,
+                proportions: proportions
+            }))
         }
     }
 }
