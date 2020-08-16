@@ -31,7 +31,7 @@ export enum PredictionAction {
 }
 
 type PredictionMessages = {
-    [PredictionAction.QuickDrawPredictionReceived]: { predictions: string[], figureId: string };
+    [PredictionAction.QuickDrawPredictionReceived]: { picturePredictions: string[], letterPredictions: string[], figureId: string };
     [PredictionAction.LookupBasicShape]: {};
 };
 
@@ -60,7 +60,7 @@ export enum ApplicationAction {
 type ApplicationMessages = {
     [ApplicationAction.StartApplication]: { };
     [ApplicationAction.CurveCompleted]: { figureId: string, curveId: string};
-    [ApplicationAction.SuggestionClicked]: { suggestion: string, figureId: string };
+    [ApplicationAction.SuggestionClicked]: { drawSuggestion: string, textSuggestion: string, figureId: string };
 };
 
 export type PredictionActions = ActionMap<PredictionMessages>[keyof ActionMap<PredictionMessages>];

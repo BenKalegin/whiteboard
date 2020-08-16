@@ -56,10 +56,11 @@ export interface FinePictureEmbedding {
 
 export interface Figure {
     id: string
-    finePicture: FinePictureEmbedding
+    finePicture?: FinePictureEmbedding
     curves: Curve[]
     curveTimes: number[]
     bounds?: Bounds
+    drawingClosed: boolean
 }
 
 export interface FigureProportions {

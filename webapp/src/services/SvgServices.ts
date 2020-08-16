@@ -17,7 +17,7 @@ export const figurePath = (figure: Figure) => {
 }
 
 export const figureFineTransform = (figure: Figure) => {
-    const {translate, scale, rotate} = figure.finePicture.transform;
+    const {translate, scale, rotate} = figure.finePicture!.transform
     const scaleStr: string = scale ? ` scale(${scale.x.toFixed(2)}, ${scale.y.toFixed(2)})` : ""
     const translateStr: string = translate? ` translate(${translate.x.toFixed(0)}, ${translate.y.toFixed(0)})` : ""
     const rotateStr: string = rotate? ` rotate(${rotate.degrees.toFixed(3)} ${rotate.aboutPoint.x.toFixed(0)}, ${rotate.aboutPoint.y.toFixed(0)})` : ""
@@ -27,7 +27,7 @@ export const figureFineTransform = (figure: Figure) => {
 export const figureStyle = (figure: Figure) => {
     return `
             #${figure.id}  {
-                --primary-color: ${figure.finePicture.stroke.color};
+                --primary-color: ${figure.finePicture!.stroke.color};
                 --secondary-color: #11EBD8;
                 --tertiary-color: #000;
             }`

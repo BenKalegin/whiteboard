@@ -5,18 +5,21 @@ import {ApplicationState} from "../reducers/Reducers";
 import {ApplicationAction, applicationMsg} from "../actions/Actions";
 
 const PredictEnhancement: React.FC = () => {
-    const prediction = useSelector((state: ApplicationState) => state.predictions.quickDraw)
+    const suggestions = useSelector((state: ApplicationState) => state.predictions)
     const figures = useSelector((state: ApplicationState) => state.canvas.figures)
     const dispatch = useDispatch()
 
-    const onSuggestionClick = (suggestion: string) => {
-        dispatch(applicationMsg(ApplicationAction.SuggestionClicked, {suggestion: suggestion, figureId: figures[figures.length-1].id}))
+    const onSuggestionClick = (draw: string, text: string) => {
+        dispatch(applicationMsg(ApplicationAction.SuggestionClicked, {drawSuggestion: draw, textSuggestion: text, figureId: figures[figures.length-1].id}))
     }
 
     return (
         <div className="contextMenu">
-            {prediction.topMatches.slice(0, 8).map((s, i) => {
-                return <SuggestionButton key={i} prediction={s} onClick={() => onSuggestionClick(s)}/>;
+            {suggestions.quickDraw.topMatches.slice(0, 8).map((s, i) => {
+                return <SuggestionButton key={i} prediction={s} onClick={() => onSuggestionClick(s, "")}/>;
+            })}
+            {suggestions.character.topMatches.slice(0, 3).map((s, i) => {
+                return <SuggestionButton key={i} prediction={s} onClick={() => onSuggestionClick("", s)}/>;
             })}
         </div>
     )};

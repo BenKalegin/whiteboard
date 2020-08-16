@@ -2,7 +2,7 @@ import {Canvas, CanvasToolbarSelection, Curve, Figure, Point, TemporalPoint} fro
 import {InkDrawSmoothReducer} from "./InkDrawSmoothReducer";
 import {Action} from "redux";
 import {ApplicationAction, applicationMsg} from "../actions/Actions";
-import {generateCurveId} from "./DynamicIdentifiers";
+import {generateCurveId, generateFigureId} from "./DynamicIdentifiers";
 
 export const updateRecentCurveWithInkDrawing = (figures: Figure[], projectedPoints: TemporalPoint[]): Figure[] => {
     const lastFigure = figures.pop()!
@@ -39,8 +39,18 @@ export const penColor = (toolSelected: CanvasToolbarSelection) => {
     }
 }
 
+const createNewFigure = (): Figure => {
+    return {
+        id: generateFigureId(),
+        curves: [],
+        curveTimes: [],
+        drawingClosed: false
+    }
+};
+
 const startNewCurve = (figures: Figure[], startedAt: number, toolSelected: CanvasToolbarSelection, projectedPoints: TemporalPoint[]): Figure[] => {
-    const lastFigure = figures.pop()!;
+
+    const figure = (figures.length === 0 || figures[figures.length-1].drawingClosed) ? createNewFigure() : figures.pop()!;
 
     const curve: Curve = {
         startedAt: startedAt,
@@ -52,11 +62,12 @@ const startNewCurve = (figures: Figure[], startedAt: number, toolSelected: Canva
     }
 
     curve.pathPoints = [...projectedPoints]
-    return [...figures, {...lastFigure, curves: [...lastFigure.curves, curve]}]
+    return [...figures, {...figure, curves: [...figure.curves, curve]}]
 }
 
 export const inkDrawMouseDown = (state: Canvas, point: Point) => {
     const inkDraw = InkDrawSmoothReducer.mouseDown(state.inkDraw, point);
+
     const figures = startNewCurve(state.figures, inkDraw.startedAt, state.toolSelected, inkDraw.projectedPoints);
     return {
         ...state,

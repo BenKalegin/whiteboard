@@ -12,20 +12,6 @@ import {Action} from "redux";
 import {CanvasAction, CanvasActions} from "../actions/Actions";
 import {inkDrawMouseDown, inkDrawMouseMove, inkDrawMouseUp, penColor} from "./InkDrawReducers";
 import {eraserMouseDown, eraserMouseMove} from "./EraserReducers";
-import {generateFigureId} from "./DynamicIdentifiers";
-
-export const createNewFigure = (): Figure => {
-    return {
-        id: generateFigureId(),
-        curves: [],
-        curveTimes: [],
-        finePicture: {
-            name: "",
-            transform: {},
-            stroke : {color: ""}
-        },
-    }
-};
 
 const isPen = (tool: CanvasToolbarSelection) => {
     switch (tool) {
@@ -42,8 +28,10 @@ const isPen = (tool: CanvasToolbarSelection) => {
 const selectTool = (state: Canvas, newTool: CanvasToolbarSelection) => {
     let figures = state.figures;
 
-    if (isPen(newTool)) {
-        figures = [...state.figures, createNewFigure()]
+    // close current figure drawing if other tool selected
+    if (figures.length > 0 && !figures[figures.length-1].drawingClosed) {
+        const lastFigure = figures.pop()!
+        figures = [...state.figures, {...lastFigure, drawingClosed:  true}]
     }
 
     return {
@@ -111,6 +99,7 @@ const replaceFigure = (state: Canvas, figureId: string, finePictureName: string,
         return state
 
     const newFigure: Figure = {...figure,
+        drawingClosed: true,
         finePicture: {
             name: finePictureName,
             transform: calcTransform(figure.bounds, finePictureName, figure, proportions.rotateAngle, proportions.flipX),

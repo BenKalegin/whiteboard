@@ -14,7 +14,7 @@ const Fine: React.FC<Props> = (props) => {
     return (
         <g id={m.id} transform={figureFineTransform(m)}>
             <style>{figureStyle(m)}</style>
-            {findPicture(m.finePicture.name)}
+            {findPicture(m.finePicture!.name)}
         </g>
     )
 }
@@ -23,7 +23,7 @@ const Figure: React.FC<Props> = (props) => {
     const m = props.model
     return (
         <React.Fragment>
-        {m.finePicture.name.length === 0 ?
+        {!m.finePicture ?
                 <g id={m.id}>
                     {m.curves.map((c, i) => <Curve model={c} key={i} />)}
                 </g>

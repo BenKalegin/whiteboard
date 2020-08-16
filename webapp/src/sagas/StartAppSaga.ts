@@ -8,7 +8,7 @@ import {
     predictionMsg
 } from "../actions/Actions";
 import {CanvasToolbarSelection} from "../models/DrawModels";
-import {fetchQuickDrawSuggestions} from "../api/InputTools";
+import {fetchCharacterSuggestions, fetchQuickDrawSuggestions} from "../api/InputTools";
 import {ApplicationState} from "../reducers/Reducers";
 import {calcProportions} from "../services/BitmapServices";
 
@@ -19,18 +19,26 @@ function* curveCompleted(action: ApplicationActions) {
         const {figureId} = action.payload
         const figure: ReturnType<typeof figureById> = yield select(figureById, figureId)
 
-        const response = yield fetchQuickDrawSuggestions(1000, 1000, figure).then(r => r.json())
-        const predictions = response[1][0][1]
-        yield put(predictionMsg(PredictionAction.QuickDrawPredictionReceived, { predictions: predictions, figureId: figureId}))
+        const quickDrawResponse = yield fetchQuickDrawSuggestions(1000, 1000, figure).then(r => r.json())
+        const quickDrawPredictions = quickDrawResponse[1][0][1]
+        const characterResponse = yield fetchCharacterSuggestions(1000, 1000, figure).then(r => r.json())
+        const characterPredictions = characterResponse[1][0][1]
+
+        yield put(predictionMsg(PredictionAction.QuickDrawPredictionReceived, {
+            picturePredictions: quickDrawPredictions,
+            letterPredictions: characterPredictions,
+            figureId: figureId}))
     }
 }
 
 function* suggestionClicked(action: ApplicationActions) {
     if (action.type === ApplicationAction.SuggestionClicked) {
-        const {suggestion, figureId} = action.payload
+        const {drawSuggestion, textSuggestion, figureId} = action.payload
         const figure: ReturnType<typeof figureById> = yield select(figureById, figureId)
-        const proportions = yield calcProportions(figure, suggestion)
-        yield put(canvasMsg(CanvasAction.ReplaceFigure, {figureId: figureId, finePictureName: suggestion, proportions: proportions}))
+        if (drawSuggestion.length > 0) {
+            const proportions = yield calcProportions(figure, drawSuggestion)
+            yield put(canvasMsg(CanvasAction.ReplaceFigure, {figureId: figureId, finePictureName: drawSuggestion, proportions: proportions}))
+        }
     }
 }
 
