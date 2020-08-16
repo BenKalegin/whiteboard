@@ -38,11 +38,13 @@ export const handWritePayload = (width: number, height: number, figure: Figure) 
         api_level: "537.36",
         app_version: 0.4,
         input_type: 0,
-        itc: "und-t-i0-handwrit",
+        device: "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+        itc: "en-t-i0-handwrit",  //"und-t-i0-handwrit",
         options: "enable_pre_space",
         requests: [
             {
-                language: "universal",
+                language: "en",
+                //language: "universal",
                 max_completions: 0,
                 max_num_results: 100,
                 pre_context: "",
@@ -75,7 +77,7 @@ export const fetchQuickDrawSuggestions = (width: number, height: number, figure:
 }
 
 export const fetchCharacterSuggestions = (width: number, height: number, figure: Figure) => {
-    const url = 'https://inputtools.google.com/request?itc=und-t-i0-handwrit&app=hwtcharpicker'
+    const url = 'https://inputtools.google.com/request?itc=en-t-i0-handwrit&app=translate' //itc=und-t-i0-handwrit&app=hwtcharpicker'
         return fetch(url, {
             method: "POST",
 /*

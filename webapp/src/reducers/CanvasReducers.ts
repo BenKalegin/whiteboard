@@ -99,7 +99,7 @@ function calcPictureTransform(bounds: Bounds, finePictureName: string, figure: F
 function calcTextTransform(bounds: Bounds, text: string, figure: Figure, rotateAngle: number, flipX: boolean) : Transform {
     const textSpaceAbove = 5
     const textSize = 13 - textSpaceAbove
-    const scaleFactor = bounds.size.x / textSize
+    const scaleFactor = bounds.size.x / ( textSize * text.length)
 
     const inkCenter: Point = { x: bounds.offset.x + bounds.size.x / 2, y: bounds.offset.y + bounds.size.y / 2};
 

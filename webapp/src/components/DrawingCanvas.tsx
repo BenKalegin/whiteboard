@@ -19,6 +19,7 @@ const DrawingCanvas: React.FC = () => {
     const boundRef = useRef<HTMLElement>(null);
 
     const mouseDown = (e: React.MouseEvent<SVGSVGElement>): void => {
+        e.preventDefault();
         dispatch({
             type: CanvasAction.CanvasMouseDown,
             payload: {point: getMousePosition(e)}
@@ -26,7 +27,7 @@ const DrawingCanvas: React.FC = () => {
     }
 
     const mouseMove = (e: React.MouseEvent<SVGSVGElement>): void => {
-
+        e.preventDefault();
         dispatch({
             type: CanvasAction.CanvasMouseMove,
             payload: {point: getMousePosition(e)}
@@ -34,6 +35,7 @@ const DrawingCanvas: React.FC = () => {
     }
 
     const mouseUp = (e: React.MouseEvent<SVGSVGElement>): void => {
+        e.preventDefault();
         dispatch({
             type: CanvasAction.CanvasMouseUp,
             payload: {point: getMousePosition(e)}

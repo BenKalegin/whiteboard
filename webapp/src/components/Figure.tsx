@@ -25,7 +25,7 @@ const Text: React.FC<Props> = (props) => {
     return (
         <g id={m.id} transform={figureTransform(m)}>
             <style>{TextStyle(m)}</style>
-            <text>{(m.embedding as TextEmbedding).text}</text>
+            <text pointerEvents="none">{(m.embedding as TextEmbedding).text}</text>
         </g>
     )
 }
