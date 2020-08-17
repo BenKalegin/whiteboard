@@ -1,0 +1,5 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M5 55v-4h10V41h10V31h10V21h20v34zM27 31V11M2.3 35.8l34-34h19M37 21V1.9M17 41V21M7 51V31M53 21V1.9"/>
+    </g>
+</svg>

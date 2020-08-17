@@ -1,0 +1,17 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)">
+        <path d="M1 19c4.823 24.596 10 31 20.15 27.011C32.553 41.529 35.809 3.681 56 13"/>
+        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="1.002">
+            <rect x="43" y="5.6" width="11" height="4" rx="1" ry="1"/>
+            <circle cx="48" cy="3.6" r="1"/>
+            <circle cx="52" cy="3.6" r="1"/>
+            <rect transform="rotate(-52.149)" x="4.221" y="35.779" width="11" height="4" rx="1" ry="1"/>
+            <circle transform="rotate(-52.149)" cx="9.221" cy="33.779" r="1"/>
+            <circle transform="rotate(-52.149)" cx="13.221" cy="33.779" r="1"/>
+            <rect transform="rotate(-61.142)" x="-17.113" y="36.705" width="11" height="4" rx="1" ry="1"/>
+            <circle transform="rotate(-61.142)" cx="-12.113" cy="34.705" r="1"/>
+            <circle transform="rotate(-61.142)" cx="-8.113" cy="34.705" r="1"/>
+        </g>
+        <path d="M5 34.8V54M15 47v7M25 42.8V54M35 25v29M45 13v41M55 13v41"/>
+    </g>
+</svg>
