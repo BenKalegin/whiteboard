@@ -211,6 +211,23 @@ import {ReactComponent as Pineapple} from "../resources/fine/Pineapple.svg"
 import {ReactComponent as Broccoli} from "../resources/fine/Broccoli.svg"
 import {ReactComponent as Balloon} from "../resources/fine/Balloon.svg"
 import {ReactComponent as Cannon} from "../resources/fine/Cannon.svg"
+import {ReactComponent as Camouflage} from "../resources/fine/Camouflage.svg"
+import {ReactComponent as CeilingFan} from "../resources/fine/Ceiling fan.svg"
+import {ReactComponent as DiveBoard} from "../resources/fine/Dive board.svg"
+import {ReactComponent as Drums} from "../resources/fine/Drums.svg"
+import {ReactComponent as Eyeglasses} from "../resources/fine/Eyeglasses.svg"
+import {ReactComponent as HousePlant} from "../resources/fine/House plant.svg"
+import {ReactComponent as Laptop} from "../resources/fine/Laptop.svg"
+import {ReactComponent as Notebook} from "../resources/fine/Notebook.svg"
+import {ReactComponent as Octagon} from "../resources/fine/Octagon.svg"
+import {ReactComponent as Pillow} from "../resources/fine/Pillow.svg"
+import {ReactComponent as Radio} from "../resources/fine/Radio.svg"
+import {ReactComponent as RollerCoaster} from "../resources/fine/Roller coaster.svg"
+import {ReactComponent as Saxophone} from "../resources/fine/Saxophone.svg"
+import {ReactComponent as Socks} from "../resources/fine/Socks.svg"
+import {ReactComponent as Stairs} from "../resources/fine/Stairs.svg"
+import {ReactComponent as Underwear} from "../resources/fine/Underwear.svg"
+import {ReactComponent as Wheel} from "../resources/fine/Wheel.svg"
 
 export const findPicture = (name: string) => {
     switch (name) {
@@ -429,6 +446,23 @@ export const findPicture = (name: string) => {
         case "broccoli": return <Broccoli/>
         case "balloon": return <Balloon/>
         case "cannon": return <Cannon/>
+        case "camouflage": return <Camouflage/>
+        case "ceiling fan": return <CeilingFan/>
+        case "dive board": return <DiveBoard/>
+        case "drums": return <Drums/>
+        case "eye glasses": return <Eyeglasses/>
+        case "house plant": return <HousePlant/>
+        case "laptop": return <Laptop/>
+        case "notebook": return <Notebook/>
+        case "octagon": return <Octagon/>
+        case "pillow": return <Pillow/>
+        case "radio": return <Radio/>
+        case "roller coaster": return <RollerCoaster/>
+        case "saxophone": return <Saxophone/>
+        case "socks": return <Socks/>
+        case "stairs": return <Stairs/>
+        case "underwear": return <Underwear/>
+        case "wheel": return <Wheel/>
         default:
             return name
     }
