@@ -81,7 +81,7 @@ function calcPictureTransform(bounds: Bounds, finePictureName: string, figure: F
     const xScaleFactor = flipX ? -scaleFactor : scaleFactor
 
     const inkCenter: Point = { x: bounds.offset.x + bounds.size.x / 2, y: bounds.offset.y + bounds.size.y / 2};
-    const rotate = rotateAngle != 0 ? { degrees: rotateAngle, aboutPoint: inkCenter } : undefined;
+    const rotate = rotateAngle !== 0 ? { degrees: rotateAngle, aboutPoint: inkCenter } : undefined;
 
     return {
         translate: {
@@ -96,7 +96,7 @@ function calcPictureTransform(bounds: Bounds, finePictureName: string, figure: F
     }
 }
 
-function calcTextTransform(bounds: Bounds, text: string, figure: Figure, rotateAngle: number, flipX: boolean) : Transform {
+function calcTextTransform(bounds: Bounds, text: string) : Transform {
     const textSpaceAbove = 5
     const textSize = 13 - textSpaceAbove
     const scaleFactor = bounds.size.x / ( textSize * text.length)
@@ -123,17 +123,17 @@ const replaceFigure = (state: Canvas, figureId: string, finePictureName: string,
 
     const embedding: FigureEmbedding =
     finePictureName.length > 0 ?
-        <FinePictureEmbedding> {
+        {
             type: EmbeddingType.FinePicture,
             name: finePictureName,
             transform: calcPictureTransform(figure.bounds, finePictureName, figure, proportions.rotateAngle, proportions.flipX),
-        }
+        } as FinePictureEmbedding
         :
-        <TextEmbedding> {
+        {
             type: EmbeddingType.Text,
             text: text,
-            transform: calcTextTransform(figure.bounds, text, figure, proportions.rotateAngle, proportions.flipX),
-        }
+            transform: calcTextTransform(figure.bounds, text),
+        } as TextEmbedding
     embedding.stroke = {color: penColor(state.toolSelected)}
 
 

@@ -76,6 +76,7 @@ export interface Figure {
     curveTimes: number[]
     bounds?: Bounds
     drawingClosed: boolean
+    toBeDeleted: boolean
 }
 
 export interface FigureProportions {

@@ -52,13 +52,13 @@ const longestCurve = (figure: Figure) => {
 }
 
 export const calcProportions = async (figure: Figure, suggestion: string): Promise<FigureProportions> => {
-    if (suggestion == 'arrow') {
+    if (suggestion === 'arrow') {
         const curve = longestCurve(figure);
         const linearApproximation = regression.linear(curve.pathPoints.map(p => [p.x, p.y]))
         const flipX = curve.pathPoints[0].x > curve.pathPoints[curve.pathPoints.length-1].x
 
         return { rotateAngle:  linearApproximation.equation[0] * 45, flipX: flipX};
-        const {data, height, width} = await getSvgBitmap(figure)
+        //const {data, height, width} = await getSvgBitmap(figure)
     }
 
     return {rotateAngle: 0, flipX: false}

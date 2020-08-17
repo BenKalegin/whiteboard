@@ -10,4 +10,5 @@ export const generateCurveId = () => {
     return curveIdPrefix + shortid.generate()
 }
 
+export const isFigureId = (id: string) => id?.startsWith(figureIdPrefix)
 export const isCurveId = (id: string) => id?.startsWith(curveIdPrefix)

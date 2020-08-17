@@ -1,4 +1,4 @@
-import {Curve, Figure, FinePictureEmbedding} from "../models/DrawModels";
+import {Curve, Figure} from "../models/DrawModels";
 
 export const curvePath = (curve: Curve) => {
     const pathChar = (i: number)  =>  { return i === 0 ? 'M' : 'L'}

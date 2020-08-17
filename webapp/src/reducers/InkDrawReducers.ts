@@ -44,7 +44,8 @@ const createNewFigure = (): Figure => {
         id: generateFigureId(),
         curves: [],
         curveTimes: [],
-        drawingClosed: false
+        drawingClosed: false,
+        toBeDeleted: false
     }
 };
 
