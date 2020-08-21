@@ -1,29 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg>
-  <g
-     transform="translate(0,-996.3622)">
-    <path
-       style="fill:none;stroke:var(--primary-color, #000);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 15,1008.3622 c 0,0 -2.112934,-2.1824 -2,-4 0.0607,-0.975 1,-2 1,-2 0,0 1.059161,-1.3902 1.059161,-2.5073 0,-1.6256 1.899691,-3.1589 3.251214,-3.2512 2.782956,-0.1901 5.782626,0.9206 7.315232,3.2512 1.496023,2.2751 1.629106,7.1561 0.812804,9.7537 -0.748859,2.383 -4.838897,7.3531 -2.438411,9.7536 1.625607,-0.8128 3.272762,-5.4378 10.566447,-4.8768 10.566446,0.8128 13.004857,13.8177 13.004857,13.8177 0,0 -7.812972,-3.8388 -10.566447,-2.4384 -1.546327,0.7864 -3.266075,2.6069 -4.876821,3.2512 -4.064018,1.6256 -8.94084,1.6256 -12.192054,-0.8128 -2.056248,-1.5422 -3.251214,-3.2512 -3.251214,-7.3153 0,-4.2321 5.874507,-7.3999 7.315232,-11.3792 0.830097,-2.2928 1.201402,-5.1933 0,-7.3152 -0.778368,-1.3748 -1.625607,-1.6257 -1.625607,-1.6257 0,0 -0.374393,1.6945 -1.374393,2.6945 -0.976854,0.9769 -3.502429,0.5568 -3.502429,0.5568 0,0 -1.436032,0.6673 -1.625607,1.6256 C 15.603864,1006.8998 15,1008.3622 15,1008.3622 z"
-/>
-    <path
-       style="fill:none;stroke:var(--primary-color, #000);stroke-width:1.23030960999999990;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 18,12.5 a 0.5,0.5 0 1 1 -1,0 0.5,0.5 0 1 1 1,0 z"
-       transform="matrix(0.81280358,0,0,0.81280358,2.7759373,990.60856)" />
-    <path
-       style="fill:none;stroke:var(--primary-color, #000);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 28,34 0,21 -5,1"
-       transform="translate(0,996.3622)" />
-    <path
-       style="fill:none;stroke:var(--primary-color, #000);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 30,34 7,7 -12,3 1,3"
-       transform="translate(0,996.3622)" />
-    <path
-       style="fill:none;stroke:var(--primary-color, #000);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 22,26 c 0,0 3.44933,4.478595 6,5 3.409593,0.696985 10,-3 11,-6 -6,0 -10,-2 -10,-2"
-       transform="translate(0,996.3622)"
-       />
-  </g>
+<svg width="56" height="56">
+    <g transform="translate(0,-996.3622)">
+        <path
+                style="fill:none;stroke:var(--primary-color, #000);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+                d="m 15,1008.3622 c 0,0 -2.112934,-2.1824 -2,-4 0.0607,-0.975 1,-2 1,-2 0,0 1.059161,-1.3902 1.059161,-2.5073 0,-1.6256 1.899691,-3.1589 3.251214,-3.2512 2.782956,-0.1901 5.782626,0.9206 7.315232,3.2512 1.496023,2.2751 1.629106,7.1561 0.812804,9.7537 -0.748859,2.383 -4.838897,7.3531 -2.438411,9.7536 1.625607,-0.8128 3.272762,-5.4378 10.566447,-4.8768 10.566446,0.8128 13.004857,13.8177 13.004857,13.8177 0,0 -7.812972,-3.8388 -10.566447,-2.4384 -1.546327,0.7864 -3.266075,2.6069 -4.876821,3.2512 -4.064018,1.6256 -8.94084,1.6256 -12.192054,-0.8128 -2.056248,-1.5422 -3.251214,-3.2512 -3.251214,-7.3153 0,-4.2321 5.874507,-7.3999 7.315232,-11.3792 0.830097,-2.2928 1.201402,-5.1933 0,-7.3152 -0.778368,-1.3748 -1.625607,-1.6257 -1.625607,-1.6257 0,0 -0.374393,1.6945 -1.374393,2.6945 -0.976854,0.9769 -3.502429,0.5568 -3.502429,0.5568 0,0 -1.436032,0.6673 -1.625607,1.6256 C 15.603864,1006.8998 15,1008.3622 15,1008.3622 z"
+        />
+        <path
+                style="fill:none;stroke:var(--primary-color, #000);stroke-width:1.23030960999999990;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+                d="m 18,12.5 a 0.5,0.5 0 1 1 -1,0 0.5,0.5 0 1 1 1,0 z"
+                transform="matrix(0.81280358,0,0,0.81280358,2.7759373,990.60856)"/>
+        <path
+                style="fill:none;stroke:var(--primary-color, #000);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+                d="m 28,34 0,21 -5,1"
+                transform="translate(0,996.3622)"/>
+        <path
+                style="fill:none;stroke:var(--primary-color, #000);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+                d="m 30,34 7,7 -12,3 1,3"
+                transform="translate(0,996.3622)"/>
+        <path
+                style="fill:none;stroke:var(--primary-color, #000);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+                d="m 22,26 c 0,0 3.44933,4.478595 6,5 3.409593,0.696985 10,-3 11,-6 -6,0 -10,-2 -10,-2"
+                transform="translate(0,996.3622)"/>
+    </g>
 </svg>

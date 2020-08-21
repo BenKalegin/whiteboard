@@ -228,6 +228,25 @@ import {ReactComponent as Socks} from "../resources/fine/Socks.svg"
 import {ReactComponent as Stairs} from "../resources/fine/Stairs.svg"
 import {ReactComponent as Underwear} from "../resources/fine/Underwear.svg"
 import {ReactComponent as Wheel} from "../resources/fine/Wheel.svg"
+import {ReactComponent as Swan} from "../resources/fine/Swan.svg"
+import {ReactComponent as Asparagus} from "../resources/fine/Asparagus.svg"
+import {ReactComponent as Belt} from "../resources/fine/Belt.svg"
+import {ReactComponent as BirthdayCake} from "../resources/fine/Birthday cake.svg"
+import {ReactComponent as Bracelet} from "../resources/fine/Bracelet.svg"
+import {ReactComponent as Broom} from "../resources/fine/Broom.svg"
+import {ReactComponent as Comet} from "../resources/fine/Comet.svg"
+import {ReactComponent as Earth} from "../resources/fine/Earth.svg"
+import {ReactComponent as GardenHose} from "../resources/fine/Garden hose.svg"
+import {ReactComponent as Lipstick} from "../resources/fine/Lipstick.svg"
+import {ReactComponent as Marker} from "../resources/fine/Marker.svg"
+import {ReactComponent as Paintbrush} from "../resources/fine/Paintbrush.svg"
+import {ReactComponent as River} from "../resources/fine/River.svg"
+import {ReactComponent as Shrimp} from "../resources/fine/Shrimp.svg"
+import {ReactComponent as Speedboat} from "../resources/fine/Speedboat.svg"
+import {ReactComponent as Submarine} from "../resources/fine/Submarine.svg"
+import {ReactComponent as Suitcase} from "../resources/fine/Suitcase.svg"
+import {ReactComponent as Toothpaste} from "../resources/fine/Toothpaste.svg"
+import {ReactComponent as Bush} from "../resources/fine/Bush.svg"
 
 export const findPicture = (name: string) => {
     switch (name) {
@@ -448,9 +467,9 @@ export const findPicture = (name: string) => {
         case "cannon": return <Cannon/>
         case "camouflage": return <Camouflage/>
         case "ceiling fan": return <CeilingFan/>
-        case "dive board": return <DiveBoard/>
+        case "diving board": return <DiveBoard/>
         case "drums": return <Drums/>
-        case "eye glasses": return <Eyeglasses/>
+        case "eyeglasses": return <Eyeglasses/>
         case "house plant": return <HousePlant/>
         case "laptop": return <Laptop/>
         case "notebook": return <Notebook/>
@@ -463,6 +482,25 @@ export const findPicture = (name: string) => {
         case "stairs": return <Stairs/>
         case "underwear": return <Underwear/>
         case "wheel": return <Wheel/>
+        case "swan": return <Swan/>
+        case "asparagus": return <Asparagus/>
+        case "belt": return <Belt/>
+        case "birthday cake": return <BirthdayCake/>
+        case "bracelet": return <Bracelet/>
+        case "broom": return <Broom/>
+        case "comet": return <Comet/>
+        case "earth": return <Earth/>
+        case "garden hose": return <GardenHose/>
+        case "lipstick": return <Lipstick/>
+        case "marker": return <Marker/>
+        case "paintbrush": return <Paintbrush/>
+        case "river": return <River/>
+        case "shrimp": return <Shrimp/>
+        case "speedboat": return <Speedboat/>
+        case "submarine": return <Submarine/>
+        case "suitcase": return <Suitcase/>
+        case "toothpaste": return <Toothpaste/>
+        case "bush": return <Bush/>
         default:
             return name
     }

@@ -1,0 +1,5 @@
+<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--primary-color, #000)" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M37 52H24c-1.108 0-2-.892-2-2V23c0-1.108.892-2 2-2h13c1.108 0 2 .892 2 2v27c0 1.108-.892 2-2 2M37 52.08V54c0 1.108-.892 2-2 2h-9c-1.108 0-2-.892-2-2v-1.974M38 21H23l4-10h7zM34 11h-7V5l7-2z"/>
+    </g>
+</svg>
