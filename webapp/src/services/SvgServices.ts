@@ -5,12 +5,16 @@ export const curvePath = (curve: Curve) => {
     return curve.pathPoints.map((p, i) => pathChar(i) + p.x.toFixed(1) + " " + p.y.toFixed(1)).join(" ")
 }
 
+/**
+ * Create svg for the figure, ignoring user's color and thickness
+ * @param figure
+ */
 export const figurePath = (figure: Figure) => {
     return figure.curves.map(c => `
             <path
             fill = "none"
-            stroke = "${c.strokeColor}"
-            stroke-width = "${c.strokeWidth}"
+            stroke = "white"
+            stroke-width = "1"
             d="${curvePath(c)}"
             />
     `).join("\n")

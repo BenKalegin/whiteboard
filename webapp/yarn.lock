@@ -2707,6 +2707,14 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
+buffer@^5.4.3:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.6.0.tgz#a31749dc7d81d84db08abf937b6b8c4033f62786"
+  integrity sha512-/gDYp/UtU0eA1ys8bOs9J6a+E/KWIY+DZ+Q2WESNUA0jFRsJOc0SNUO6xJ5SGA1xueg3NL65W6s+NY5l9cunuw==
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
+
 builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
@@ -3321,6 +3329,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+cross-fetch@^3.0.4:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.0.5.tgz#2739d2981892e7ab488a7ad03b92df2816e03f4c"
+  integrity sha512-FFLcLtraisj5eteosnX1gf01qYDCOc4fDy0+euOt8Kn9YBY2NtXL/pCoYPavw24NIQkQqm5ZOLsGD5Zzj0gyew==
+  dependencies:
+    node-fetch "2.6.0"
 
 cross-spawn@7.0.1:
   version "7.0.1"
@@ -4558,6 +4573,11 @@ file-loader@4.3.0:
   dependencies:
     loader-utils "^1.2.3"
     schema-utils "^2.5.0"
+
+file-type@^12.3.0:
+  version "12.4.2"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-12.4.2.tgz#a344ea5664a1d01447ee7fb1b635f72feb6169d9"
+  integrity sha512-UssQP5ZgIOKelfsaB5CuGAL+Y+q7EmONuiwF3N5HAH0t27rvrttgi6Ra9k/+DVaY9UF6+ybxu5pOXLUdA8N7Vg==
 
 file-uri-to-path@1.0.0:
   version "1.0.0"
@@ -6946,6 +6966,21 @@ minipass@^3.0.0, minipass@^3.1.1:
   dependencies:
     yallist "^4.0.0"
 
+mirada@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/mirada/-/mirada-0.0.15.tgz#f5e98bc5d6ec7fafde1ceb27947147780884ee0a"
+  integrity sha512-mbm4c+wjBVcmUzHRLv/TfOAq+iy03D24KwGxx8H+NSXkD5EOZV9zFWbVxTvZCc9XwR0FIUhryU/kQm12SMSQ3g==
+  dependencies:
+    buffer "^5.4.3"
+    cross-fetch "^3.0.4"
+    file-type "^12.3.0"
+    misc-utils-of-mine-generic "^0.2.31"
+
+misc-utils-of-mine-generic@^0.2.31:
+  version "0.2.37"
+  resolved "https://registry.yarnpkg.com/misc-utils-of-mine-generic/-/misc-utils-of-mine-generic-0.2.37.tgz#1739e3e614c35fc225b9b48c2b99f862acae9052"
+  integrity sha512-MfuMmkEJbzs0MANgXABv37wNG6iQFcWOXb4ZRwwxPz/cdg8dtny8NGFVXf2jb/yH5Z4dA8YAwCpBoAHeQsySXA==
+
 mississippi@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/mississippi/-/mississippi-3.0.0.tgz#ea0a3291f97e0b5e8776b363d5f0a12d94c67022"
@@ -7096,6 +7131,11 @@ no-case@^3.0.3:
   dependencies:
     lower-case "^2.0.1"
     tslib "^1.10.0"
+
+node-fetch@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
+  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
 node-forge@0.9.0:
   version "0.9.0"

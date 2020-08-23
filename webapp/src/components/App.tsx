@@ -29,6 +29,7 @@ export default function App() {
 
   return (
       <div className="App">
+          <canvas width={200} height={200} id="testcanvas"/>
         <CanvasToolbar selectTool={tool => selectTool(tool)}/>
         <DrawingCanvas/>
         <PredictEnhancement/>
