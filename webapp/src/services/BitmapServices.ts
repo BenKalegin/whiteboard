@@ -57,14 +57,17 @@ const longestCurve = (figure: Figure) => {
 
 function debugLineOutput(width: number, height: number, lines: Point[][]) {
     const canvas = document.getElementById('testcanvas') as HTMLCanvasElement;
-    const ctx2D = canvas.getContext('2d') as CanvasRenderingContext2D;
-    ctx2D.fillStyle = "yellow"
-    ctx2D.fillRect(0, 0, width, height)
-    ctx2D.strokeStyle = "black"
+    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+    ctx.fillStyle = "white"
+    ctx.fillRect(0, 0, 500, 500)
+    const colors = ["red", "blue", "green", "black"]
+    let color = 0;
     for (const line of lines) {
-        ctx2D.moveTo(line[0].x, line[0].y)
-        ctx2D.lineTo(line[1].x, line[1].y)
-        ctx2D.stroke();
+        ctx.beginPath();
+        ctx.moveTo(line[0].x, line[0].y)
+        ctx.lineTo(line[1].x, line[1].y)
+        ctx.strokeStyle = colors[(++color) % colors.length]
+        ctx.stroke();
     }
 }
 
@@ -79,19 +82,16 @@ export const calcProportions = async (figure: Figure, suggestion: string): Promi
         // Convert the image to gray-scale
         const gray = new cv.Mat(src.rows, src.cols, cv.CV_8UC1)
         cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0)
-        src.delete();
-        //cv.imshow(document.getElementById('testcanvas')!, gray)
 
-
-        // Find the edges in the image using canny detector
-        let edges = new cv.Mat()
-        cv.Canny(gray, edges, 50, 200, 3, false)
-        cv.imshow(document.getElementById('testcanvas')!, edges)
+        // We dont need to search for the edges in the image using canny detector because we overwritten the stroke to 1
+        // in every svg curve
+        //let edges = new cv.Mat()
+        //cv.Canny(gray, edges, 50, 200, 3, false)
+        //cv.imshow(document.getElementById('testcanvas')!, edges)
 
         // Detect points that form a line
         const linesMat = new cv.Mat()
-        cv.HoughLinesP(edges, linesMat, 1, Math.PI / 180, 10, 10, 1)
-        //cv.HoughLines(edges, linesMat, 1, Math.PI / 180, 10, 10, 1)
+        cv.HoughLinesP(gray, linesMat, 5, Math.PI / 180, 30, 30, 10)
 
         const lines: Point[][] = []
         for (let i = 0; i < linesMat.rows; ++i) {
@@ -100,9 +100,19 @@ export const calcProportions = async (figure: Figure, suggestion: string): Promi
             lines.push([pt1, pt2])
         }
         linesMat.delete();
-        edges.delete();
+        src.delete();
+        gray.delete()
+        //edges.delete();
 
-        debugLineOutput(imageData.width, imageData.height, lines);
+        const lengths = lines.map((l: Point[], ix: number) => {
+                return {
+                    i: ix,
+                    len: Math.pow(l[1].x - l[0].x, 2) + Math.pow(l[1].y - l[0].y, 2)
+                }
+            }
+        ).sort(x => -x.len).slice(0, 5).map(value => value.i)
+
+        debugLineOutput(imageData.width, imageData.height, lines) //.filter((value, index) => lengths.includes(index)));
 
         // data is in form red=data[0], green = data[1], blue = data[2], alpha = data[3]
         // convert it to white/black
