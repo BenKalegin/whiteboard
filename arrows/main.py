@@ -6,10 +6,8 @@ import numpy as np
 from sklearn import cluster
 from sklearn.preprocessing import RobustScaler
 
-rcParams = plt.matplotlib.rcParams
 
-
-def process_file(filename, index ):
+def process_file(filename, index):
     gray = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
     invert = cv2.bitwise_not(cv2.blur(gray, ksize=(2, 2)))
     # kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
@@ -37,7 +35,8 @@ def process_file(filename, index ):
         (0xbc, 0xbd, 0x22),
         (0x17, 0xbe, 0xcf)]
 
-    colors_s = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
+    colors_s = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22',
+                '#17becf']
 
     line_center_and_angle = []
     for x in range(0, len(lines)):
@@ -46,7 +45,7 @@ def process_file(filename, index ):
             line_center_and_angle.append([(x1 + x2) / 20, line_angle])
 
     scaled = RobustScaler().fit_transform(line_center_and_angle)
-    clusters = cluster.DBSCAN(eps=0.5)
+    clusters = cluster.AgglomerativeClustering(n_clusters=5)
     clusters.fit(scaled)
     labels = clusters.labels_.tolist()
 
@@ -74,6 +73,3 @@ process_file("data/arrow3.PNG", 1)
 process_file("data/arrow4.PNG", 2)
 process_file("data/arrow5.PNG", 3)
 process_file("data/arrow6.PNG", 4)
-
-
-
