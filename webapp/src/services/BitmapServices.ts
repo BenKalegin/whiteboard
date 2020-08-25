@@ -1,8 +1,7 @@
-import {Figure, FigureProportions, Point} from "../models/DrawModels";
+import {Curve, Figure, FigureProportions, Point} from "../models/DrawModels";
 import {figurePath} from "./SvgServices";
 import regression from 'regression'
 //import {probabilisticHoughTransform} from "./ProbabilisticHoughTransform";
-//import {HoughLinesP, Canny, cvtColor, Mat, matFromImageData, COLOR_RGBA2GRAY, loadOpencv} from 'mirada'
 import * as Mirada from 'mirada'
 declare var cv: Mirada.CV
 
@@ -71,70 +70,16 @@ function debugLineOutput(width: number, height: number, lines: Point[][]) {
     }
 }
 
+const detectEdges = (curve: Curve) => {
+    for (const point of curve.pathPoints) {
+    }
+}
+
 export const calcProportions = async (figure: Figure, suggestion: string): Promise<FigureProportions> => {
     if (suggestion === "arrow") {
-        await Mirada.loadOpencv({});
-        let imageData = await getSvgBitmap(figure)
 
 
-        const src = cv.matFromImageData(imageData)
-
-        // Convert the image to gray-scale
-        const gray = new cv.Mat(src.rows, src.cols, cv.CV_8UC1)
-        cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0)
-
-        // We dont need to search for the edges in the image using canny detector because we overwritten the stroke to 1
-        // in every svg curve
-        //let edges = new cv.Mat()
-        //cv.Canny(gray, edges, 50, 200, 3, false)
-        //cv.imshow(document.getElementById('testcanvas')!, edges)
-
-        // Detect points that form a line
-        const linesMat = new cv.Mat()
-        cv.HoughLinesP(gray, linesMat, 5, Math.PI / 180, 30, 30, 10)
-
-        const lines: Point[][] = []
-        for (let i = 0; i < linesMat.rows; ++i) {
-            let pt1: Point = { x: linesMat.data32S[i * 4], y: linesMat.data32S[i * 4 + 1]}
-            let pt2: Point = { x: linesMat.data32S[i * 4 + 2], y: linesMat.data32S[i * 4 + 3]}
-            lines.push([pt1, pt2])
-        }
-        linesMat.delete();
-        src.delete();
-        gray.delete()
-        //edges.delete();
-
-        const lengths = lines.map((l: Point[], ix: number) => {
-                return {
-                    i: ix,
-                    len: Math.pow(l[1].x - l[0].x, 2) + Math.pow(l[1].y - l[0].y, 2)
-                }
-            }
-        ).sort(x => -x.len).slice(0, 5).map(value => value.i)
-
-        debugLineOutput(imageData.width, imageData.height, lines) //.filter((value, index) => lengths.includes(index)));
-
-        // data is in form red=data[0], green = data[1], blue = data[2], alpha = data[3]
-        // convert it to white/black
-/*
-        const blackAndWhite: number[] = new Array<number>(height * width)
-        for(let y = 0; y < height; y++) {
-            for (let x = 0; x < width; x++) {
-                const offset = (y * width + x) * 4; //rgba
-                //const luminance = .2126 * data[offset] + .7152 * data[offset+1] + .0722 * data[offset+2]
-                const lum = data[offset] + data[offset + 1] + data[offset + 2];
-                if (lum > 0)
-                    console.log("lum " + x + ":" + y + " = " + lum)
-                blackAndWhite[y * width + x] = lum > 0 ? 1: 0;
-            }
-        }
-
-        const lines = probabilisticHoughTransform(blackAndWhite, width, height, 1, Math.PI / 180, 10, 10, 3, 10);
-        for (const line of lines) {
-            console.log(`${line[0].x}:${line[0].y}->${line[1].x}:${line[1].y}`)
-        }
-*/
-
+        //debugLineOutput(imageData.width, imageData.height, lines) //.filter((value, index) => lengths.includes(index)));
 
         const curve = longestCurve(figure);
 
