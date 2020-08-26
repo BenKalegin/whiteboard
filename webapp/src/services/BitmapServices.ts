@@ -70,14 +70,31 @@ function debugLineOutput(width: number, height: number, lines: Point[][]) {
     }
 }
 
-const detectEdges = (curve: Curve) => {
-    for (const point of curve.pathPoints) {
+
+function calculateSpeedOverNPoint(curve: Curve, n: number) {
+    const speed: number[] = []
+    for (let i = n; i < curve.pathPoints.length - n; i++) {
+        const pi = curve.pathPoints[i];
+        const pn = curve.pathPoints[i-n];
+        const dx = pi.x - pn.x
+        const dy = pi.y - pn.y
+        const s = Math.sqrt(dx * dx + dy * dy) / (pi.timespan - pn.timespan)
+        speed.push(s)
     }
+    return speed;
+}
+
+/**
+ * Separate curve regions based on pen speed
+ */
+const ExtractSubCurves = (curve: Curve): Curve[] => {
+    //const speed = calculateSpeedOverNPoint(curve, 1);
+    return [curve]
 }
 
 export const calcProportions = async (figure: Figure, suggestion: string): Promise<FigureProportions> => {
     if (suggestion === "arrow") {
-
+        const curves = figure.curves.flatMap(c => ExtractSubCurves(c))
 
         //debugLineOutput(imageData.width, imageData.height, lines) //.filter((value, index) => lengths.includes(index)));
 
