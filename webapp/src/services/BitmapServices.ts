@@ -3,6 +3,8 @@ import {figurePath} from "./SvgServices";
 import regression from 'regression'
 //import {probabilisticHoughTransform} from "./ProbabilisticHoughTransform";
 import * as Mirada from 'mirada'
+import {interpolateNearest} from "./InterpolateServices";
+import {continuousWaveletTransformUsingTensorFlow} from "./SignalServices";
 declare var cv: Mirada.CV
 
 export interface OnLoadable {
@@ -73,7 +75,7 @@ function debugLineOutput(width: number, height: number, lines: Point[][]) {
 
 function calculateSpeedOverNPoint(curve: Curve, n: number) {
     const speed: number[] = []
-    for (let i = n; i < curve.pathPoints.length - n; i++) {
+    for (let i = n; i < curve.pathPoints.length; i++) {
         const pi = curve.pathPoints[i];
         const pn = curve.pathPoints[i-n];
         const dx = pi.x - pn.x
@@ -85,16 +87,43 @@ function calculateSpeedOverNPoint(curve: Curve, n: number) {
 }
 
 /**
+ * Search for max value in the array and "inverts" the array in-place, replacing every element x = max(x) - x
+ * @param values
+ */
+const subtractArrayValuesFromMax = (values: number[]) : void => {
+    let max = values[0]
+    for (const value of values) {
+        if (value > max)
+            max = value
+    }
+
+    for (let i = 0; i < values.length; i++){
+        values[i] = max - values[i]
+    }
+};
+
+
+/**
  * Separate curve regions based on pen speed
  */
-const ExtractSubCurves = (curve: Curve): Curve[] => {
-    //const speed = calculateSpeedOverNPoint(curve, 1);
-    return [curve]
+const interpolateSpeed = (curve: Curve): { duration: number; speeds: number[] } => {
+    const n = 1;
+    const rawSpeed = calculateSpeedOverNPoint(curve, n);
+    const rawTimes = curve.pathPoints.map(p => p.timespan).slice(n)
+
+    // interpolate gaps between time points with nearest speed value
+    const speed = interpolateNearest(rawTimes, rawSpeed)
+
+    // invert speed(t) to search for peaks
+    subtractArrayValuesFromMax(speed.values)
+    return { speeds: speed.values, duration: speed.maxTime - speed.minTime }
 }
 
 export const calcProportions = async (figure: Figure, suggestion: string): Promise<FigureProportions> => {
     if (suggestion === "arrow") {
-        const curves = figure.curves.flatMap(c => ExtractSubCurves(c))
+        const { speeds, duration } = interpolateSpeed(figure.curves[0]);
+        await continuousWaveletTransformUsingTensorFlow(speeds, duration)
+        //const curves = figure.curves.flatMap(c => ExtractSubCurves(c))
 
         //debugLineOutput(imageData.width, imageData.height, lines) //.filter((value, index) => lengths.includes(index)));
 
