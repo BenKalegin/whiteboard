@@ -3,6 +3,7 @@ import {InkDrawSmoothReducer} from "./InkDrawSmoothReducer";
 import {Action} from "redux";
 import {ApplicationAction, applicationMsg} from "../actions/Actions";
 import {generateCurveId, generateFigureId} from "./DynamicIdentifiers";
+import {simplify} from "../services/SimplifyPolyline";
 
 export const updateRecentCurveWithInkDrawing = (figures: Figure[], projectedPoints: TemporalPoint[]): Figure[] => {
     const lastFigure = figures.pop()!
@@ -93,7 +94,14 @@ const getSvgElementById = (id: string): SVGElement | null => {
 
 export const inkDrawMouseUp = (state: Canvas, point: Point, events: Action[]) => {
     const inkDraw = InkDrawSmoothReducer.mouseUp(state.inkDraw, point)
-    const figures = updateRecentCurveWithInkDrawing(state.figures, state.inkDraw.projectedPoints);
+
+    const wasPoints = state.inkDraw.projectedPoints.length;
+    const tolerance = 0.8;
+    const highestQuality = true;
+    const simplified = simplify(state.inkDraw.projectedPoints, tolerance, highestQuality)
+    console.log(`Curve simplified tolerance: ${tolerance}, ratio: ${wasPoints / simplified.length}`)
+
+    const figures = updateRecentCurveWithInkDrawing(state.figures, simplified);
     const figure = figures[figures.length - 1]
     const curve = figure.curves[figure.curves.length - 1]
 
