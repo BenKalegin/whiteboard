@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace primitive_shape_generator
@@ -22,34 +25,37 @@ namespace primitive_shape_generator
         static void Main()
         {
             _random = new Random(111);
+            Console.WriteLine("Generating arrows");
+            for (var i = 0; i < 100; i++)
+                DrawArrows(i, DataDestination.Training);
 
-            Console.WriteLine("Ellipses...");
-            var nEllipses = 100;
-            for (var i = 0; i < nEllipses; i++)
-                DrawEllipse(i, DataDestination.Training);
-
-            Console.WriteLine("Rectangles...");
-            var nRectangles = 100;
-            for (var i = 0; i < nRectangles; i++)
-                DrawRectangle(i, DataDestination.Training);
-
-            Console.WriteLine("Rounded Rectangles...");
-            var nRoundedRectangles = 100;
-            for (var i = 0; i < nRoundedRectangles; i++)
-                DrawRoundedRectangle(i, DataDestination.Training);
-
-
-            Console.WriteLine("Ellipses...");
-            for (var i = 0; i < nEllipses / 5; i++)
-                DrawEllipse(i, DataDestination.Validation);
-
-            Console.WriteLine("Rectangles...");
-            for (var i = 0; i < nRectangles / 5; i++)
-                DrawRectangle(i, DataDestination.Validation);
-
-            Console.WriteLine("Rounded Rectangles...");
-            for (var i = 0; i < nRoundedRectangles / 5; i++)
-                DrawRoundedRectangle(i, DataDestination.Validation);
+            // Console.WriteLine("Ellipses...");
+            // var nEllipses = 100;
+            // for (var i = 0; i < nEllipses; i++)
+            //     DrawEllipse(i, DataDestination.Training);
+            //
+            // Console.WriteLine("Rectangles...");
+            // var nRectangles = 100;
+            // for (var i = 0; i < nRectangles; i++)
+            //     DrawRectangle(i, DataDestination.Training);
+            //
+            // Console.WriteLine("Rounded Rectangles...");
+            // var nRoundedRectangles = 100;
+            // for (var i = 0; i < nRoundedRectangles; i++)
+            //     DrawRoundedRectangle(i, DataDestination.Training);
+            //
+            //
+            // Console.WriteLine("Ellipses...");
+            // for (var i = 0; i < nEllipses / 5; i++)
+            //     DrawEllipse(i, DataDestination.Validation);
+            //
+            // Console.WriteLine("Rectangles...");
+            // for (var i = 0; i < nRectangles / 5; i++)
+            //     DrawRectangle(i, DataDestination.Validation);
+            //
+            // Console.WriteLine("Rounded Rectangles...");
+            // for (var i = 0; i < nRoundedRectangles / 5; i++)
+            //     DrawRoundedRectangle(i, DataDestination.Validation);
 
         }
 
@@ -62,14 +68,87 @@ namespace primitive_shape_generator
             CreatePicture(graphics => graphics.DrawEllipse(_pen, bounds), "ellipse", index, destination);
         }
 
+
+        private static double BezierCurve(Point p0, Point p1, Point p2, ICollection<Point> path)
+        {
+            PointF PointAtT(float t)
+            {
+                return new PointF
+                {
+                    X = (1 - t) * (1 - t) * p0.X + (2 * t * (1 - t) * p1.X) + (t * t * p2.X),
+                    Y = (1 - t) * (1 - t) * p0.Y + (2 * t * (1 - t) * p1.Y) + (t * t * p2.Y)
+                };
+            };
+
+            Point? recentlyAdded = null;
+            
+            for (float t = 0f; t <= 1.0; t += 0.01f)
+            {
+                PointF pt = PointAtT(t);
+                Point intPoint = new Point((int) Math.Round(pt.X), (int) Math.Round(pt.Y));
+                if (intPoint != recentlyAdded)
+                {
+                    path.Add(intPoint);
+                    recentlyAdded = intPoint;
+                }
+            }
+            return Angle(PointAtT(0.99f), PointAtT(1.0f));
+        }
+
+        private static double Angle(PointF pf1, PointF pf2)
+        {
+            float xDiff = pf2.X - pf1.X;
+            float yDiff = pf2.Y - pf1.Y;
+            return Math.Atan2(yDiff, xDiff);
+        }
+
+        private static void DrawArrows(int index, DataDestination destination)
+        {
+            const int arrowWidth = ImageWidth - 20;
+            const int arrowHeight = ImageHeight - 20;
+            var startPoint = new Point(0, 0);
+            var endPoint = new Point(arrowWidth, arrowHeight);
+
+            ICollection<Point> points = new List<Point>();
+
+            var middleX = _random.Next(arrowWidth/10, arrowWidth * 8/10);
+            var middleY = _random.Next(arrowWidth / 10, arrowWidth * 8 / 10); //_random.Next(middleX, arrowHeight * 8/10);
+
+            var middlePoint = new Point(middleX, middleY);
+            //middlePoint = new Point(arrowWidth * 9/10, arrowHeight);
+            var angle = DrawArrowsTrunk(startPoint, middlePoint, endPoint, points);
+            var leftTickLen = _random.Next(arrowWidth * 15 / 100, arrowWidth * 50 / 100);
+            var rightTickLen = leftTickLen * _random.Next(90, 110)/ 100;
+            var tickToTrunkAngle = Math.PI / 360.0 * _random.Next( 15, 30);
+
+            CreatePicture(g =>
+            {
+                g.DrawLines(_pen, points.ToArray());
+                var leftTickEnd = endPoint;
+                leftTickEnd.X -= (int)Math.Round(Math.Cos(angle + tickToTrunkAngle) * leftTickLen);
+                leftTickEnd.Y -= (int)Math.Round(Math.Sin(angle + tickToTrunkAngle) * leftTickLen);
+                var rightTickEnd = endPoint;
+                rightTickEnd.X -= (int)Math.Round(Math.Cos(angle - tickToTrunkAngle) * rightTickLen);
+                rightTickEnd.Y -= (int)Math.Round(Math.Sin(angle - tickToTrunkAngle) * rightTickLen);
+                g.DrawLine(_pen, endPoint, leftTickEnd);
+                g.DrawLine(_pen, endPoint, rightTickEnd);
+            }, "arrow", index, destination);
+        }
+
+        private static double DrawArrowsTrunk(Point startPoint, Point middlePoint, Point endPoint, ICollection<Point> result)
+        {
+            return BezierCurve(startPoint, middlePoint, endPoint, result);
+        }
+
         private static void DrawRectangle(int index, DataDestination destination)
         {
             var width = _random.Next(ImageWidth / 2, ImageWidth);
             var height = _random.Next(ImageHeight / 2, ImageHeight);
 
             var bounds = new Rectangle((ImageWidth - width) / 2, (ImageHeight - height) / 2, width, height);
-            CreatePicture(graphics => graphics.DrawRectangle(_pen, bounds), "rectangle", index, destination);
+            CreatePicture(graphics => graphics.DrawRectangle(_pen, bounds), "arrow", index, destination);
         }
+
         private static void DrawRoundedRectangle(int index, DataDestination destination)
         {
             var width = _random.Next(ImageWidth / 2, ImageWidth);
