@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "convert-ink-to-sketch3": {
+      "commandName": "Project",
+      "commandLineArgs": "E:\\prj\\github\\whiteboard\\primitive-shapes\\manual-data\\Arrow5.json E:\\prj\\github\\whiteboard\\primitive-shapes\\test\\Arrow5.json"
+    }
+  }
+}

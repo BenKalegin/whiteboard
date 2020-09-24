@@ -101,7 +101,7 @@ export const inkDrawMouseUp = (state: Canvas, point: Point, events: Action[]) =>
     const simplified = simplify(state.inkDraw.projectedPoints, tolerance, highestQuality)
     console.log(`Curve simplified tolerance: ${tolerance}, ratio: ${wasPoints / simplified.length}`)
 
-    const figures = updateRecentCurveWithInkDrawing(state.figures, simplified);
+    const figures = updateRecentCurveWithInkDrawing(state.figures, state.inkDraw.projectedPoints);
     const figure = figures[figures.length - 1]
     const curve = figure.curves[figure.curves.length - 1]
 
